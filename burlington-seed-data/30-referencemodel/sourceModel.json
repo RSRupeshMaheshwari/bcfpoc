@@ -1,0 +1,41 @@
+{
+    "metaInfo": {
+        "dataIndex": "entityModel",
+        "collectionName": "entityModels",
+        "responseObjectName": "response"
+    },
+    "entityModels": [
+        {
+            "id": "source_entityManageModel",
+            "name": "source",
+            "type": "entityManageModel",
+            "domain": "generic",
+            "properties": {
+                "createdService": "entityManageModelService",
+                "createdBy": "system",
+                "createdDate": "2017-11-02T11:58:48.958-0500",
+                "modifiedService": "entityManageModelService",
+                "modifiedBy": "mary.jane@riversand.com",
+                "modifiedDate": "2017-11-07T00:39:48.502-0600"
+            },
+            "data": {
+                "attributes": {
+                    "code": {
+                        "properties": {
+                            "dataType": "string",
+                            "externalName": "",
+                            "isEntityIdentifier": true
+                        }
+                    },
+                    "externalname": {
+                        "properties": {
+                            "dataType": "string",
+                            "externalName": "Source",
+                            "isExternalName": true
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,997 @@
+{
+	"variables": [],
+	"info": {
+		"name": "03. Entity Govern Service",
+		"_postman_id": "2139abc9-a8b0-67d6-194a-47c80fe3bf9e",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.1.1 Get workflow status of an entity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity is in newProductSetup WF\"] = data.has(\"newProductSetup\") && data.has(\"newProductSetup\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"business\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"contexts\": [\r\n        {\r\n          \"workflow\": \"newProductSetup\"\r\n        }\r\n      ],\r\n      \"id\": \"f7dc12d8-ef27-46b2-84b7-3e5e501f6142\",\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \r\n          \"sku\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\r\n        \"_ALL\"\r\n      ]\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2.1.1 Get business conditions status of an entity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity is in newProductSetup WF\"] = data.has(\"newProductSetup\") && data.has(\"newProductSetup\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"id\": \"sku0001\",\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"sku\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\r\n        \"businessConditions\"\r\n      ]\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2.1.2 Get validation Rules status of an entity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity is in newProductSetup WF\"] = data.has(\"newProductSetup\") && data.has(\"newProductSetup\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"id\": \"sku0001\",\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"sku\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\r\n        \"_ALL\"\r\n      ]\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2.1.3 Validate Business Rules and Model Rules Synchronously",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity is in newProductSetup WF\"] = data.has(\"newProductSetup\") && data.has(\"newProductSetup\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/validate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"evaluateModelRules\": \"true\"\n  },\n  \"entity\": {\n    \"id\": \"shelfNarrowBookcase001\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"attributes\": {\n        \"displayname\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"shelfNarrowBookcase001\"\n            }\n          ]\n        }\n      },\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"Mattresses\",\n            \"direction\": \"both\",\n            \"source\": \"internal\",\n            \"relationshipType\": \"association\",\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"James Cash Penney.For the Irish retail chain branded Penneys\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            },\n            \"relTo\": {\n              \"id\": \"King\",\n              \"type\": \"sku\"\n            }\n          },\n          {\n            \"id\": \"Mattresses\",\n            \"direction\": \"both\",\n            \"source\": \"internal\",\n            \"relationshipType\": \"association\",\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"JCP means James Cash Penney.For the Irish retail chain branded Penneys\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              },\n              \"status\": {\n                \"values\": [\n                  {\n                    \"value\": \"New\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            },\n            \"relTo\": {\n              \"id\": \"Full\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptybookshelves/itybookshelves\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"attributes\": {\n            \"woodfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"WHITE\"\n                }\n              ]\n            },\n            \"piecesinset\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": 12\n                }\n              ]\n            },\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"YOUTH\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"0-12_MONTHS\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"10_+_YEARS\"\n                }\n              ]\n            },\n            \"assembly\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"ASSEMBLY_REQUIRED\"\n                }\n              ]\n            },\n            \"lastflow\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"Y\"\n                }\n              ]\n            },\n            \"metalfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"OIL_RUBBED_BRONZE\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"PAINTED\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"CHROME\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.1. start workflow",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"SKU rule context mappings get\"] = data.has(\"start request successful\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/startWorkflow",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"params\": {\n    \"workflow\": {\n      \"workflowName\": \"newProductSetup\"\n    }\n  },\n  \"entity\": {\n    \"id\": \"shelfNarrowBookcase001\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptybookshelves/itybookshelves\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          }\n        }\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.2 Change workflow Assignment",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/workflowChangeAssignment",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"workflow\": {\n      \"workflowName\": \"newProductSetup\",\n      \"activity\": {\n        \"activityName\": \"Review Assortment\",\n        \"newlyAssignedUserName\": \"john\"\n      }\n    }\n  },\n  \"entity\": {\n    \"id\": \"skuD0011\",\n    \"type\": \"sku\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.3 Resume workflow",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/transitionworkflow",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"workflow\": {\n      \"workflowName\": \"newProductSetup\"\n    }\n  },\n  \"entity\": {\n    \"id\": \"skuD0011\",\n    \"type\": \"sku\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.4 Workflow Transition",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = !(data.has(\"transition request successful\"));",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/transitionWorkflow",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "business1jcp@riversand.com_user",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "assetenrichmentjcp@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"business\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"workflow\": {\n      \"workflowName\": \"newProductSetup\",\n      \"activity\": {\n        \"activityName\": \"waitingForRms\",\n        \"action\": \"Done\",\n        \"comment\": \"Submit action\"\n      }\n    }\n  },\n  \"entity\": {\n    \"id\": \"dcc477b0-5d5b-48c5-ab7a-fd8d0aabc4ff\",\n    \"type\": \"sku\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.5 Entity Govern get by giving WFName,StepName and Assigned User",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"contexts\": [\r\n        {\r\n          \"workflow\": \"newProductSetup\"\r\n        }\r\n      ],\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \r\n          \"sku\"\r\n        ],\r\n         \"attributesCriterion\": [\r\n          {\r\n            \"activities/activityName\": {\r\n              \"eq\": \"reviewAssortment\"\r\n            }\r\n          }\r\n        ],\r\n        \"excludeNonContextual\": true\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\r\n        \"_ALL\"\r\n      ]\r\n    }\r\n  }\r\n}\r\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.6 Get workflow by business condition, WF name, Step name and user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity get sku0003\"] = data.has(\"sku0003\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"contexts\": [\r\n        {\r\n          \"workflow\": \"newProductSetup\"\r\n        }\r\n      ],\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"sku\"\r\n        ],\r\n        \"attributesCriterion\": [\r\n          {\r\n            \"businessConditions\": {\r\n              \"attributes\": [\r\n                {\r\n                  \"businessConditionName\": {\r\n                    \"eq\": \"vendorRequiredAttributesArePopulated_businessCondition\"\r\n                  }\r\n                },\r\n                {\r\n                  \"businessConditionStatus\": {\r\n                    \"eq\": false\r\n                  }\r\n                }\r\n              ]\r\n            }\r\n          },\r\n          {\r\n            \"status\": {\r\n              \"eq\": \"Executing\"\r\n            }\r\n          },\r\n          {\r\n           \"activities/activityName\": {\r\n            \"eq\":\"newSkusToSubmit\"\r\n           },\r\n           \"activities/assignedUser\": {\r\n            \"eq\":\"_UNASSIGNED\"\r\n           }\r\n           \r\n          }\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\r\n        \"businessConditions\", \"status\", \"activities\"\r\n      ]\r\n    },\r\n    \"options\":{\r\n     \"totalRecords\" : 3000\r\n    }\r\n  }\r\n}"
+				},
+				"description": "Group Attributes Search"
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.7 Get workflow by business condition, WF name, Step name and user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity get sku0003\"] = data.has(\"sku0003\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"contexts\": [\r\n        {\r\n          \"workflow\": \"newProductSetup\"\r\n        }\r\n      ],\r\n      \"filters\": {\r\n        \"attributesCriterion\": [\r\n          {\r\n            \"activities/activityName\": {\r\n              \"eq\": \"reviewAssortment\"\r\n            }\r\n          },\r\n          {\r\n            \"status\": {\r\n              \"eq\": \"Executing\"\r\n            }\r\n          },\r\n          {\r\n            \"businessConditions/businessConditionName\": {\r\n              \"eq\": \"buyerRequiredAttributesArePopulated_businessCondition\"\r\n            },\r\n            \"businessConditions/businessConditionStatus\": {\r\n              \"eq\": false\r\n            }\r\n          }\r\n        ],\r\n        \"typesCriterion\": [\r\n          \"sku\",\r\n          \"lot\",\r\n          \"productpresentation\",\r\n          \"ensemble\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n     \"attributes\": [\"businessConditions\"] \r\n    },\r\n    \"options\": {\r\n      \"from\": 0,\r\n      \"to\": 0\r\n    }\r\n  }\r\n}"
+				},
+				"description": "3.1.7 Get workflow by business condition, WF name, Step name and user"
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.6 Get workflow by business condition, WF name, Step name and user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity get sku0003\"] = data.has(\"sku0003\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"contexts\": [\r\n        {\r\n          \"workflow\": \"newProductSetup\"\r\n        }\r\n      ],\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"sku\"\r\n        ],\r\n        \"attributesCriterion\": [\r\n          {\r\n            \"businessConditions\": {\r\n              \"attributes\": [\r\n                {\r\n                  \"businessConditionName\": {\r\n                    \"eq\": \"vendorRequiredAttributesArePopulated_businessCondition\"\r\n                  }\r\n                },\r\n                {\r\n                  \"businessConditionStatus\": {\r\n                    \"eq\": false\r\n                  }\r\n                }\r\n              ]\r\n            }\r\n          },\r\n          {\r\n            \"status\": {\r\n              \"eq\": \"Executing\"\r\n            }\r\n          },\r\n          {\r\n           \"activities/activityName\": {\r\n            \"eq\":\"newSkusToSubmit\"\r\n           },\r\n           \"activities/assignedUser\": {\r\n            \"eq\":\"_UNASSIGNED\"\r\n           }\r\n           \r\n          }\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\r\n        \"businessConditions\", \"status\", \"activities\"\r\n      ]\r\n    },\r\n    \"options\":{\r\n     \"totalRecords\" : 3000\r\n    }\r\n  }\r\n}"
+				},
+				"description": "Group Attributes Search"
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.7 Get Govern Entity by entity id and context",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity is in newProductSetup WF\"] = data.has(\"newProductSetup\") && data.has(\"newProductSetup\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Vendor3",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "vendor3jcp@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"contexts\": [\r\n        {\r\n            \"classification\": \"APPAREL, SLEEP, UNDER GARMENTS>>SOCKS + HOSIERY>>SOCKS>>KNEE HIGH SOCKS\",\r\n            \"taxonomy\": \"Product Setup Taxonomy\"\r\n          }\r\n      ],\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"sku\"\r\n        ],\r\n        \"attributesCriterion\": [\r\n          {\r\n            \"activities/activityName\": {\r\n              \"eq\": \"reviewAssortment\"\r\n            }\r\n          }\r\n        ],\r\n        \"excludeNonContextual\": true\r\n      },\r\n      \"id\" : \"emb2zhyepsumm\"\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\"_ALL\"]\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3.1.7 Get Govern Entity by entity id and context copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity is in newProductSetup WF\"] = data.has(\"newProductSetup\") && data.has(\"newProductSetup\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygovernservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Vendor3",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "vendor3jcp@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"contexts\": [\r\n        {\r\n            \"classification\": \"APPAREL, SLEEP, UNDER GARMENTS>>SOCKS + HOSIERY>>SOCKS>>KNEE HIGH SOCKS\",\r\n            \"taxonomy\": \"Product Setup Taxonomy\"\r\n          }\r\n      ],\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"sku\"\r\n        ]\r\n      },\r\n      \"id\" : \"emb2zhyepsumm\"\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\"_ALL\"]\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

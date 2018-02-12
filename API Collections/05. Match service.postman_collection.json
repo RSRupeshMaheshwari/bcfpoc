@@ -1,0 +1,894 @@
+{
+	"variables": [],
+	"info": {
+		"name": "05. Match service",
+		"_postman_id": "88356c79-1513-3914-2097-e9b945f10530",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Match Config for sku_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"sku_matchConfig\",\n    \"name\": \"sku\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"sku\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"orin\": {\n                        \"eq\": \"{{orin}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          },\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 2,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"sku\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"rmsskuid\": {\n                        \"eq\": \"{{rmsskuid}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          },\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 3,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"sku\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"upcbarcode\": {\n                        \"eq\": \"{{upcbarcode}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2. Match Config for lot_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"lot_matchConfig\",\n    \"name\": \"lot\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"lot\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"orin\": {\n                        \"eq\": \"{{orin}}\",\n                        \"type\": \"_STRING\"\n                        \n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          },\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 2,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"lot\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"rmsitemid\": {\n                        \n                        \"eq\": \"{{rmsitemid}}\",\n                        \"type\": \"_STRING\"\n                        \n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3. Match Config for pp_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"pp_matchConfig\",\n    \"name\": \"pp\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"pp\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"identifier\": {\n                        \"eq\": \"{{ identifier}}\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4. Match Config for ens_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"ens_matchConfig\",\n    \"name\": \"ens\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"ens\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"identifier\": {\n                        \"exact\": \"{{ identifier}}\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "5. Get matching configuration for sku",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"id\": \"sku_matchConfig\",\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"matchConfig\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\r\n        \"_ALL\"\r\n      ],\r\n       \"properties\":[\"_ALL\"]\r\n    },\r\n    \"options\": {\r\n      \"maxRecords\": 100\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "6. Create Entity SKU with orin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku0001. Please check back after 1 min\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "{{owner}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "buyer1jcp@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"entity\": {\n    \"id\": \"matchTest003\",\n    \"name\": \"firstEntity\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"orin\": {\n          \"values\": [\n            {\n              \"value\": \"678678\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"retailskunumber\": {\n          \"values\": [\n            {\n              \"value\": \"Kid's Sun Lotion\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"enddate\": {\n          \"values\": [\n            {\n              \"value\": \"2017-05-16T00:30:43.260-0500\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creationdate\": {\n          \"values\": [\n            {\n              \"value\": \"2017-01-11T00:30:43.260-0500\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hidedisplayindicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"displayname\": {\n          \"values\": [\n            {\n              \"value\": \"mineral\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"value\": \"0.042\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"value\": \"31.22\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": {{owner}},\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]  \n        },\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"12\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]  \n        },\n        \"msrp\": {\n          \"values\": [\n            {\n              \"value\": \"23.33\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"e1\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"relTo\": {\n              \"id\": \"rel1\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": "create sku entity with supplier number name attribute value as Nike"
+			},
+			"response": []
+		},
+		{
+			"name": "7. Match search SKU - orin",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/matchservice/search",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "vendor",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"entity\": {\n\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"SAP\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"orin\": {\n          \"values\": [\n            {\n              \"value\": \"678678\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"shortName\": {\n          \"values\": [\n            {\n              \"value\": \"EarthOriginsSophieStrapSandalsMedium:Red:6\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "8. Get Matched Results for sku match config",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/matchservice/search",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "vendor",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"entity\": {\n    \"type\": \"sku\",\n    \"data\": {\n      \"attributes\": {\n        \"orin\": {\n          \"values\": [\n            {\n              \"value\": \"\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "9. Match Config for image_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"image_matchConfig\",\n    \"name\": \"image\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"image\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"property_originalfilename\": {\n                        \"exact\": \"{{property_originalfilename}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    },\n                    {\n                      \"property_ownershipdata\": {\n                        \"exact\": \"{{property_ownershipdata}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "10. Match Config for document_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"document_matchConfig\",\n    \"name\": \"document\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"document\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"property_originalfilename\": {\n                        \"exact\": \"{{property_originalfilename}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    },\n                    {\n                      \"property_ownershipdata\": {\n                        \"exact\": \"{{property_ownershipdata}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "11. Match Config for video_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"video_matchConfig\",\n    \"name\": \"video\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"video\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"property_originalfilename\": {\n                        \"exact\": \"{{property_originalfilename}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    },\n                    {\n                      \"property_ownershipdata\": {\n                        \"exact\": \"{{property_ownershipdata}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "12. Match Config for audio_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"audio_matchConfig\",\n    \"name\": \"audio\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"audio\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"property_originalfilename\": {\n                        \"exact\": \"{{property_originalfilename}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    },\n                    {\n                      \"property_ownershipdata\": {\n                        \"exact\": \"{{property_ownershipdata}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "11. Match Config for promocontent_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"business\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"promocontent_matchConfig\",\n    \"name\": \"promocontentt\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"promocontent\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"promocontenttitle\": {\n                        \"eq\": \"{{promocontenttitle}}\",\n                        \"type\": \"_STRING\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

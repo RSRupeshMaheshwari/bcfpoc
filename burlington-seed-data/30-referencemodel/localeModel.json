@@ -1,0 +1,68 @@
+{
+  "metaInfo": {
+    "dataIndex": "entityModel",
+    "collectionName": "entityModels",
+    "responseObjectName": "response"
+  },
+  "entityModels": [
+{
+  "domain": "generic",
+  "id": "locale_entityManageModel",
+  "name": "locale",
+  "type": "entityManageModel",
+  "data": {
+    "attributes": {
+      "code": {
+        "properties": {
+          "dataType": "string",
+          "externalName": "",
+          "isEntityIdentifier": true
+        }
+      },
+      "externalname": {
+        "properties": {
+          "dataType": "string",
+          "externalName": "",
+          "isExternalName": true
+        }
+      },
+      "language": {
+        "properties": {
+          "dataType": "string",
+          "externalName": ""
+        }
+      },
+      "region": {
+        "properties": {
+          "dataType": "string",
+          "externalName": ""
+        }
+      }
+    },
+    "relationships": {
+      "fallbacklocale": [
+        {
+          "attributes": {
+            "fallbacklocalesequence": {
+              "properties": {
+                "dataType": "integer",
+                "externalName": ""
+              }
+            }
+          },
+          "properties": {
+            "externalName": "",
+            "relatedEntityInfo": [
+              {
+                "relEntityType": "locale"
+              }
+            ],
+            "relationshipType": "association"
+          }
+        }
+      ]
+    }
+  }
+}
+]
+}

@@ -1,0 +1,981 @@
+{
+	"variables": [],
+	"info": {
+		"name": "09. Authorization service",
+		"_postman_id": "c5b35e0f-02a6-255c-60b2-d581ec99b6ad",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Entitytype Authorization",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Entity Model Create for SKU (Buyer)",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"sku_authorizationModel_vendor\",\n    \"name\": \"sku_authorizationModel_vendor\",\n    \"type\": \"authorizationModel\",\n    \"properties\": {\n      \"readPermission\": \"true\",\n      \"writePermission\": \"true\",\n      \"attributesPermission\": [\n        {\n          \"writePermission\": \"true\",\n          \"readPermission\": \"true\"\n        }\n      ],\n      \"relationshipsPermission\": [\n        {\n          \"writePermission\": \"true\",\n          \"readPermission\": \"true\"\n        }\n      ],\n      \"contextsPermission\": [\n        {\n          \"writePermission\": \"true\",\n          \"readPermission\": \"true\"\n        }\n      ],\n      \"contextsAttributesPermission\": [\n        {\n          \"writePermission\": \"true\",\n          \"readPermission\": \"true\"\n        }\n      ],\n      \"contextsRelationshipsPermission\": [\n        {\n          \"writePermission\": \"true\",\n          \"readPermission\": \"true\"\n        }\n      ],\n      \"createdService\": \"entityManageModelService\",\n      \"createdBy\": \"system\",\n      \"createdDate\": \"2017-07-20T05:32:52.709-0500\",\n      \"modifiedService\": \"entityManageModelService\",\n      \"modifiedBy\": \"mary.jane@riversand.com\",\n      \"modifiedDate\": \"2017-07-24T04:21:49.556-0500\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"orin\": {\n          \"properties\": {\n            \"writePermission\": false,\n            \"readPermission\": false\n          }\n        },\n        \"rmsskuid\": {\n          \"properties\": {\n            \"writePermission\": false,\n            \"readPermission\": false\n          }\n        },\n        \"retail\": {\n          \"properties\": {\n            \"writePermission\": false,\n            \"readPermission\": false\n          }\n        },\n        \"hidedisplayindicator\": {\n          \"properties\": {\n            \"writePermission\": false,\n            \"readPermission\": false\n          }\n        },\n        \"retailskunumber\": {\n          \"properties\": {\n            \"writePermission\": false,\n            \"readPermission\": false\n          }\n        },\n        \"suppliernumbername\": {\n          \"properties\": {\n            \"readPermission\": true,\n            \"writePermission\": true,\n            \"ownerPermission\": true\n          }\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2. Entity Model Create for LOT (Vendor)",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"lot_entityManageModel\",\n    \"name\": \"lot_entityManageModel\",\n    \"type\": \"entityManageModel\",\n    \"data\": {\n      \"attributes\": {\n        \"firstName\": {\n          \"properties\": {\n            \"isAttributeIdentifier\": \"true\",\n            \"dataType\": \"string\"\n          }\n        },\n        \"weight\": {\n          \"properties\": {\n            \"dataType\": \"integer\"\n          }\n        },\n        \"gender\": {\n          \"properties\": {\n            \"dataType\": \"string\"\n          }\n        },\n        \"state\": {\n          \"properties\": {\n            \"dataType\": \"string\"\n          }\n        }\n      },\n      \"relationships\": {\n        \"crosssell\": [\n          {\n            \"properties\": {\n              \"externalName\": \"Cross sell\",\n              \"relationshipType\": \"association\"\n            },\n            \"attributes\": {\n              \"status\": {\n                \"properties\": {\n                  \"dataType\": \"string\",\n                  \"externalName\": \"Status\"\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Entity Manage Model for LOT with Auth enabled (Vendor)",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n     \r\n      \"id\": \"lot_entityManageModel\",\r\n      \"filters\" : {\r\n        \"typesCriterion\": [\r\n        \"entityManageModel\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\" : {\r\n      \"attributes\" : [\"_ALL\"]\r\n    }\r\n  }\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get Entity Manage Model for SKU with Auth enabled (Buyer)",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n     \r\n      \"id\": \"sku_entityManageModel\",\r\n      \"filters\" : {\r\n        \"typesCriterion\": [\r\n        \"entityManageModel\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\" : {\r\n      \"attributes\" : [\"_ALL\"]\r\n    }\r\n  }\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "5. EntityType for entityManageModel",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"entityManageModel_entityType\",\n    \"name\": \"entityManageModel_entityType\",\n    \"type\": \"entityType\",\n    \"domain\": \"thing\",\n    \"properties\": {\n      \"writePermission\": true,\n      \"readPermission\": true\n    }\n  }\n}"
+						},
+						"description": "Allows you to create a new reference entity of domain reference data."
+					},
+					"response": []
+				},
+				{
+					"name": "6. EntityType for color",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"color_entityType\",\n    \"name\": \"color_entityType\",\n    \"type\": \"entityType\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"writePermission\": true,\n      \"readPermission\": true\n    }\n  }\n}"
+						},
+						"description": "Allows you to create a new reference entity of domain reference data."
+					},
+					"response": []
+				},
+				{
+					"name": "7. EntityType for sku",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"sku_entityType\",\n    \"name\": \"sku_entityType\",\n    \"type\": \"entityType\",\n    \"domain\": \"thing\",\n    \"properties\": {\n      \"writePermission\": true,\n      \"readPermission\": true\n    }\n  }\n}"
+						},
+						"description": "Allows you to create a new reference entity of domain reference data."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. EntityDomain Authorization",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Entity Domain permission",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"thing_authorizationModel_buyer\",\n    \"name\": \"thing_authorizationModel_buyer\",\n    \"type\": \"authorizationModel\",\n    \"properties\": {\n      \"writePermission\": true,\n      \"readPermission\": true\n    }\n  }\n}"
+						},
+						"description": "Allows you to create a new entity type of domain thing."
+					},
+					"response": []
+				},
+				{
+					"name": "2. Reference data domain permission",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"referenceData_authorizationModel_buyer\",\n    \"name\": \"referenceData_authorizationModel_buyer\",\n    \"type\": \"authorizationModel\",\n    \"properties\": {\n      \"writePermission\": true,\n      \"readPermission\": true\n    }\n  }\n}"
+						},
+						"description": "Allows you to create a new reference entity of domain reference data."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Ownership",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Ownership permission",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"sku_authorizationModel_vendor\",\n    \"name\": \"sku_authorizationModel_vendor\",\n    \"type\": \"authorizationModel\",\n    \"data\": {\n      \"attributes\": {\n        \"vendorName\": {\n          \"properties\": {\n            \"ownerPermission\": true,\n            \"writePermission\": true,\n            \"readPermission\": true\n          }\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "In the model, if an attribute is found with ownerPermission set to true then while doing a get entity it will add a FILTER for this attribute equal to vendorName in the header of get request."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4. Exclusion List",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Tenant t1 Create [Important CHANGE WF Service!!!]",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/dataplatform/api/configurationservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"configObject\": {\n    \"id\": \"t1\",\n    \"name\": \"t1-tenant-config\",\n    \"type\": \"tenantserviceconfig\",\n    \"properties\": {\n      \"createdByService\": \"configservice\",\n      \"createdService\": \"configurationManageService\",\n      \"createdDate\": \"2017-04-14T08:02:06.151Z\"\n    },\n    \"data\": {\n      \"jsonData\": {\n        \"tenantId\": \"t1\",\n        \"tenantAuthKey\": \"2527f502-8e88-4614-80ae-5888202af9c5\",\n        \"messageLocale\": \"en-US\",\n        \"services\": {\n          \"entityManageService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataObject\": \"entity\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              },\n              \"entityManage\": {\n                \"isEntityManageEventsEnabled\": true,\n                \"isEntityManageAttributeEventsEnabled\": false,\n                \"isEntityManageModelInferenceEnabled\": false\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityreadindex\",\n                          \"writeIndex\": \"t1entitywriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitymanageevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitymanagerequestsuccessevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitymanagerequesterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entityerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityerrorreadindex\",\n                          \"writeIndex\": \"t1entityerrorwriteindex\"\n                        }\n                      },\n                      \"entityeventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"entityerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"dataobjecterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1requestobjectreadindex\",\n                          \"writeIndex\": \"t1requestobjectwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitywritetable\",\n                          \"writeTable\": \"t1entitywritetable\"\n                        }\n                      },\n                      \"product\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitywritetable\",\n                          \"writeTable\": \"t1entitywritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entitymanageevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entitymanagerequestsuccessevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"entitymanagerequesterrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventerrorwritetable\",\n                          \"writeTable\": \"t1eventerrorwritetable\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1errorerrorwritetable\",\n                          \"writeTable\": \"t1errorerrorwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"tables\": {\n                          \"readTable\": \"t1requestobjectwritetable\",\n                          \"writeTable\": \"t1requestobjectwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              },\n              \"eventSubscribers\": [\n                {\n                  \"name\": \"EntityManageSubscriber\",\n                  \"description\": \"Riversand Data Platform entity govern connector for t1\",\n                  \"active\": true,\n                  \"filters\": [\n                    {\n                      \"filterType\": \"include\",\n                      \"dataObjectType\": \"entitymanageevent\"\n                    }\n                  ]\n                }\n              ]\n            }\n          },\n          \"entityService\": {\n            \"serviceSpecific\": {\n              \"isAuthEnabled\": \"true\"\n            }\n          },\n          \"entityGovernService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataObject\": \"entity\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              },\n              \"entityGovern\": {\n                \"isEntityGovernEventsEnabled\": true,\n                \"isEntityGovernAttributeEventsEnabled\": false,\n                \"customKeywords\": {\n                  \"keywords\": [],\n                  \"paths\": []\n                }\n              },\n              \"workflow\": {\n                \"resturi\": \"http://192.168.1.81/RS_WS_QA_t1\",\n                \"start\": \"/WorkflowRestService.svc/StartWorkflow\",\n                \"get\": \"/WorkflowRestService.svc/GetWorkflowDetails\",\n                \"resume\": \"/WorkflowRestService.svc/ResumeWorkflow\",\n                \"changeassignment\": \"/WorkflowRestService.svc/ChangeAssignment\"\n              },\n              \"export\": {\n                \"isExportEnabled\": \"true\",\n                \"resturi\": \"http://172.30.6.56:9095/t1/api/entityExportService\",\n                \"publish\": \"publish\"\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entitygovernreadindex\",\n                          \"writeIndex\": \"t1entitygovernwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitymanageevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitygovernrequestsuccessevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitygovernrequesterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1governeventreadindex\",\n                          \"writeIndex\": \"t1governeventwriteindex\"\n                        }\n                      },\n                      \"entityerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityerrorreadindex\",\n                          \"writeIndex\": \"t1entityerrorwriteindex\"\n                        }\n                      },\n                      \"entityeventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"entityerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"dataobjecterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1requestobjectreadindex\",\n                          \"writeIndex\": \"t1requestobjectwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitygovernwritetable\",\n                          \"writeTable\": \"t1entitygovernwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1governeventwritetable\",\n                          \"writeTable\": \"t1governeventwritetable\"\n                        }\n                      },\n                      \"entitygovernrequestsuccessevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"entitygovernrequesterrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventerrorwritetable\",\n                          \"writeTable\": \"t1eventerrorwritetable\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1errorerrorwritetable\",\n                          \"writeTable\": \"t1errorerrorwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"tables\": {\n                          \"readTable\": \"t1requestobjectwritetable\",\n                          \"writeTable\": \"t1requestobjectwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              },\n              \"eventSubscribers\": [\n                {\n                  \"name\": \"EntityGovernSubscriber\",\n                  \"description\": \"Riversand Data Platform entity manage connector for t1\",\n                  \"active\": true,\n                  \"filters\": [\n                    {\n                      \"filterType\": \"include\",\n                      \"dataObjectType\": \"entitygovernevent\"\n                    }\n                  ]\n                }\n              ]\n            }\n          },\n          \"entityFamilyManageService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataObject\": \"entity\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityreadindex\",\n                          \"writeIndex\": \"t1entitywriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitymanageevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entityfamilymanagerequestsuccessevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entityfamilymanagerequesterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entityerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityerrorreadindex\",\n                          \"writeIndex\": \"t1entityerrorwriteindex\"\n                        }\n                      },\n                      \"entityeventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"entityerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"dataobjecterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1requestobjectreadindex\",\n                          \"writeIndex\": \"t1requestobjectwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitywritetable\",\n                          \"writeTable\": \"t1entitywritetable\"\n                        }\n                      },\n                      \"product\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitywritetable\",\n                          \"writeTable\": \"t1entitywritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entitymanageevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entityfamilymanagerequestsuccessevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"entityfamilymanagerequesterrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventerrorwritetable\",\n                          \"writeTable\": \"t1eventerrorwritetable\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1errorerrorwritetable\",\n                          \"writeTable\": \"t1errorerrorwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"tables\": {\n                          \"readTable\": \"t1requestobjectwritetable\",\n                          \"writeTable\": \"t1requestobjectwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              },\n              \"eventSubscribers\": [\n                {\n                  \"name\": \"EntityFamilyManageSubscriber\",\n                  \"description\": \"Riversand Data Platform entity govern connector for t1\",\n                  \"active\": true,\n                  \"filters\": [\n                    {\n                      \"filterType\": \"include\",\n                      \"dataObjectType\": \"entityfamilymanageevent\"\n                    }\n                  ]\n                }\n              ]\n            }\n          },\n          \"entityFamilyGovernService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataObject\": \"entity\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityreadindex\",\n                          \"writeIndex\": \"t1entitywriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitymanageevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entityfamilygovernrequestsuccessevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entityfamilygovernrequesterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entityerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityerrorreadindex\",\n                          \"writeIndex\": \"t1entityerrorwriteindex\"\n                        }\n                      },\n                      \"entityeventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"entityerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"dataobjecterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1requestobjectreadindex\",\n                          \"writeIndex\": \"t1requestobjectwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitywritetable\",\n                          \"writeTable\": \"t1entitywritetable\"\n                        }\n                      },\n                      \"product\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitywritetable\",\n                          \"writeTable\": \"t1entitywritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entitymanageevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"entityfamilygovernrequestsuccessevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"entityfamilygovernrequesterrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventerrorwritetable\",\n                          \"writeTable\": \"t1eventerrorwritetable\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1errorerrorwritetable\",\n                          \"writeTable\": \"t1errorerrorwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"tables\": {\n                          \"readTable\": \"t1requestobjectwritetable\",\n                          \"writeTable\": \"t1requestobjectwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              },\n              \"eventSubscribers\": [\n                {\n                  \"name\": \"EntityFamilyGovernSubscriber\",\n                  \"description\": \"Riversand Data Platform entity manage connector for t1\",\n                  \"active\": true,\n                  \"filters\": [\n                    {\n                      \"filterType\": \"include\",\n                      \"dataObjectType\": \"entityfamilygovernevent\"\n                    }\n                  ]\n                }\n              ]\n            }\n          },\n          \"entityManageModelService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataModelDataObject\": \"entityModel\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              },\n              \"entityManageModel\": {\n                \"isEntityManageModelEventsEnabled\": true\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"dataModelDataObject\": {\n                    \"objectTypes\": {\n                      \"entityModel\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entitymanagemodelreadindex\",\n                          \"writeIndex\": \"t1entitymanagemodelwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitymanageevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitymanagemodelevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entitymanagemodeleventreadindex\",\n                          \"writeIndex\": \"t1entitymanagemodeleventwriteindex\"\n                        }\n                      },\n                      \"entitymanagemodelrequestsuccessevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitymanagemodelrequesterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entityerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityerrorreadindex\",\n                          \"writeIndex\": \"t1entityerrorwriteindex\"\n                        }\n                      },\n                      \"entityeventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"entityerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"dataobjecterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1requestobjectreadindex\",\n                          \"writeIndex\": \"t1requestobjectwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"dataModelDataObject\": {\n                    \"objectTypes\": {\n                      \"entityModel\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitymanagemodelwritetable\",\n                          \"writeTable\": \"t1entitymanagemodelwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitymanagemodeleventreadtable\",\n                          \"writeTable\": \"t1entitymanagemodeleventwritetable\"\n                        }\n                      },\n                      \"entitymanagemodelrequestsuccessevent\": {\n                        \"tables\": {\n                          \"readIndex\": \"t1internaleventwritetable\",\n                          \"writeIndex\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"entitymanagemodelrequesterrorevent\": {\n                        \"tables\": {\n                          \"readIndex\": \"t1internaleventwritetable\",\n                          \"writeIndex\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventerrorwritetable\",\n                          \"writeTable\": \"t1eventerrorwritetable\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1errorerrorwritetable\",\n                          \"writeTable\": \"t1errorerrorwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              }\n            }\n          },\n          \"entityModelService\": {\n            \"serviceSpecific\": {\n              \"isAuthEnabled\": true,\n              \"exclusionTypeList\": [\n                \"entityType\",\n                \"ruleContextMappings\",\n                \"businessRule\",\n                \"authorizationModel\",\n                \"businessCondition\",\n                \"entityValidationModel\",\n                \"workflowDefinition\",\n                \"workflowDefinitionMapping\",\n                \"entityDefaultValuesModel\"\n              ],\n              \"exclusionDomainList\": [\n                \"thing\",\n                \"referenceData\",\n                \"party\"\n              ]\n            }\n          },\n          \"entityGovernModelService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataModelDataObject\": \"entityModel\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"dataModelDataObject\": {\n                    \"objectTypes\": {\n                      \"entityModel\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entitygovernmodelreadindex\",\n                          \"writeIndex\": \"t1entitygovernmodelwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entitygovernmodelevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entitymanagemodeleventreadindex\",\n                          \"writeIndex\": \"t1entitymanagemodeleventwriteindex\"\n                        }\n                      },\n                      \"entitymanagerequestsuccessevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitymanagerequesterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"entitygovernevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"entityerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityerrorreadindex\",\n                          \"writeIndex\": \"t1entityerrorwriteindex\"\n                        }\n                      },\n                      \"entityeventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"entityerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorreadindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"eventerrorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"dataobjecterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1entityeventerrorwriteindex\",\n                          \"writeIndex\": \"t1entityeventerrorwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1requestobjectreadindex\",\n                          \"writeIndex\": \"t1requestobjectwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"dataObject\": {\n                    \"objectTypes\": {\n                      \"entity\": {\n                        \"tables\": {\n                          \"readTable\": \"t1entitygovernmodelwritetable\",\n                          \"writeTable\": \"t1entitygovernmodelwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"eventerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventerrorwritetable\",\n                          \"writeTable\": \"t1eventerrorwritetable\"\n                        }\n                      },\n                      \"errorerrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1errorerrorwritetable\",\n                          \"writeTable\": \"t1errorerrorwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              }\n            }\n          },\n          \"eventManageService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataObject\": \"entity\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              },\n              \"eventToServiceMapping\": {\n                \"entitygovernevent\": \"entityGovernService\",\n                \"entitymanageevent\": \"entityManageService\"\n              },\n              \"eventManage\": {\n                \"isEventsEnabled\": false\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              }\n            }\n          },\n          \"internalEventManageService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataObject\": \"entity\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              },\n              \"internalEventManage\": {\n                \"isInternalEventsEnabled\": true\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"internalevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"internalevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              }\n            }\n          },\n          \"requestManageService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"dataObject\": \"entity\",\n                \"eventDataObject\": \"event\",\n                \"requestDataObject\": \"request\"\n              },\n              \"requestManage\": {\n                \"isRequestManageEnabled\": true,\n                \"includeDataObject\": false\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1requestobjectreadindex\",\n                          \"writeIndex\": \"t1requestobjectwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"requestDataObject\": {\n                    \"objectTypes\": {\n                      \"request\": {\n                        \"tables\": {\n                          \"readTable\": \"t1requestobjectwritetable\",\n                          \"writeTable\": \"t1requestobjectwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              }\n            }\n          },\n          \"notificationManageService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"notificationDataObject\": \"notificationObject\",\n                \"eventDataObject\": \"event\"\n              },\n              \"notificationManage\": {\n                \"persistNotification\": false,\n                \"notificationClients\": [\n                  {\n                    \"client\": \"uiclient\",\n                    \"restUri\": \"http://172.30.6.57:5005/api/\",\n                    \"service\": \"notify\",\n                    \"action\": \"send\"\n                  }\n                ]\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"notificationDataObject\": {\n                    \"objectTypes\": {\n                      \"notificationObject\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1notificationreadindex\",\n                          \"writeIndex\": \"t1notificationwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"notificationDataObject\": {\n                    \"objectTypes\": {\n                      \"notificationObject\": {\n                        \"tables\": {\n                          \"readTable\": \"t1notificationwritetable\",\n                          \"writeTable\": \"t1notificationwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          },\n          \"configurationManageService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"configDataObject\": \"configObject\",\n                \"eventDataObject\": \"event\"\n              },\n              \"configObjectManage\": {\n                \"isConfigObjectManageEventsEnabled\": false\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"configDataObject\": {\n                    \"objectTypes\": {\n                      \"configObject\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1configurationreadindex\",\n                          \"writeIndex\": \"t1configurationwriteindex\"\n                        }\n                      },\n                      \"configuration\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1configurationreadindex\",\n                          \"writeIndex\": \"t1configurationwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"configurationmanagerequestsuccessevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"configurationmanagerequesterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"configDataObject\": {\n                    \"objectTypes\": {\n                      \"configuration\": {\n                        \"tables\": {\n                          \"readTable\": \"t1configurationreadtable\",\n                          \"writeTable\": \"t1configurationwritetable\"\n                        }\n                      },\n                      \"configObject\": {\n                        \"tables\": {\n                          \"readTable\": \"t1configurationreadtable\",\n                          \"writeTable\": \"t1configurationwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"configurationmanagerequestsuccessevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"configurationmanagerequesterrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"graphStore\": {\n                \"graphDatabase\": \"t1graph\",\n                \"traversalSource\": \"t1source\"\n              }\n            }\n          },\n          \"binaryObjectManageService\": {\n            \"serviceSpecific\": {\n              \"defaultDataTypes\": {\n                \"binaryDataObject\": \"binaryObject\",\n                \"eventDataObject\": \"event\"\n              },\n              \"binaryObjectManage\": {\n                \"isbinaryObjectManageEventEnabled\": true\n              }\n            },\n            \"platformSpecific\": {\n              \"searchStore\": {\n                \"domains\": {\n                  \"binaryDataObject\": {\n                    \"objectTypes\": {\n                      \"binaryObject\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1binaryobjectreadindex\",\n                          \"writeIndex\": \"t1binaryobjectwriteindex\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"binaryobjectmanageevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1eventreadindex\",\n                          \"writeIndex\": \"t1eventwriteindex\"\n                        }\n                      },\n                      \"binaryobjectmanagerequestsuccessevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      },\n                      \"binaryobjectmanagerequesterrorevent\": {\n                        \"indices\": {\n                          \"readIndex\": \"t1internaleventreadindex\",\n                          \"writeIndex\": \"t1internaleventwriteindex\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"objectStore\": {\n                \"domains\": {\n                  \"binaryDataObject\": {\n                    \"objectTypes\": {\n                      \"binaryObject\": {\n                        \"tables\": {\n                          \"readTable\": \"t1binaryobjectwritetable\",\n                          \"writeTable\": \"t1binaryobjectwritetable\"\n                        }\n                      }\n                    }\n                  },\n                  \"eventDataObject\": {\n                    \"objectTypes\": {\n                      \"event\": {\n                        \"tables\": {\n                          \"readTable\": \"t1eventwritetable\",\n                          \"writeTable\": \"t1eventwritetable\"\n                        }\n                      },\n                      \"binaryobjectmanagerequestsuccessevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      },\n                      \"binaryobjectmanagerequesterrorevent\": {\n                        \"tables\": {\n                          \"readTable\": \"t1internaleventwritetable\",\n                          \"writeTable\": \"t1internaleventwritetable\"\n                        }\n                      }\n                    }\n                  }\n                }\n              },\n              \"binaryObjectStore\": {\n                \"domains\": {\n                  \"binaryDataObject\": {\n                    \"objectTypes\": {\n                      \"binaryObject\": {\n                        \"folderPaths\": {\n                          \"readFolderPath\": \"/rdp/t1/binaryobject\",\n                          \"writeFolderPath\": \"/rdp/t1/binaryobject\"\n                        }\n                      }\n                    }\n                  }\n                }\n              }\n            }\n          },\n          \"authenticationService\": {\n            \"serviceSpecific\": {\n              \"isApiAuthEnabled\": true,\n              \"isOAuthEnabled\": false,\n              \"saml\": {\n                \"entryPoint\": \"https://riversand.auth0.com/samlp/PW77EctX4PkWm64HW8AHZkMZWWeod4xx\",\n                \"issuer\": \"urn:riversand.auth0.com\",\n                \"IdPCert\": \"../keys/riversand-auth0.crt\",\n                \"assertionLookup\": {\n                  \"ownershipData\": \"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/vendor\",\n                  \"userId\": \"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn\",\n                  \"userName\": \"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/userName\",\n                  \"firstName\": \"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/firstName\",\n                  \"lastName\": \"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/lastName\",\n                  \"userEmail\": \"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/userEmail\",\n                  \"userRoles\": \"http://schemas.xmlsoap.org/ws/2005/05/identity/claims/roles\"\n                }\n              },\n              \"api\": {\n                \"clients\": [\n                  {\n                    \"clientId\": \"externalClient\",\n                    \"clientAuthKey\": \"de8294ab-9c1c-4891-ae52-9e0458f01365\"\n                  },\n                  {\n                    \"clientId\": \"rufClient\",\n                    \"clientAuthKey\": \"3218fa37-f809-4be4-b88e-653419b20e28\"\n                  },\n                  {\n                    \"clientId\": \"copClient\",\n                    \"clientAuthKey\": \"cf117706-6222-4ef2-b145-4ab761e617ce\"\n                  },\n                  {\n                    \"clientId\": \"governanceClient\",\n                    \"clientAuthKey\": \"a6415bff-7a04-4f2e-a557-ddf8a830d498\"\n                  }\n                ]\n              },\n              \"OAuth\": {\n                \"_comment\": \"Not Supported.\"\n              }\n            }\n          }\n        }\n      },\n      \"contexts\": []\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get t1 tenant",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/dataplatform/api/configurationservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"t1\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"tenantserviceconfig\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"totalRecords\": 100\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "5. Get Authorization Models",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Get Auth models",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"authorizationModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ],\n      \"properties\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "In the model, if an attribute is found with ownerPermission set to true then while doing a get entity it will add a FILTER for this attribute equal to vendorName in the header of get request."
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Auth models for sku_authorizationModel_vendor",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n       \"id\": \"sku_authorizationModel_vendor\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"authorizationModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ],\n      \"properties\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "In the model, if an attribute is found with ownerPermission set to true then while doing a get entity it will add a FILTER for this attribute equal to vendorName in the header of get request."
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Auth models for sku_authorizationModel_vendor for context attributes",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_authorizationModel_vendor\",\n       \"contexts\": [\n        {\n            \"classification\": \"pl3908003_entityManageModel>>pt3909008_entityManageModel>>st4101046_entityManageModel>>it3919134_entityManageModel\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"authorizationModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ],\n      \"properties\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "In the model, if an attribute is found with ownerPermission set to true then while doing a get entity it will add a FILTER for this attribute equal to vendorName in the header of get request."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

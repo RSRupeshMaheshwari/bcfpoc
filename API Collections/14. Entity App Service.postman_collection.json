@@ -1,0 +1,3971 @@
+{
+	"variables": [],
+	"info": {
+		"name": "14. Entity App Service",
+		"_postman_id": "a5930a70-9701-b55b-5c7a-74eda4559330",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1.1 Entityappservice - Create",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Entity create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for create with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"newskuentit1\",\n    \"name\": \"newskuentity1\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Meet Mehta\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"10\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"1234567891\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"value\": \"newskuentity001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"GADGETS, TOYS, ELECTRONICS>>SPORTING GOODS + EQUIPMENT>>SOFTBALL>>SOFTBALL HELMETS\",\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          },\n          \"attributes\": {\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"value\": \"UNDER 1\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"basematerial\": {\n              \"values\": [\n                {\n                  \"value\": \"ant base material\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"suppliernumbername\": {\n              \"values\": [\n                {\n                  \"value\": \"Nike\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"description\": {\n              \"values\": [\n                {\n                  \"value\": \"descriprtion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Entity create at leaf level for coalsece",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for create with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"newskuentity001\",\n    \"name\": \"newskuentity001\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Meet Mehta\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"10\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n         \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"1234567891\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \n        \"producttitle\": {\n          \"values\": [\n            {\n              \"value\": \"newskuentity001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"GADGETS, TOYS, ELECTRONICS>>SPORTING GOODS + EQUIPMENT>>SOFTBALL>>SOFTBALL HELMETS\",\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          },\n          \"attributes\": {\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"value\": \"UNDER 1\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"basematerial\": {\n              \"values\": [\n                {\n                  \"value\": \"ant base material\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"suppliernumbername\": {\n              \"values\": [\n                {\n                  \"value\": \"Nike\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"description\": {\n              \"values\": [\n                {\n                  \"value\": \"descriprtion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"Entity01\",\n    \"name\": \"shelfNarrowBookcase003Name\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"shelfNarrowBookcase001\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"Nike\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"6521664\"\n            }\n          ]\n        },\n        \"description\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"shelfNarrowBookcase ready to assemble\"\n            }\n          ]\n        }\n      },\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"Mattresses\",\n            \"direction\": \"both\",\n            \"source\": \"internal\",\n            \"relationshipType\": \"association\",\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"James Cash Penney.For the Irish retail chain branded Penneys\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            },\n            \"relTo\": {\n              \"id\": \"King\",\n              \"type\": \"sku\"\n            }\n          },\n          {\n            \"id\": \"Mattresses\",\n            \"direction\": \"both\",\n            \"source\": \"internal\",\n            \"relationshipType\": \"association\",\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"JCP means James Cash Penney.For the Irish retail chain branded Penneys\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              },\n              \"status\": {\n                \"values\": [\n                  {\n                    \"value\": \"New\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            },\n            \"relTo\": {\n              \"id\": \"Full\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"plfurniture>>ptyaccentfurniture>>sptybookshelves>>itybookshelves\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"attributes\": {\n            \"woodfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"WHITE\"\n                }\n              ]\n            },\n            \"piecesinset\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": 12\n                }\n              ]\n            },\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"YOUTH\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"0-12_MONTHS\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"10_+_YEARS\"\n                }\n              ]\n            },\n            \"assembly\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"ASSEMBLY_REQUIRED\"\n                }\n              ]\n            },\n            \"lastflow\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"Y\"\n                }\n              ]\n            },\n            \"metalfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"OIL_RUBBED_BRONZE\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"PAINTED\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"CHROME\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1.2 Entityappservice - Get and GetColasece",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Get Entity using Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"tests[\"Successfull Request\"] = jsonData[\"entityOperationResponse\"][\"status\"] === \"success\"",
+									"",
+									"tests[\"Entities Found\"] = _.has(jsonData[\"entityOperationResponse\"], 'entities');"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/getcombined",
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"combinedGet\",\n    \"name\": \"combinedGet\",\n    \"type\": \"config\",\n    \"data\": {\n      \"jsonData\": {\n        \"searchQueries\": [\n          {\n            \"serviceName\": \"entitygovernservice\",\n            \"action\": \"get\",\n            \"searchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"contexts\": [\n                  {\n                    \"workflow\": \"newProductSetup\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"sku\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"activities/activityName\": {\n                        \"eq\": \"newSkusToSubmit\"\n                      }\n                    }\n                  ],\n                  \"excludeNonContextual\": true\n                }\n              },\n              \"sort\": {\n                \"properties\": [\n                  {\n                    \"modifiedDate\": \"_ASC\",\n                    \"sortType\": \"_DATETIME\"\n                  }]\n              },\n              \"options\": {\n                \"maxRecords\": 2000\n              }\n            }\n          },\n          {\n            \"serviceName\": \"entityservice\",\n            \"action\": \"get\",\n            \"searchSequence\": 2,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"sku\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"lifecyclestage\": {\n                        \"exact\": \"Saved\"\n                      }\n                    }\n                  ]\n                }\n              },\n              \"fields\": {\n                \"attributes\": [\"lifecyclestage\"]\n              },\n              \"options\": {\n                \"maxRecords\": 10\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+						},
+						"description": "Gets the Entities which exist in the given context."
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Entity Coalesce for leaf level",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/getcoalesce",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "buyer@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "buyer@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\": [\n        {\n            \"classification\": \"GADGETS, TOYS, ELECTRONICS>>SPORTING GOODS + EQUIPMENT>>SOFTBALL>>SOFTBALL HELMETS\",\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          }\n      ],\n      \"id\": \"NavyaSku103\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "Gets the Entities by IDs"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1.3 Entityappservice - Update",
+			"description": "",
+			"item": [
+				{
+					"name": "1 Update an entity with app service api",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for update with entity Id : AppServiceC0001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"AppServiceC0001\",\n    \"name\": \"AppServiceC0001\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Meet Mehta\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"upcbusiness2121\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"business2121\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"shortdescription\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"23\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"status\": {\n          \"values\": [\n            {\n              \"value\": \"discontinued\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": {{owner}},\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"APPAREL\",\n            \"taxonomy\": \"Web Taxonomy\"\n          },\n          \"attributes\": {\n            \"basematerial\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 500ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"ecommshortdescattr\": {\n              \"values\": [\n                {\n                  \"value\": \"Riversand IBC\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"measurements\": {\n              \"values\": [\n                {\n                  \"value\": \"23.22\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"closuretype\": {\n              \"values\": [\n                {\n                  \"value\": \"ZIPPER\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Update entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"Entity01\",\n    \"name\": \"shelfNarrowBookcase003Name\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"shelfNarrowBookcase001 updated\"\n            }\n          ]\n        },\n        \"description\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"shelfNarrowBookcase ready to assemble updated\"\n            }\n          ]\n        }\n      },\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"Mattresses\",\n            \"direction\": \"both\",\n            \"source\": \"internal\",\n            \"relationshipType\": \"association\",\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"James Cash Penney.For the Irish retail chain branded Penneys\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              },\n              \"enabled\": {\n                \"values\": [\n                  {\n                    \"value\": \"True\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            },\n            \"relTo\": {\n              \"id\": \"Entity01\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"GADGETS, TOYS, ELECTRONICS>>SPORTING GOODS + EQUIPMENT>>SOFTBALL>>SOFTBALL HELMETS\",\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          },\n          \"attributes\": {\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"value\": \"UNDER 1\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"basematerial\": {\n              \"values\": [\n                {\n                  \"value\": \"ant base material\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"suppliernumbername\": {\n              \"values\": [\n                {\n                  \"value\": \"Nike\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"description\": {\n              \"values\": [\n                {\n                  \"value\": \"descriprtion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2.1 Code\\Value resolution for self attributes",
+			"description": "",
+			"item": [
+				{
+					"name": "1.1  EntityType for color copy",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"Trendycolor_entityType\",\n    \"name\": \"Trendycolor_entityType\",\n    \"type\": \"entityType\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"writePermission\": true,\n      \"readPermission\": true\n    }\n  }\n}"
+						},
+						"description": "Allows you to create a new reference entity of domain reference data."
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 newcolor Reference model",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"Color Reference Model Creation\"] = data.has(\"Entity has been submitted for create with entity Id : color_entityManageModel. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"Trendycolor_entityManageModel\",\n    \"name\": \"Trendycolor\",\n    \"type\": \"entityManageModel\",\n    \"data\": {\n      \"attributes\": {\n        \"code\": {\n          \"properties\": {\n            \"isEntityIdentifier\": true,\n            \"dataType\": \"string\",\n            \"externalName\": \"Code\"\n          }\n        },\n        \"value\": {\n          \"properties\": {\n            \"dataType\": \"string\",\n            \"externalName\": \"Value\",\n            \"isExternalName\": true\n          }\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "1.3 Get Reference model",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"tests[\"Successfull Request\"] = jsonData[\"entityOperationResponse\"][\"status\"] === \"success\"",
+									"",
+									"tests[\"Entities Found\"] = _.has(jsonData[\"entityOperationResponse\"], 'entities');"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"Trendycolor_entityManageModel\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"entityManageModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 500,\n      \"from\": 0\n    }\n  }\n}"
+						},
+						"description": "Gets the Entities which exist in the given context."
+					},
+					"response": []
+				},
+				{
+					"name": "1.4 Create reference entity for type newcolors with code using isExternalName",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"Trendycolor\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"source\": \"internal\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"code\": {\n          \"values\": [\n            {\n              \"value\": \"AB\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"value\": {\n          \"values\": [\n            {\n              \"value\": \"Aqua Blue\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context"
+					},
+					"response": []
+				},
+				{
+					"name": "1.5 Create reference entity for type newcolors with code using isExternalName copy",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"Trendycolor\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"source\": \"internal\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"code\": {\n          \"values\": [\n            {\n              \"value\": \"GR\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"value\": {\n          \"values\": [\n            {\n              \"value\": \"Green\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context"
+					},
+					"response": []
+				},
+				{
+					"name": "1.6 Get Entities for newcolors refernce",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"tests[\"Successfull Request\"] = jsonData[\"entityOperationResponse\"][\"status\"] === \"success\"",
+									"",
+									"tests[\"Entities Found\"] = _.has(jsonData[\"entityOperationResponse\"], 'entities');"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"Trendycolor\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 500,\n      \"from\": 0\n    }\n  }\n}"
+						},
+						"description": "Gets the Entities which exist in the given context."
+					},
+					"response": []
+				},
+				{
+					"name": "1.7 Update Manage Model for Sku by adding reference attribute",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"sku_entityManageModel\",\n    \"name\": \"sku\",\n    \"type\": \"entityManageModel\",\n    \"data\": {\n      \"attributes\": {\n        \"trendycolor\": {\n          \"properties\": {\n            \"externalName\": \"COLOR\",\n            \"dataType\": \"string\",\n            \"groupName\": \"Item Details\",\n            \"isReferenceType\": true,\n            \"referenceEntityInfo\": [\n              {\n                \"refRelationshipName\": \"hasReferenceTo\",\n                \"refEntityType\": \"color\"\n              }\n            ]\n          }\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "1.8 Entity create with newreference attribute",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for create with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"trendyupc001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"newtrendycolor\": {\n          \"values\": [\n            {\n              \"value\": \"Aqua Blue\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"lifecyclestage\": {\n          \"values\": [\n            {\n              \"value\": \"draft\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "1.9 Get Entity",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"tests[\"Successfull Request\"] = jsonData[\"entityOperationResponse\"][\"status\"] === \"success\"",
+									"",
+									"tests[\"Entities Found\"] = _.has(jsonData[\"entityOperationResponse\"], 'entities');"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"c4d16d91-ba0a-4ec7-8e55-703d22929ff6\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 500,\n      \"from\": 0\n    }\n  }\n}"
+						},
+						"description": "Gets the Entities which exist in the given context."
+					},
+					"response": []
+				},
+				{
+					"name": "2.1 Update the reference attribute model with properties",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"lifecyclestage_entityManageModel\",\n    \"name\": \"lifecyclestage\",\n    \"type\": \"entityManageModel\",\n    \"domain\": \"generic\",\n    \"data\": {\n      \"attributes\": {\n        \"lifecyclestagecode\": {\n          \"properties\": {\n            \"externalName\": \"lifecyclestagecode\",\n            \"isEntityIdentifier\": true,\n            \"dataType\": \"string\"\n          }\n        },\n        \"lifecyclestagevalue\": {\n          \"properties\": {\n            \"externalName\": \"lifecyclestagevalue\",\n            \"isExternalName\": true,\n            \"dataType\": \"string\"\n          }\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2.2 Create an entity contains value for reference attribute",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Sahana\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"lifestyleupc0022\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"value\": \"Newreferencedata001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"supplierNumberName\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"lifecyclestage\": {\n          \"values\": [\n            {\n              \"value\": \"Discontinued\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2.3 Get entity contains value for reference attribute",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"ae1408a2-80da-4a1f-a03d-547d47d1ad9b\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 500,\n      \"from\": 0\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2.2 Code\\Value resolution for contextual attributes",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Create an entity which contains 10 contextual reference attributes",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Meet Mehta\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"663523\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"value\": \"Newagegroup7\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbermame\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"HOUSEWARES>>PET ACCESSORIES>>PET ACCESSORIES>>PET CAR SEAT COVERS\",\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          },\n          \"attributes\": {\n            \"lifecyclestage\": {\n              \"values\": [\n                {\n                  \"value\": \"deleted\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"status\": {\n              \"values\": [\n                {\n                  \"value\": \"2\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"warranty\": {\n              \"values\": [\n                {\n                  \"value\": \"warrN1061\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"productline\": {\n              \"values\": [\n                {\n                  \"value\": \"3908001\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"producttype\": {\n              \"values\": [\n                {\n                  \"value\": \"3909282\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"itemtype\": {\n              \"values\": [\n                {\n                  \"value\": \"3937289\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"class\": {\n              \"values\": [\n                {\n                  \"value\": \"5070_jrstable\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"skuitemtypevalues\": {\n              \"values\": [\n                {\n                  \"value\": \"REG\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"channel\": {\n              \"values\": [\n                {\n                  \"value\": \"BTH\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"hazmatflag\": {\n              \"values\": [\n                {\n                  \"value\": \"0\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                },\n                {\n                  \"value\": \"No\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "Create an entity which contains 10 contextual reference attributes and verify values saved"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get created an entity which contains 10 contextual reference attributes",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\": [\n        {\n          \"classification\": \"HOUSEWARES/PET ACCESSORIES/PET ACCESSORIES/PET CAR SEAT COVERS\",\n          \"taxonomy\": \"Product Setup Taxonomy\"\n        }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"fbd76dad-c5a4-4e8d-a2e7-26997e10aba5\"\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"upcbarcode\",\n        \"producttitle\",\n        \"supplierNumberName\",\n        \"lifecyclestage\",\n        \"status\",\n        \"warranty\",\n        \"productline\",\n        \"producttype\",\n        \"itemtype\",\n        \"class\",\n        \"skuitemtypevalues\",\n        \"channel\",\n        \"hazmatflag\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 500,\n      \"from\": 0\n    }\n  }\n}"
+						},
+						"description": "Verify an entity which contains 10 contextual reference attributes and verify values saved"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1.4 Entityappservice - Process",
+			"description": "",
+			"item": [
+				{
+					"name": "1.1 Entity create with out id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for create with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"123123123213\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"newsku9002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hideDisplayIndicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"displayName\": {\n          \"values\": [\n            {\n              \"value\": \"newmatchentity001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledHeight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"skuQuantity\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"supplierNumberName\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 500ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"retailSkuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"Kid's Sun Lotion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel/men\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 600ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2.1 Create classification/category at the root level Mens Apparel",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"name\": \"menapparel\",\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"value\": \"Mens Apparel\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"_root\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create classification with attributes, context and context relationships"
+					},
+					"response": []
+				},
+				{
+					"name": "2.2 Create sub classification/category  Tshirts (Men's Apparel--> Tshirts)",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"value\": \"T-Shirts\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"531e733f-9bc5-472b-8f18-fe9c59229de6\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "7.1.3 Create sub classification/category  men (apparel-->men)"
+					},
+					"response": []
+				},
+				{
+					"name": "2.3 Create classification/category at the root level Womens Apparel",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"name\": \"womensapparel\",\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"value\": \"Women's Apparel\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"_root\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create classification with attributes, context and context relationships"
+					},
+					"response": []
+				},
+				{
+					"name": "2.4 Create sub classification/category  Tshirts(Women's Apparel-->T-Shirts)",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"value\": \"T-Shirts\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"1b4e4247-ff05-4549-b1f2-2029de2e4f9a\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "7.1.3 Create sub classification/category  men (apparel-->men)"
+					},
+					"response": []
+				},
+				{
+					"name": "2.5 Entity create (newtshirtformen001) Mens Apparel-->T-Shirts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for create with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"upc newmatchentity002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"newsku9002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hideDisplayIndicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"displayName\": {\n          \"values\": [\n            {\n              \"value\": \"newtshirtformen001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"value\": \"newtshirtformen001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledHeight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"skuQuantity\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"supplierNumberName\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"Mens Apparel/T-Shirts\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 500ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"retailSkuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"Kid's Sun Lotion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2.6 Entity create (newtshirtforwomen001) Women's Apparel-->T-Shirts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for create with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"upc newmatchentity002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"newsku9002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hideDisplayIndicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"displayName\": {\n          \"values\": [\n            {\n              \"value\": \"newtshirtforwomen001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"value\": \"newtshirtforwomen001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledHeight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"skuQuantity\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"supplierNumberName\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"Women's Apparel/T-Shirts\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 500ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"retailSkuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"Kid's Sun Lotion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3.1 Entity create with unique upc ,orin and skuid using match config",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for create with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"newsku9002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hideDisplayIndicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"displayName\": {\n          \"values\": [\n            {\n              \"value\": \"newmatchentity001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledHeight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"skuQuantity\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"supplierNumberName\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"upc newmatchentity002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 500ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"retailSkuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"Kid's Sun Lotion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel/men\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 600ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 Entity create with duplicate upc and unique orin and skuid using match config",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for update with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"tests[\"Entity matched successful\"] = data.has(\"Entity matched with existing entity id: newmatchentity001. Action changed to update.\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"newsku9002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hideDisplayIndicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"displayName\": {\n          \"values\": [\n            {\n              \"value\": \"newmatchentity002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledHeight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"skuQuantity\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"supplierNumberName\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"upc newmatchentity001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"orin\": {\n          \"values\": [\n            {\n              \"value\": \"orin newmatchentity002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"rmsskuid\": {\n          \"values\": [\n            {\n              \"value\": \"rsi newmatchentity002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 500ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"retailSkuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"Kid's Sun Lotion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel/men\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 600ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 Entity create with duplicate  orin and unique upc and rmsskuid using match config",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for update with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"tests[\"Entity matched successful\"] = data.has(\"Entity matched with existing entity id: newmatchentity001. Action changed to update.\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"newsku9002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hideDisplayIndicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"displayName\": {\n          \"values\": [\n            {\n              \"value\": \"newmatchentity003\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledHeight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"skuQuantity\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"supplierNumberName\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"upc newmatchentity003\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"orin\": {\n          \"values\": [\n            {\n              \"value\": \"orin newmatchentity002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"rmsskuid\": {\n          \"values\": [\n            {\n              \"value\": \"rsi newmatchentity003\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 500ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"retailSkuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"Kid's Sun Lotion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel/men\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 600ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3.4 Entity create with duplicate  orin and unique upc and rmsskuid using match config",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for update with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"tests[\"Entity matched successful\"] = data.has(\"Entity matched with existing entity id: newmatchentity001. Action changed to update.\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/process",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skunumber\": {\n          \"values\": [\n            {\n              \"value\": \"newsku9002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hideDisplayIndicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"displayName\": {\n          \"values\": [\n            {\n              \"value\": \"newmatchentity003\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledHeight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"skuQuantity\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"supplierNumberName\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"upc newmatchentity003\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"orin\": {\n          \"values\": [\n            {\n              \"value\": \"orin newmatchentity002\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"rmsskuid\": {\n          \"values\": [\n            {\n              \"value\": \"rsi newmatchentity003\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 500ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"retailSkuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"Kid's Sun Lotion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"webtaxonomy\",\n            \"classification\": \"apparel/men\"\n          },\n          \"attributes\": {\n            \"skuNumber\": {\n              \"values\": [\n                {\n                  \"value\": \"NSUN KDS_SPF30 600ML\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "4.1 Get Entity using Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"tests[\"Successfull Request\"] = jsonData[\"entityOperationResponse\"][\"status\"] === \"success\"",
+									"",
+									"tests[\"Entities Found\"] = _.has(jsonData[\"entityOperationResponse\"], 'entities');"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"e1485160-c30f-4188-bf5c-ea15e67cf0cd\",\n     \n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 500,\n      \"from\": 0\n    }\n  }\n}"
+						},
+						"description": "Gets the Entities which exist in the given context."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3.1 NamePopulation for classification\\refernce entities",
+			"description": "",
+			"item": [
+				{
+					"name": "1.1 Create context model for Clothing for classification manage model",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model created successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku_ruleContextMappings. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"classification_entityManageModel\",\n    \"name\": \"classification\",\n    \"type\": \"entityManageModel\",\n    \"domain\": \"generic\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"properties\": {\n            \"externalName\": \"External Name\",\n            \"groupName\": \"Basic\",\n            \"dataType\": \"string\",\n            \"isExternalName\": true\n          }\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "create business rule that invokes the NewProductSetupWFRule"
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 Create classification/category at the root level Clothing with alphabets",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"value\": \"Clothing\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"classification_root\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create classification with attributes, context and context relationships"
+					},
+					"response": []
+				},
+				{
+					"name": "1.3 Create classification/category with integers",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"value\": \"86231862323\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"classification_root\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create classification with attributes, context and context relationships"
+					},
+					"response": []
+				},
+				{
+					"name": "1.4 Create classification/category with alphanumeric",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"value\": \"8623Apparel1862323\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"classification_root\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create classification with attributes, context and context relationships"
+					},
+					"response": []
+				},
+				{
+					"name": "1.5 Create classification/category with special characters",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"value\": \"#Gift!-pack@ge\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"classification_root\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create classification with attributes, context and context relationships"
+					},
+					"response": []
+				},
+				{
+					"name": "1.6 Update classification/category externalname attribute",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"classification\",\n    \"data\": {\n      \"attributes\": {\n        \"externalName\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"value\": \"Clothing\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"relationships\": {\n            \"belongsTo\": [\n              {\n                \"direction\": \"both\",\n                \"source\": \"internal\",\n                \"operation\": \"aggregation\",\n                \"relTo\": {\n                  \"id\": \"classification_root\",\n                  \"type\": \"classification\"\n                }\n              }\n            ]\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create classification with attributes, context and context relationships"
+					},
+					"response": []
+				},
+				{
+					"name": "2.1  EntityType for color",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"Trendycolor_entityType\",\n    \"name\": \"Trendycolor_entityType\",\n    \"type\": \"entityType\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"writePermission\": true,\n      \"readPermission\": true\n    }\n  }\n}"
+						},
+						"description": "Allows you to create a new reference entity of domain reference data."
+					},
+					"response": []
+				},
+				{
+					"name": "2.2 newcolor Reference model",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"Color Reference Model Creation\"] = data.has(\"Entity has been submitted for create with entity Id : color_entityManageModel. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-vendorName",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entityModel\": {\n    \"id\": \"Trendycolor_entityManageModel\",\n    \"name\": \"Trendycolor\",\n    \"type\": \"entityManageModel\",\n    \"data\": {\n      \"attributes\": {\n        \"code\": {\n          \"properties\": {\n            \"isEntityIdentifier\": true,\n            \"dataType\": \"string\",\n            \"externalName\": \"Code\"\n          }\n        },\n        \"value\": {\n          \"properties\": {\n            \"dataType\": \"string\",\n            \"externalName\": \"Value\",\n            \"isExternalName\": true\n          }\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2.3 Create reference entity with string",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"Trendycolor\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"source\": \"internal\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"code\": {\n          \"values\": [\n            {\n              \"value\": \"AB\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"value\": {\n          \"values\": [\n            {\n              \"value\": \"Aqua Blue\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context"
+					},
+					"response": []
+				},
+				{
+					"name": "2.3 Create reference entity with integer",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"Trendycolor\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"source\": \"internal\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"code\": {\n          \"values\": [\n            {\n              \"value\": \"AB\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"value\": {\n          \"values\": [\n            {\n              \"value\": \"98768\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context"
+					},
+					"response": []
+				},
+				{
+					"name": "2.4 Create reference entity with alphanumeric",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"Trendycolor\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"source\": \"internal\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"code\": {\n          \"values\": [\n            {\n              \"value\": \"A123B\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"value\": {\n          \"values\": [\n            {\n              \"value\": \"Aqua123Blue\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context"
+					},
+					"response": []
+				},
+				{
+					"name": "2.5 Create reference entity with special characters",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"type\": \"Trendycolor\",\n    \"domain\": \"referenceData\",\n    \"properties\": {\n      \"source\": \"internal\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"code\": {\n          \"values\": [\n            {\n              \"value\": \"A@B\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"value\": {\n          \"values\": [\n            {\n              \"value\": \"Aq@ua!Bl%ue\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "Create entity with Simple common and category specific attr,Uom attr,Reference attribue in a specific context"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4.1 Entity Level Coalesce",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Create Entity for entity Coalesce",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"coalesce entity created successfully\"] = data.has(\"Entity has been submitted for create with entity Id : skuC0001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"name\": \"Navyatest001\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Meet Mehta\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"enddate\": {\n          \"values\": [\n            {\n              \"value\": \"2016-06-13T00:30:43.260-0500\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hidedisplayindicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"value\": \"0.142\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        },\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"10\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"upcabrcode\": {\n          \"values\": [\n            {\n              \"value\": \"Navyatest001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"HOUSEWARES/RANGES/RANGES\",\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          },\n          \"attributes\": {\n            \"appliancetypes\": {\n              \"values\": [\n                {\n                  \"value\": \"ELECTRIC_COOKTOPS\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"broilerlocation\": {\n              \"values\": [\n                {\n                  \"value\": \"OVEN\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"enddate\": {\n              \"values\": [\n                {\n                  \"value\": \"2016-06-13T00:30:43.260-0500\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"assembledheight\": {\n              \"values\": [\n                {\n                  \"value\": \"0.052\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"uom\": \"kg\"\n                }\n              ]\n            },\n            \"skuquantity\": {\n              \"values\": [\n                {\n                  \"value\": \"30\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"suppliernumbername\": {\n              \"values\": [\n                {\n                  \"value\": \"Nike\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"description\": {\n              \"values\": [\n                {\n                  \"value\": \"plfurniture descriprtion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get entity coalesce with attributes from self and parent level classification",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"get for coalesce successfully\"] = data.has(\"\\\"id\\\":\\\"skuC0001\\\"\") & data.has(\"\\\"NSUN KDS_SPF30 200ML\\\"\") & data.has(\"\\\"plfurniture\\\"\")& data.has(\"\\\"description\\\"\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/getcoalesce",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\": [\n        {\n          \"classification\": \"HOUSEWARES>>RANGES>>RANGES\",\n          \"taxonomy\": \"Product Setup Taxonomy\"\n        }\n      ],\n      \"id\": \"292e57f2-e32f-4723-8eb1-a56d3edde141\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"enddate\",\n        \"hidedisplayindicator\",\n        \"assembledheight\",\n        \"skuquantity\",\n        \"suppliernumbername\",\n        \"appliancetypes\",\n        \"broilerlocation\",\n        \"description\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 1\n    }\n  }\n}"
+						},
+						"description": "Get Coalesc Entity"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Entity create at leaf level",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"Entity has been submitted for create with entity Id : newmatchentity001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"newskuentity001\",\n    \"name\": \"newskuentity001\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Meet Mehta\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"10\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"value\": \"1234567891\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"value\": \"newskuentity001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"GADGETS, TOYS, ELECTRONICS>>SPORTING GOODS + EQUIPMENT>>SOFTBALL>>SOFTBALL HELMETS\",\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          },\n          \"attributes\": {\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"value\": \"UNDER 1\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"basematerial\": {\n              \"values\": [\n                {\n                  \"value\": \"ant base material\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"suppliernumbername\": {\n              \"values\": [\n                {\n                  \"value\": \"Nike\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            },\n            \"description\": {\n              \"values\": [\n                {\n                  \"value\": \"descriprtion\",\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get Entity Coalesce for leaf level",
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappservice/getcoalesce",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "buyer@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "buyer@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\": [\n        {\n            \"classification\": \"GADGETS, TOYS, ELECTRONICS>>SPORTING GOODS + EQUIPMENT>>SOFTBALL>>SOFTBALL HELMETS\",\n            \"taxonomy\": \"Product Setup Taxonomy\"\n          }\n      ],\n      \"id\": \"newskuentity001\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "Gets the Entities by IDs"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "1.1 App Entity Create",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "1.2  App entity update",
+			"description": "",
+			"item": []
+		}
+	]
+}

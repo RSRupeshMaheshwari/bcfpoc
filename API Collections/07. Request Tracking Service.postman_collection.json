@@ -1,0 +1,381 @@
+{
+	"variables": [],
+	"info": {
+		"name": "07. Request Tracking Service",
+		"_postman_id": "2c2be031-61c1-45f8-fcc6-59b07c305686",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create entity",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \n  \"entity\": {\n    \"id\": \"shelfNarrowBookcase001\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"displayname\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"shelfNarrowBookcase001\"\n            }\n          ]\n        },\n        \"description\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"shelfNarrowBookcase ready to assemble\"\n            }\n          ]\n        },\n        \"size\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"Large\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"shelfNarrowBookcase\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"Nike\"\n            }\n          ]\n        },\n        \"producttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",             \n              \"value\": \"plfurniture\"\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"value\": \"85\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"inch\"\n            }\n          ]\n        },\n        \"subproducttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"ptyaccentfurniture\"\n            }\n          ]\n        },\n        \"itemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"plfurniture/ptyaccentfurniture/sptybookshelves/itybookshelves\"\n            }\n          ]\n        }\n      },\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"Mattresses\",\n            \"direction\": \"both\",\n            \"source\": \"internal\",\n            \"relationshipType\": \"association\",\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"James Cash Penney.For the Irish retail chain branded Penneys\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            },\n            \"relTo\": {\n              \"id\": \"King\",\n              \"type\": \"sku\"\n            }\n          },\n          {\n            \"id\": \"Mattresses\",\n            \"direction\": \"both\",\n            \"source\": \"internal\",\n            \"relationshipType\": \"association\",\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"JCP means James Cash Penney.For the Irish retail chain branded Penneys\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              },\n              \"status\": {\n                \"values\": [\n                  {\n                    \"value\": \"New\",\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            },\n            \"relTo\": {\n              \"id\": \"Full\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptybookshelves/itybookshelves\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"attributes\": {\n            \"woodfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"WHITE\"\n                }\n              ]\n            },\n            \"piecesinset\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": 12\n                }\n              ]\n            },\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"YOUTH\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"0-12_MONTHS\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"10_+_YEARS\"\n                }\n              ]\n            },\n            \"assembly\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"ASSEMBLY_REQUIRED\"\n                }\n              ]\n            },\n            \"lastflow\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"Y\"\n                }\n              ]\n            },\n            \"metalfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"OIL_RUBBED_BRONZE\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"PAINTED\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"CHROME\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get request object using request id",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n     \n      \"filters\": {\n        \"typesCriterion\": [\n          \"requestobject\"\n        ],\n         \"attributesCriterion\": [\n          {\n            \"taskId\": {\n              \"exact\": \"2b38e92d-a57e-4bd8-8f4c-ce97919088ae\"\n            }\n          }\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 100\n    }\n  \n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3. Update request object(NA)",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\":\"b9f9109d-7257-4515-9320-7190cc808dd6\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"requestobject\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 100\n    }\n  \n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4. Delete request object(NA)",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\":\"b9f9109d-7257-4515-9320-7190cc808dd6\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"requestobject\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 100\n    }\n  \n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "5. Search request objects",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"ids\":[\"b9f9109d-7257-4515-9320-7190cc808dd6\",\"c92c0a46-2f4d-45fe-af28-6dd3216d843f\"],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"requestobject\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 100\n    }\n  \n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "6. Request of Request object",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \n      \"filters\": {\n        \"typesCriterion\": [\n          \"requestofrequestsobject\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 1\n    }\n  \n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "7. Get request object using taskid,entity id and entity action",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"requestobject\"\n        ],\n        \"attributesCriterion\": [\n          {\n            \"taskId\": {\n              \"exact\": \"354464cf-3709-4312-b915-ae5b5981077f\"\n            }\n          },\n          {\n            \"entityAction\": {\n              \"contains\": \"create update delete\"\n            }\n          },\n          {\n            \"entityId\": {\n              \"exact\": \"f577d1f1-bc25-4c51-abfe-2ddf13d476c1\"\n            }\n          }\n        ]\n      },\n      \"valueContexts\": [\n        {\n          \"source\": \"rdp\",\n          \"locale\": \"en-US\"\n        }\n      ]\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "8. Get request object using request Id,entity id and entity action",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"requestobject\"\n        ],\n        \"attributesCriterion\": [\n          {\n            \"requestGroupId\": {\n              \"exact\": \"fb383b3d-cd76-48d3-ac22-ef78c591984e\"\n            }\n          },\n          {\n            \"entityAction\": {\n              \"contains\": \"create update delete\"\n            }\n          },\n          {\n            \"entityId\": {\n              \"exact\": \"XersionKnitCapriLeggingsToddlerGirls0005\"\n            }\n          }\n        ]\n      },\n      \"valueContexts\": [\n        {\n          \"source\": \"rdp\",\n          \"locale\": \"en-US\"\n        }\n      ]\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "9. Get request object with entity id and req id",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n     \n      \"filters\": {\n        \"typesCriterion\": [\n          \"requestobject\"\n        ],\n         \"attributesCriterion\": [\n          {\n            \"taskId\": {\n              \"exact\": \"2b38e92d-a57e-4bd8-8f4c-ce97919088ae\"\n            }\n          },{\n            \"entityId\":{\n            \"exact\": \"XersionKnitLeggingsToddlerGirls0001\"  \n            }\n          }\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 100\n    }\n  \n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "10. Get Entity Count based on update",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/eventservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"entitymanageevent\"\n        ],\n        \"attributesCriterion\": [\n          {\n            \"eventType\":{\n              \"exact\": \"EntityUpdate\"\n            }\n          },\n          {\n            \"sourceTimestamp\":{\n              \"gt\": \"2017-07-21T21:06:00.000+0000\",\n              \"lt\": \"2017-07-21T21:19:00.000+0000\"\n            }\n          }\n        ]\n      }\n    },\n    \"options\":{\n      \"maxRecords\":1\n    }\n  }\n}"
+				},
+				"description": "Get external event by specifying file name"
+			},
+			"response": []
+		},
+		{
+			"name": "11. Get Entity Count based on add",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/eventservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"entitymanageevent\"\n        ],\n        \"attributesCriterion\": [\n          {\n            \"eventType\":{\n              \"exact\": \"EntityAdd\"\n            }\n          },\n          {\n            \"sourceTimestamp\":{\n              \"gt\": \"2017-07-21T21:06:00.000+0000\",\n              \"lt\": \"2017-07-21T21:19:00.000+0000\"\n            }\n          }\n        ]\n      }\n    },\n    \"options\":{\n      \"maxRecords\":1\n    }\n  }\n}"
+				},
+				"description": "Get external event by specifying file name"
+			},
+			"response": []
+		},
+		{
+			"name": "13. get task summary object",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\":\"123123123213567\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"tasksummaryobject\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 1\n    }\n  \n  }\n}"
+				},
+				"description": "Get Task Summary Object"
+			},
+			"response": []
+		},
+		{
+			"name": "14. get task summary object with attribute criterion",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"tasksummaryobject\"\n        ],\n        \"attributesCriterion\": [\n        {\n          \"taskId\": {\n            \"exact\": \"508f9965-34bb-4aa2-9f11-4632691cdef2\"\n          }\n        }\n      ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 1000\n    }\n  }\n}"
+				},
+				"description": "Get external event by specifying file name"
+			},
+			"response": []
+		},
+		{
+			"name": "15. create task summary object",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"requestObject\": {\n    \"id\": \"taskId1\",\n    \"name\": \"taskId1ExcelFile1EntityImport\",\n    \"type\": \"tasksummaryobject\",\n    \"data\": {\n      \"attributes\": {\n        \"taskId\": {\n          \"values\": [\n            {\n              \"value\": \"taskId1\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"taskType\": {\n          \"values\": [\n            {\n              \"value\": \"taskType\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecords\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"fileName\": {\n          \"values\": [\n            {\n              \"value\": \"importExcelFileName\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"fileId\": {\n          \"values\": [\n            {\n              \"value\": \"importExcelFileName\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"fileType\": {\n          \"values\": [\n            {\n              \"value\": \"importExcelFileName\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"startTime\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"source\": \"internal\",\n              \"id\": \"36e5abd5-f562-4918-b17a-35245436e91e\",\n              \"value\": \"2017-09-04T05:19:59.600-0500\"\n            }\n          ]\n        },\n        \"lastModifiedTime\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"source\": \"internal\",\n              \"id\": \"47308d58-44a1-46c7-9262-c9dbd10b1208\",\n              \"value\": \"2017-09-04T05:19:59.600-0500 (populated by internal)\"\n            }\n          ]\n        },\n        \"submittedBy\": {\n          \"values\": [\n            {\n              \"value\": \"userId\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRSConnectErrors\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsForProcess\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsProcessed\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalinternalErrors\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsSuccess\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"source\": \"internal\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"totalRecordsError\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsCreate\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsUpdate\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsDelete\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"taskStatus\": {\n          \"values\": [\n            {\n              \"value\": \"inProgress\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"errorMessage\": {\n          \"values\": [\n            {\n              \"value\": \"errorMessage (to be populated by RSConnect if the import fails)\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+				},
+				"description": "Create Task Summary Object"
+			},
+			"response": []
+		},
+		{
+			"name": "16. update task summary object. Does not support Delta update, full object has to be passed",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"requestObject\": {\n    \"id\": \"taskId1\",\n    \"name\": \"taskId1ExcelFile1EntityImport\",\n    \"type\": \"tasksummaryobject\",\n    \"data\": {\n      \"attributes\": {\n        \"taskId\": {\n          \"values\": [\n            {\n              \"value\": \"taskId1\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"taskType\": {\n          \"values\": [\n            {\n              \"value\": \"taskType\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecords\": {\n          \"values\": [\n            {\n              \"value\": \"100\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"fileName\": {\n          \"values\": [\n            {\n              \"value\": \"importExcelFileName\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"fileId\": {\n          \"values\": [\n            {\n              \"value\": \"importExcelFileName\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"fileType\": {\n          \"values\": [\n            {\n              \"value\": \"importExcelFileName\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"startTime\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"source\": \"internal\",\n              \"id\": \"36e5abd5-f562-4918-b17a-35245436e91e\",\n              \"value\": \"2017-09-04T05:19:59.600-0500\"\n            }\n          ]\n        },\n        \"lastModifiedTime\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"source\": \"internal\",\n              \"id\": \"47308d58-44a1-46c7-9262-c9dbd10b1208\",\n              \"value\": \"2017-09-04T05:19:59.600-0500 (populated by internal)\"\n            }\n          ]\n        },\n        \"submittedBy\": {\n          \"values\": [\n            {\n              \"value\": \"userId\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRSConnectErrors\": {\n          \"values\": [\n            {\n              \"value\": \"10\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsForProcess\": {\n          \"values\": [\n            {\n              \"value\": \"90\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsProcessed\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalinternalErrors\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsSuccess\": {\n          \"values\": [\n            {\n              \"locale\": \"en-US\",\n              \"source\": \"internal\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"totalRecordsError\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsCreate\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsUpdate\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"totalRecordsDelete\": {\n          \"values\": [\n            {\n              \"value\": \"0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"taskStatus\": {\n          \"values\": [\n            {\n              \"value\": \"inProgress\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"errorMessage\": {\n          \"values\": [\n            {\n              \"value\": \"errorMessage (to be populated by RSConnect if the import fails)\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+				},
+				"description": "Update Task Summary Object"
+			},
+			"response": []
+		},
+		{
+			"name": "17. get task detail object",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/requesttrackingservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\":\"123123123213567\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"taskdetailobject\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    },\n    \"options\": {\n      \"maxRecords\": 1\n    }\n  \n  }\n}"
+				},
+				"description": "Get Task Detail Object"
+			},
+			"response": []
+		}
+	]
+}

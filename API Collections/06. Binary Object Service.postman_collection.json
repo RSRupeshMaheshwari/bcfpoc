@@ -1,0 +1,241 @@
+{
+	"variables": [],
+	"info": {
+		"name": "06. Binary Object Service",
+		"_postman_id": "9772647f-df57-54ea-20cc-b8dfa18dd79b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create binary object",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binaryobjectservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"binaryObject\": {\n    \"id\": \"fileId1786\",\n    \"type\": \"excelfile\",\n    \"properties\": {\n      \"profileName\": \"sku_Folder_Excel_Import_Process\",\n      \"profileId\": \"d75a63f9-ed4f-4b6e-9973-8743396b61c0\",\n      \"userId\": \"userId\",\n      \"encoding\": \"Base64\",\n      \"filename\": \"ui_uploadedfile.xlsx\"\n    },\n    \"data\": {\n      \"blob\": \"ew0KICAgImlkIjogIjEiLA\"\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get binary object",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binaryobjectservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"a3f6976d-74ec-11e7-88bd-751eb167edde\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"binarystreamobject\",\n          \"excelfile\"\n        ]\n      }\n    },\n    \"options\": {\n      \"maxRecords\": 10\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3. Delete binary object",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binaryobjectservice/delete",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"binaryObject\":\n   {\n      \"id\": \"fileId1786\",\n      \"type\": \"excelfile\"\n   }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4. Get binary object by Id",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binaryobjectservice/getById",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"fileId1786\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"excelfile\"\n        ]\n      }\n    },\n    \"options\": {\n      \"maxRecords\": 10\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

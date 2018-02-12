@@ -1,0 +1,81 @@
+{
+	"variables": [],
+	"info": {
+		"name": "16. RS Asset Service",
+		"_postman_id": "3170722d-7d2e-37fc-7f98-db4379077531",
+		"description": "Methods for directly invoking the REST methods supported by the RS-DAM service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create Asset Entity via BinaryStreamObject",
+			"request": {
+				"url": "http://{{WEBURL}}:9095/{{TENANT_ID}}/api/rsAssetService/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"binaryStreamObject\": {\n        \"id\": \"7f51c22c-421b-4fb1-83c7-3f7d95d59866\",\n        \"type\": \"binarystreamobject\",\n        \"properties\": {\n          \"objectKey\": \"Aaishwarya Alloy Crystal Rose Gold Bracelet1@_@7c2f6070-451d-40ff-9820-081854ac9a3d.jpeg\",\n          \"fullObjectPath\": \"rdp/binarystreamobject/Aaishwarya Alloy Crystal Rose Gold Bracelet1@_@7c2f6070-451d-40ff-9820-081854ac9a3d.jpeg\",\n          \"originalFileName\": \"Aaishwarya Alloy Crystal Rose Gold Bracelet1.jpeg\",\n          \"user\": \"vendor3jcp@riversand.com\",\n          \"role\": \"vendor\",\n          \"ownershipData\": \"Vendor3\",\n          \"createdService\": \"binaryStreamObjectService\",\n          \"createdBy\": \"vendor3jcp@riversand.com_user\",\n          \"createdDate\": \"2017-06-09T09:39:52.718-0500\",\n          \"modifiedService\": \"binaryStreamObjectService\",\n          \"modifiedBy\": \"vendor3jcp@riversand.com_user\",\n          \"modifiedDate\": \"2017-06-09T09:39:52.718-0500\"\n        }\n      }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

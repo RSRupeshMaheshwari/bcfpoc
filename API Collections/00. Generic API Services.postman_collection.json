@@ -1,0 +1,2147 @@
+{
+	"variables": [],
+	"info": {
+		"name": "00. Generic API Services",
+		"_postman_id": "edfcf6c6-0a4a-5b0b-31a4-da6bff2aa881",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create Objects",
+			"description": "",
+			"item": [
+				{
+					"name": "2. Create data object of entity with simple attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku2002. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entity\": {\n    \"id\": \"sku2002\",\n    \"name\": \"entityToAttribute\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"attributes\": {\n        \"displayname\": {\n          \"values\": [\n            {\n              \"value\": \"mineral\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"value\": \"31.22\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": {{owner}},\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"12\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Create data object of entity with relationships",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku2003. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2003\",\n    \"name\": \"entityToRelationship\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"sku2003\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"relTo\": {\n              \"id\": \"rel2003\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "4. Create data object of entity with properties",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku2004. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2004\",\n    \"name\": \"entityToProperties\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "5. Create data object of entity with simple attribute/properties/context/relationship",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2005\",\n    \"name\": \"entityToAllDataObject\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture\"\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture/ptyaccentfurniture\"\n          }\n        }\n      ],\n      \"attributes\": {\n        \"displayname\": {\n          \"values\": [\n            {\n              \"value\": \"mineral\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"value\": \"31.22\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": {{owner}},\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"12\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      },\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"sku2005\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"relTo\": {\n              \"id\": \"rel2005\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "1. Create data object of entity with context",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku2001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2001\",\n    \"name\": \"entityToContext\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture\"\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture/ptyaccentfurniture\"\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Update Objects",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Update data object of entity with context",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2001\",\n    \"name\": \"entityContext\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptycabinetschests\"\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture/ptyaccentfurniture\"\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptycabinetschests/ityaccentchests\"\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Update data object of entity with simple attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2002. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entity\": {\n    \"id\": \"sku2002\",\n    \"name\": \"entityAttribute\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"attributes\": {\n        \"displayname\": {\n          \"values\": [\n            {\n              \"value\": \"mineral\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"value\": \"434\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"value\": \"14.20\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": {{owner}},\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"68\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Update data object of entity with relationships",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2003. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2003\",\n    \"name\": \"entityRelationship\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"sku2003\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"relTo\": {\n              \"id\": \"rel2003\",\n              \"type\": \"sku\"\n            }\n          }\n        ],\n        \"ischildof\": [\n          {\n            \"id\": \"sku2003\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"relTo\": {\n              \"id\": \"rel2004\",\n              \"type\": \"lot\"\n            },\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"Rel NSUN KDS_SPF30 200M\",\n                    \"source\": \"SAP\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "4. Update data object of entity with properties",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2004. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2004\",\n    \"name\": \"entityToProperties\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Meet Mehta\",\n      \"modifiedByService\": \"entityservice\"\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "5. Update data object of entity with simple attribute/properties/context/relationship",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2005. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2005\",\n    \"name\": \"entityToAllDataObject\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Meet Mehta\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture\"\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptycabinetschests/ityaccentchests\"\n          }\n        }\n      ],\n      \"attributes\": {\n        \"displayname\": {\n          \"values\": [\n            {\n              \"value\": \"mineral\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"value\": \"3332\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"value\": \"10.20\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": {{owner}},\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skuquantity\": {\n          \"values\": [\n            {\n              \"value\": \"122\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"id\": {\n          \"values\": [\n            {\n              \"value\": \"NSUN KDS_SPF30 200ML\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"enddate\": {\n          \"values\": [\n            {\n              \"value\": \"2012-05-04T09:22:19.000+0000\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"hidedisplayindicator\": {\n          \"values\": [\n            {\n              \"value\": \"false\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"value\": \"0.052\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"uom\": \"kg\"\n            }\n          ]\n        }\n      },\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"sku2005\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"relTo\": {\n              \"id\": \"rel2005\",\n              \"type\": \"sku\"\n            }\n          }\n        ],\n        \"ischildof\": [\n          {\n            \"id\": \"sku2003\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"relTo\": {\n              \"id\": \"rel2004\",\n              \"type\": \"lot\"\n            },\n            \"attributes\": {\n              \"linkdescription\": {\n                \"values\": [\n                  {\n                    \"value\": \"Rel NSUN KDS_SPF78 700M\",\n                    \"source\": \"SAP\",\n                    \"locale\": \"en-US\"\n                  }\n                ]\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Delete Objects",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Delete data object of entity with context",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2001. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2001\",\n    \"name\": \"entityToContext\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture\"\n          },\n          \"action\":\"delete\"\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture/ptyaccentfurniture\"\n          }\n        }\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Delete data object of entity with simple attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for delete with entity Id : sku2002. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entity\": {\n    \"id\": \"sku2002\",\n    \"name\": \"entityToAttribute\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"attributes\": {\n        \"displayname\": {\n          \"action\": \"delete\"\n        },\n        \"length\": {\n          \"action\": \"delete\"\n        },\n        \"height\": {\n          \"action\": \"delete\"\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": {{owner}},\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skuquantity\": {\n          \"action\": \"delete\"\n        }\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Delete data object of entity with relationships",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2003. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2003\",\n    \"name\": \"entityToRelationship\",\n    \"type\": \"sku\",\n    \"data\": {\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"sku2003\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"action\": \"delete\",\n            \"relTo\": {\n              \"id\": \"rel2003\",\n              \"type\": \"sku\"\n            }\n          },\n          {\n            \"id\": \"sku2003\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"relTo\": {\n              \"id\": \"rel2002\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "4. Delete data object of entity with properties",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2004. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2004\",\n    \"name\": \"entityToProperties\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"action\": \"delete\"\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "5. Delete data object of entity with simple attribute/properties/context/relationship",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"entity create successfully\"] = data.has(\"Entity has been submitted for update with entity Id : sku2005. Please check back after 1 min\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/update",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"entity\": {\n    \"id\": \"sku2005\",\n    \"name\": \"entityToAllDataObject\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"entityservice\",\n      \"createdBy\": \"Miriam Pott\",\n      \"modifiedByService\": \"entityservice\"\n    },\n    \"data\": {\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture\"\n          }\n        },\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"plfurniture/ptyaccentfurniture\"\n          },\n          \"action\": \"delete\"\n        }\n      ],\n      \"attributes\": {\n        \"displayname\": {\n          \"action\": \"delete\"\n        },\n        \"length\": {\n          \"action\": \"delete\"\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"value\": \"31.22\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"value\": {{owner}},\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"skuquantity\": {\n          \"action\": \"delete\"\n        }\n      },\n      \"relationships\": {\n        \"kitskutosku\": [\n          {\n            \"id\": \"sku2005\",\n            \"direction\": \"both\",\n            \"relationshipType\": \"association\",\n            \"action\": \"delete\",\n            \"relTo\": {\n              \"id\": \"rel2005\",\n              \"type\": \"sku\"\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4. Get Objects",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Get-Create : data object of entity with context",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);\r",
+									"\r",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); \r",
+									"\r",
+									"tests[\"entity get successfully\"] = (data.has(\"sku2001\") & data.has(\"contexts\")) | (data.has(\"\\\"classification\\\":\\\"plfurniture/ptyaccentfurniture\\\"\") & data.has(\"\\\"classification\\\":\\\"plfurniture\\\"\"));\r",
+									"\r",
+									"console.log(data);\r",
+									"\r",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\": [\n        {\n          \"taxonomy\": \"productsetuptaxonomy\",\n          \"classification\": \"plfurniture/ptyaccentfurniture\"\n        },\n        {\n          \"taxonomy\": \"productsetuptaxonomy\",\n          \"classification\": \"plfurniture\"\n        }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"sku2001\"\n    },\n    \"fields\": {}\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "1.1. Get-Update : Data object of entity with context",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);\r",
+									"\r",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); \r",
+									"\r",
+									"tests[\"entity get successfully\"] = (data.has(\"sku2001\") & data.has(\"contexts\")) | (data.has(\"\\\"classification\\\":\\\"plfurniture/ptyaccentfurniture/sptycabinetschests/ityaccentchests\\\"\"));\r",
+									"\r",
+									"console.log(data);\r",
+									"\r",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\": [\n        {\n          \"taxonomy\": \"productsetuptaxonomy\",\n          \"classification\": \"plfurniture/ptyaccentfurniture/sptycabinetschests/ityaccentchests\"\n        }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"sku2001\"\n    },\n    \"fields\": {}\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 Get-Delete : Data object of entity with context",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);\r",
+									"\r",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); \r",
+									"\r",
+									"tests[\"entity get successfully\"] = !(data.has(\"\\\"classification\\\":\\\"plfurniture\\\"\"));\r",
+									"\r",
+									"console.log(data);\r",
+									"\r",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\": [\n        {\n          \"taxonomy\": \"productsetuptaxonomy\",\n          \"classification\": \"plfurniture\"\n        }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"sku2001\"\n    },\n    \"fields\": {}\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get-Create : Data object of entity with simple attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);\r",
+									"\r",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); \r",
+									"\r",
+									"tests[\"entity get successfully\"] = (data.has(\"sku2002\") & data.has(\"attributes\")) | (data.has(\"\\\"value\\\":\\\"mineral\\\"\") & data.has(\"\\\"value\\\":3\") & data.has(\"\\\"value\\\":31.22\") & data.has(\"\\\"value\\\":\\\"vendor1\\\"\") & data.has(\"\\\"value\\\":12\"));\r",
+									"\r",
+									"console.log(data);\r",
+									"\r",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"sku2002\"\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"displayname\",\"length\",\"height\",\"suppliernumbername\",\"skuquantity\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2.1. Get- Update : Data object of entity with simple attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);\r",
+									"\r",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); \r",
+									"\r",
+									"tests[\"entity get successfully\"] = (data.has(\"sku2002\") & data.has(\"attributes\")) | (data.has(\"\\\"value\\\":\\\"mineral\\\"\") & data.has(\"\\\"value\\\":434\") & data.has(\"\\\"value\\\":14.2\") & data.has(\"\\\"value\\\":\\\"vendor1\\\"\") & data.has(\"\\\"value\\\":68\"));\r",
+									"\r",
+									"console.log(data);\r",
+									"\r",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"sku2002\"\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"displayname\",\"length\",\"height\",\"suppliernumbername\",\"skuquantity\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "2.2. Get- Delete : Data object of entity with simple attributes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);\r",
+									"\r",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); \r",
+									"\r",
+									"tests[\"entity get successfully\"] = (data.has(\"sku2002\") | data.has(\"\\\"value\\\":\\\"vendor1\\\"\"));\r",
+									"\r",
+									"console.log(data);\r",
+									"\r",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"sku2002\"\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"displayname\",\"length\",\"height\",\"suppliernumbername\",\"skuquantity\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get-Create : Data object of entity with relationships",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);\r",
+									"\r",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); \r",
+									"\r",
+									"tests[\"entity get successfully\"] = (data.has(\"sku2003\") & data.has(\"relationships\") & data.has(\"kitskutosku\")) | (data.has(\"\\\"id\\\":\\\"rel2003\\\"\"));\r",
+									"\r",
+									"console.log(data);\r",
+									"\r",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"sku2003\"\n    },\n    \"fields\": {\n      \"relationships\": [\n        \"kitskutosku\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				},
+				{
+					"name": "3.1. Get-Update : Data object of entity with relationships",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);\r",
+									"\r",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); \r",
+									"\r",
+									"tests[\"entity get successfully\"] = (data.has(\"sku2003\") & data.has(\"relationships\") & data.has(\"kitskutosku\") & data.has(\"ischildof\")) | (data.has(\"\\\"id\\\":\\\"rel2003\\\"\") & data.has(\"\\\"id\\\":\\\"rel2004\\\"\"));\r",
+									"\r",
+									"console.log(data);\r",
+									"\r",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/{{service}}/get",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "{{owner}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Meet Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Meet",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Mehta",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "meet.mehta@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"buyer\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"sku\"\n        ]\n      },\n      \"id\": \"sku2003\"\n    },\n    \"fields\": {\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": "create sku entity with supplier number name attribute value as Nike"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

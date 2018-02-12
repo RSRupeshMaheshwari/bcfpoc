@@ -1,0 +1,131 @@
+{
+	"variables": [],
+	"info": {
+		"name": "10. Binary Stream Object Manage Service",
+		"_postman_id": "cc50d5cc-ca91-377c-75c2-b82b2ccf344a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create binary stream object Metadata",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binarystreamobjectservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"binaryStreamObject\": {\n    \"id\": \"guid\",\n    \"type\": \"binarystreamobject\",\n    \"properties\": {\n      \"objectKey\": \"rdp/binarystreamobject/assets/abc@_@guid.jpg\",\n      \"originalFileName\": \"abc.jpg\",\n      \"user\": \"vendor1jcp@riversand.com\",\n      \"role\": \"vendor\",\n      \"ownershipData\": \"Vendor1\"\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Service - Binary Stream Object Get using id",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binarystreamobjectservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n     \"id\":\"file1Metadata543\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"binarystreamobject\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3. Get Service - Binary Stream Object Get using attribute filters",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binarystreamobjectservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"binarystreamobject\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "4. Delete binary stream object Metadata",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binarystreamobjectservice/delete",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"binaryStreamObject\": {\n    \"id\": \"file1Metadata1\",\n    \"type\": \"binarystreamobject\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "5. BinaryStream Object Prepare Upload",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binarystreamobjectservice/prepareUpload",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"binaryStreamObject\": {\n    \"id\": \"file1Metadata543\",\n    \"type\": \"binarystreamobject\",\n    \"data\": {}\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "6. Binary Stream Object Prepare Download",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/binarystreamobjectservice/prepareDownload",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"binaryStreamObject\": {\n    \"id\": \"file1Metadata543\",\n    \"type\": \"binarystreamobject\",\n    \"data\": {}\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

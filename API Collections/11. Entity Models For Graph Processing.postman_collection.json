@@ -1,0 +1,1659 @@
+{
+	"variables": [],
+	"info": {
+		"name": "11. Entity Models For Graph Processing",
+		"_postman_id": "f6305af5-1f77-a8cc-c18a-25e8f26e636c",
+		"description": "Entity Models For Graph Processing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SKU to Lot Graph Process Model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model created successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku_entityManageModel. Please check back after 1 min\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entityModel\": {\n    \"id\": \"sku_ischildof_lot_graphProcessModel\",\n    \"name\": \"sku_ischildof_lot\",\n    \"type\": \"graphProcessModel\",\n    \"domain\": \"generic\",\n    \"properties\": {\n      \"defaultValueSource\": \"internal\",\n      \"defaultValueLocale\": \"en-US\",\n      \"matchRulesOperator\": \"or\",\n      \"matchRules\": [\n        {\n          \"seq\": 1,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"lotgroup\": \"lotgroup\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"Create\"\n                },\n                {\n                  \"actionName\": \"AddSourceRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddSourceRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"Error\"\n                }\n              ]\n            }\n          ],\n          \"smartIdAttributes\": [\n            {\n              \"attributeNames\": \"lotgroup\",\n              \"concatDelimiter\": \"\"\n            }\n          ]\n        },\n        {\n          \"seq\": 2,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"subproducttype\": \"subproducttype\",\n              \"itemtype\": \"itemtype\",\n              \"cost\": \"cost\",\n              \"length\": \"length\",\n              \"height\": \"height\",\n              \"grossweight\": \"grossweight\",\n              \"diff1group\": \"diff1group\",\n              \"diff2group\": \"diff2group\",\n              \"colordesc\": \"colordesc\",\n              \"assembledweight\": \"assembledweight\",\n              \"assembledlength\": \"assembledlength\",\n              \"assembledwidth\": \"assembledwidth\",\n              \"assembledheight\": \"assembledheight\",\n              \"countryofmanufacture\": \"countryofmanufacture\",\n              \"suppliernumbername\": \"suppliernumbername\",\n              \"brand\": \"brand\",\n              \"producttype\": \"producttype\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"Create\"\n                },\n                {\n                  \"actionName\": \"AddSourceRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddSourceRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"Error\"\n                }\n              ]\n            }\n          ],\n          \"smartIdAttributes\": [\n            {\n              \"attributeNames\": [\n                \"subproducttype\",\n                \"itemtype\",\n                \"cost\",\n                \"length\",\n                \"height\",\n                \"grossweight\",\n                \"diff1group\",\n                \"diff2group\",\n                \"colordesc\",\n                \"assembledweight\",\n                \"assembledlength\",\n                \"assembledwidth\",\n                \"assembledheight\",\n                \"countryofmanufacture\",\n                \"suppliernumbername\",\n                \"brand\",\n                \"producttype\"\n              ],\n              \"concatDelimiter\": \"_\"\n            }\n          ]\n        }\n      ],\n      \"relExists\": [\n        {\n          \"actions\": [\n            {\n              \"actionName\": \"CopyData\"\n            }\n          ]\n        }\n      ]\n    },\n    \"data\": {\n      \"attributes\": {\n        \"description\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"skusize\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"startdate\": {\n          \"properties\": {\n            \"strategy\": \"min\"\n          }\n        },\n        \"enddate\": {\n          \"properties\": {\n            \"strategy\": \"max\"\n          }\n        },\n        \"skutype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"inspirationalcopy\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"cost\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"colordesc\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"division\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"subdivision\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"entity\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"brand\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"warranty\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"productline\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"producttype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"subproducttype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"itemtype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"sizerange\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"class\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"subclass\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"source\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"skuitemtype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"channel\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"directshiprestrict\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"disposalfee\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"willcallrestrict\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"parantheticamount\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"willcallfactoryshipind\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"noncontinentalprepaid\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"continentalprepaid\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"unusualdemandquantity\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"hazmatflag\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"prop65indicator\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"suppliernumbername\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"suppliersitenumber\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storeprimarysupplierid\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecomprimarysupplierid\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"supplierchannel\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"alternatesupplierid\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"retail\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"length\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"shippingwidth\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"height\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"grossweight\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"liquidvolume\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"liquidunitofmeasure\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"countryofmanufacture\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"originindicator\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"warrantyflag\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"monogramcharge\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"diff1type\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"diff1group\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"diff2type\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"diff2group\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"specialprogramtype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"factoryshipleadtime\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"lifestyle\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"suppliermfrshippoint\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"sizeinner\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"packagetype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"weightunitofmeasure\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"whsesupplier1\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"whsesuppliershippoint1\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"supplierleadtime\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecomhangingindicator\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"effindicator\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storeset\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"floorsetdate\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"christmasindicator\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"protectionplan\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecommsuppliershippoint\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"maxbackorderdays\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storeactivesizes\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storepurchasetype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecommpurchasetype\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"sourcingpartner\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"factoryshipuom\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ticketstockno\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ticketattribute\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"season\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ppkno\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecommjcpstatus\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"innerquantitycolor\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"casequantitycolor\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"conceptual\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"whseprocessingfee1\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"compliancelikeitem\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"enterpriseinventoryindicator\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"fashionpyramid\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"deliveryinstructions\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"packingmethod\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"pricetier\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"specialitemcode\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storeoosdate\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"factoryshiplimitedinvind\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"minorderqtycolor\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecommminorderqty\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"shippinginforequired\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"producttitle\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"assembledlength\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"assembledwidth\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"assembledheight\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"assembledweight\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"productdescription\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"features1\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"features2\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"features3\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"features4\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"features5\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"searchkeywordsnavigation\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"programname\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecomminnerpack\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecommoosdate\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"sizecase\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storejcpstatus\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storesubset\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"lotgroup\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"plannedonsitedate\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"msrp\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storeunitcost\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecommunitcost\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"ecommactivesizes\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"storecollectionnumbername\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"shippointstate\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"shippointcity\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        }\n      },\n      \"relationships\": {\n        \"hasimages\": [\n          {\n            \"properties\": {\n              \"externalName\": \"Images\",\n              \"strategy\": \"copyWhenEmpty\",\n              \"relationshipType\": \"association\",\n              \"relatedEntityInfo\": [\n                {\n                  \"relEntityType\": \"image\"\n                }\n              ]\n            }\n          }\n        ]\n      },\n      \"contexts\": [\n        {\n          \"context\": {\n            \"taxonomy\": \"productsetuptaxonomy\",\n            \"classification\": \"_ALL\"\n          },\n          \"properties\": {\n            \"includeAllAttributes\": true\n          }\n        }\n      ]\n    }\n  }\n}"
+				},
+				"description": "1. SKU to Lot Rollup Model"
+			},
+			"response": []
+		},
+		{
+			"name": "SKU to Image Graph Process Model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model created successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku_entityManageModel. Please check back after 1 min\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entityModel\": {\n    \"id\": \"sku_hasimages_image_graphProcessModel\",\n    \"name\": \"sku_hasimages_image\",\n    \"type\": \"graphProcessModel\",\n    \"domain\": \"generic\",\n    \"properties\": {\n      \"defaultValueSource\": \"internal\",\n      \"defaultValueLocale\": \"en-US\",\n      \"matchRules\": [\n        {\n          \"seq\": 1,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"primaryimage\": \"property_originalfilename\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddSourceRelationship\",\n                  \"setRelAttrValues\": [\n                    {\n                      \"isprimary\": \"true\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"Error\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"seq\": 2,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"alternateimages\": \"property_originalfilename\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddSourceRelationship\",\n                  \"setRelAttrValues\": [\n                    {\n                      \"isprimary\": \"false\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"Error\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"data\": {}\n  }\n}"
+				},
+				"description": "SKU to Image Rollup Model"
+			},
+			"response": []
+		},
+		{
+			"name": "Lot to sku Graph Process model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model created successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku_entityManageModel. Please check back after 1 min\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entityModel\": {\n    \"id\": \"lot_ischildof_sku_graphProcessModel\",\n    \"name\": \"lot_ischildof_sku\",\n    \"type\": \"graphProcessModel\",\n    \"domain\": \"generic\",\n    \"properties\": {\n      \"defaultValueSource\": \"internal\",\n      \"defaultValueLocale\": \"en-US\",\n      \"matchRules\": [\n        {\n          \"seq\": 1,\n          \"matchType\": \"whereUsedRelationshipBased\",\n          \"relationshipName\": \"ischildof\",\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"data\": {\n      \"attributes\": {\n        \"startdate\": {},\n        \"enddate\": {},\n        \"displayname\": {},\n        \"description\": {},\n        \"entity\": {},\n        \"brand\": {},\n        \"warranty\": {},\n        \"skusize\": {},\n        \"source\": {},\n        \"skuitemtype\": {},\n        \"channel\": {},\n        \"directshiprestrict\": {},\n        \"disposalfee\": {},\n        \"willcallrestrict\": {},\n        \"parantheticamount\": {},\n        \"willcallfactoryshipind\": {},\n        \"noncontinentalprepaid\": {},\n        \"continentalprepaid\": {},\n        \"unusualdemandquantity\": {},\n        \"hazmatflag\": {},\n        \"prop65indicator\": {},\n        \"suppliernumbername\": {},\n        \"suppliersitenumber\": {},\n        \"storeprimarysupplierid\": {},\n        \"ecomprimarysupplierid\": {},\n        \"supplierchannel\": {},\n        \"alternatesupplierid\": {},\n        \"msrp\": {},\n        \"storeunitcost\": {},\n        \"ecommunitcost\": {},\n        \"retail\": {},\n        \"length\": {},\n        \"shippingwidth\": {},\n        \"height\": {},\n        \"grossweight\": {},\n        \"liquidvolume\": {},\n        \"liquidunitofmeasure\": {},\n        \"countryofmanufacture\": {},\n        \"originindicator\": {},\n        \"plannedonsitedate\": {},\n        \"warrantyflag\": {},\n        \"monogramcharge\": {},\n        \"diff1type\": {},\n        \"diff1group\": {},\n        \"diff2type\": {},\n        \"diff2group\": {},\n        \"ecommactivesizes\": {},\n        \"cost\": {},\n        \"ecomminnerpack\": {},\n        \"ecommoosdate\": {},\n        \"specialprogramtype\": {},\n        \"storesubset\": {},\n        \"factoryshipleadtime\": {},\n        \"sizecase\": {},\n        \"storecollectionnumbername\": {},\n        \"lifestyle\": {},\n        \"suppliermfrshippoint\": {},\n        \"sizeinner\": {},\n        \"packagetype\": {},\n        \"weightunitofmeasure\": {},\n        \"whsesupplier1\": {},\n        \"whsesuppliershippoint1\": {},\n        \"supplierleadtime\": {},\n        \"ecomhangingindicator\": {},\n        \"effindicator\": {},\n        \"storeset\": {},\n        \"floorsetdate\": {},\n        \"christmasindicator\": {},\n        \"protectionplan\": {},\n        \"ecommsuppliershippoint\": {},\n        \"maxbackorderdays\": {},\n        \"storeactivesizes\": {},\n        \"storepurchasetype\": {},\n        \"ecommpurchasetype\": {},\n        \"sourcingpartner\": {},\n        \"factoryshipuom\": {},\n        \"ticketstockno\": {},\n        \"ticketattribute\": {},\n        \"season\": {},\n        \"ppkno\": {},\n        \"ecommjcpstatus\": {},\n        \"conceptual\": {},\n        \"whseprocessingfee1\": {},\n        \"compliancelikeitem\": {},\n        \"enterpriseinventoryindicator\": {},\n        \"fashionpyramid\": {},\n        \"deliveryinstructions\": {},\n        \"packingmethod\": {},\n        \"pricetier\": {},\n        \"specialitemcode\": {},\n        \"storeoosdate\": {},\n        \"factoryshiplimitedinvind\": {},\n        \"ecommminorderqty\": {},\n        \"shippinginforequired\": {},\n        \"producttitle\": {},\n        \"assembledlength\": {},\n        \"assembledwidth\": {},\n        \"assembledheight\": {},\n        \"assembledweight\": {},\n        \"searchkeywordsnavigation\": {},\n        \"shippointstate\": {},\n        \"shippointcity\": {},\n        \"storejcpstatus\": {}\n      }\n    }\n  }\n}"
+				},
+				"description": "1. SKU to Lot Rollup Model"
+			},
+			"response": []
+		},
+		{
+			"name": "Image to sku Graph Process model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model created successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku_entityManageModel. Please check back after 1 min\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entityModel\": {\n    \"id\": \"image_hasimages_sku_graphProcessModel\",\n    \"name\": \"image_hasimages_sku\",\n    \"type\": \"graphProcessModel\",\n    \"domain\": \"generic\",\n    \"properties\": {\n      \"defaultValueSource\": \"internal\",\n      \"defaultValueLocale\": \"en-US\",\n      \"matchRules\": [\n        {\n          \"seq\": 1,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"property_originalfilename\": \"primaryimage\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\",\n                  \"setRelAttrValues\": [\n                    {\n                      \"isprimary\": \"true\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\",\n                  \"setRelAttrValues\": [\n                    {\n                      \"isprimary\": \"true\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"seq\": 2,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"property_originalfilename\": \"alternateimages\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\",\n                  \"setRelAttrValues\": [\n                    {\n                      \"isprimary\": \"false\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\",\n                  \"setRelAttrValues\": [\n                    {\n                      \"isprimary\": \"false\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"data\": {}\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Lot to PP Graph Process model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model created successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku_entityManageModel. Please check back after 1 min\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entityModel\": {\n    \"id\": \"lot_productpresentationtolot_productpresentation_singlelotpp_graphProcessModel\",\n    \"name\": \"lot_productpresentationtolot_productpresentation_singlelotpp\",\n    \"type\": \"graphProcessModel\",\n    \"domain\": \"generic\",\n    \"properties\": {\n      \"defaultValueSource\": \"internal\",\n      \"defaultValueLocale\": \"en-US\",\n      \"graphProcessPath\": \"lot_productpresentationtolot_productpresentation\",\n      \"matchRules\": [\n        {\n          \"seq\": 1,\n          \"matchType\": \"whereUsedRelationshipBased\",\n          \"relationshipName\": \"productpresentationtolot\",\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"Create\"\n                },\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"data\": {\n      \"attributes\": {\n        \"startdate\": {\n          \"properties\": {\n            \"strategy\": \"min\"\n          }\n        },\n        \"enddate\": {\n          \"properties\": {\n            \"strategy\": \"max\"\n          }\n        },\n        \"producttitle\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"division\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"subdivision\": {\n          \"properties\": {\n            \"strategy\": \"aggregate\"\n          }\n        },\n        \"inspirationalcopy\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        }\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Lot to PP Graph Process model - Multi Lot PP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model created successfully\"] = data.has(\"Entity has been submitted for create with entity Id : sku_entityManageModel. Please check back after 1 min\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entityModel\": {\n    \"id\": \"lot_productpresentationtolot_productpresentation_multilotpp_graphProcessModel\",\n    \"name\": \"lot_productpresentationtolot_productpresentation_multilotpp\",\n    \"type\": \"graphProcessModel\",\n    \"domain\": \"generic\",\n    \"properties\": {\n      \"defaultValueSource\": \"internal\",\n      \"defaultValueLocale\": \"en-US\",\n      \"graphProcessPath\": \"lot_productpresentationtolot_productpresentation\",\n      \"matchRulesOperator\": \"or\",\n      \"matchRules\": [\n        {\n          \"seq\": 1,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"multilotppvalupc\": \"skuupcs\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"seq\": 2,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"multilotppvalvpn\": \"skuvpns\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"seq\": 3,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"multilotppvalppk\": \"skuppks\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"seq\": 4,\n          \"matchType\": \"attributeBased\",\n          \"attributeMaps\": [\n            {\n              \"multilotppvalppid\": \"identifier\"\n            }\n          ],\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"AddTargetRelationship\"\n                },\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"seq\": 5,\n          \"matchType\": \"whereUsedRelationshipBased\",\n          \"relationshipName\": \"productpresentationtolot\",\n          \"noMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"DoNothing\"\n                }\n              ]\n            }\n          ],\n          \"singleMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ],\n          \"multiMatchResult\": [\n            {\n              \"actions\": [\n                {\n                  \"actionName\": \"CopyData\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"data\": {\n      \"attributes\": {\n        \"startdate\": {\n          \"properties\": {\n            \"strategy\": \"min\"\n          }\n        },\n        \"enddate\": {\n          \"properties\": {\n            \"strategy\": \"max\"\n          }\n        },\n        \"producttitle\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"division\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"subdivision\": {\n          \"properties\": {\n            \"strategy\": \"aggregate\"\n          }\n        },\n        \"inspirationalcopy\": {\n          \"properties\": {\n            \"strategy\": \"copyWhenEmpty\"\n          }\n        },\n        \"skuupcs\": {\n          \"properties\": {\n            \"strategy\": \"aggregate\"\n          }\n        },\n        \"skuvpns\": {\n          \"properties\": {\n            \"strategy\": \"aggregate\"\n          }\n        },\n        \"skuppks\": {\n          \"properties\": {\n            \"strategy\": \"aggregate\"\n          }\n        }\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sku to Lot Graph Process model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_ischildof_lot_graphProcessModel\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"graphProcessModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sku to Image Graph Process model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_hasimages_image_graphProcessModel\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"graphProcessModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lot to Sku Graph Process model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_hasimages_image_graphProcessModel\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"graphProcessModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Image to Sku Graph Process model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_hasimages_image_graphProcessModel\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"graphProcessModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lot to PP Graph Process model",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"lot_productpresentationtolot_productpresentation_singlelotpp_graphProcessModel\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"graphProcessModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Graph Process Models",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "admin@riversand.com_user",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"admin\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"graphProcessModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sku to Lot rollup model with context",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\": [\n        {\n          \"taxonomy\": \"productsetuptaxonomy\",\n          \"classification\": \"pl3908004/pt3909169/st4101490/it3936700\"\n        }\n      ],\n      \"id\": \"sku_ischildof_lot_rollupModel\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"rollupModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "3. Delete sku_ischildof_lot_rollupModel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"Entity has been submitted for delete with entity Id : new_entityManageModel. Please check back after 1min\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/delete",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"admin\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"entityModel\": {\n    \"id\": \"sku_ischildof_lot_rollupModel\",\n    \"type\": \"rollupModel\"\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DONOT USE - NOT REQUIRED - Match Config for lot_matchConfig",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"configObject\": {\n    \"id\": \"lot_matchConfig\",\n    \"name\": \"lot\",\n    \"type\": \"matchConfig\",\n    \"data\": {\n      \"jsonData\": {\n        \"type\": \"config\",\n        \"matchRules\": [\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 1,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"lot\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"orin\": {\n                        \"exact\": \"{{orin}}\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          },\n          {\n            \"matchType\": \"deterministic\",\n            \"matchSequence\": 2,\n            \"searchQuery\": {\n              \"query\": {\n                \"valueContexts\": [\n                  {\n                    \"source\": \"internal\",\n                    \"locale\": \"en-US\"\n                  }\n                ],\n                \"filters\": {\n                  \"typesCriterion\": [\n                    \"lot\"\n                  ],\n                  \"attributesCriterion\": [\n                    {\n                      \"rmsitemid\": {\n                        \"exact\": \"{{rmsitemid}}\"\n                      }\n                    }\n                  ]\n                }\n              }\n            }\n          }\n        ]\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Lot Match Config",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/configurationservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "t1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-vendorName",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"id\": \"lot_matchConfig\",\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"matchConfig\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\r\n        \"_ALL\"\r\n      ],\r\n       \"properties\":[\"_ALL\"]\r\n    },\r\n    \"options\": {\r\n      \"maxRecords\": 100\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Graph Process Models copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "admin@riversand.com_user",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"admin\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"graphProcessModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Graph Process Models copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"model get successful\"] = data.has(\"sku_entityValidationModel\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitymodelservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "admin@riversand.com_user",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"admin\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"filters\": {\n        \"typesCriterion\": [\n          \"graphProcessModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ORIN API Test",
+			"request": {
+				"url": "http://lenlmpadmrfpp01.jcpenney.com:7005/RMSItem/GenerateORIN/getItemNumbers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"UserID\": \"PimUser\", \"ItemCount\": \"1\", \"RequestID\": \"TOKEN\"}"
+				},
+				"description": "ORIN API Test"
+			},
+			"response": []
+		}
+	]
+}

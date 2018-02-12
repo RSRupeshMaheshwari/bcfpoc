@@ -1,0 +1,1129 @@
+{
+	"variables": [],
+	"info": {
+		"name": "12. Entity Graph Service - Data",
+		"_postman_id": "d44ff268-1b0d-fea0-f059-a4ed6df43368",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Create SKU to Lot Entity Graph Request",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygraphservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"graphprocessconfig\": \"sku_ischildof_lot\"\n  },\n  \"entity\": {\n    \"id\": \"PH_TEST_LG_18_JUN_5\",\n    \"type\": \"sku\",\n    \"data\": {}\n  }\n}"
+				},
+				"description": "Create SKU to Image Entity Graph Request"
+			},
+			"response": []
+		},
+		{
+			"name": "2. Create SKU to Image Entity Graph Request",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygraphservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"graphprocessconfig\": \"sku_hasimages_image\"\n  },\n  \"entity\": {\n    \"id\": \"PH_TEST_LG_18_JUN_1\",\n    \"type\": \"sku\",\n    \"data\": {}\n  }\n}"
+				},
+				"description": "Create SKU to Image Entity Graph Request"
+			},
+			"response": []
+		},
+		{
+			"name": "3. Create Image to SKU Entity Graph Request",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygraphservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"graphprocessconfig\" :\"image_hasimages_sku\"\n  },\n  \"entity\": {\n    \"id\": \"PH_1005_jpg_image\",\n    \"type\": \"image\",\n    \"data\": {\n    }\n  }\n}"
+				},
+				"description": "Create Image to SKU Entity Graph Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Lot to SKU Entity Graph Request",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygraphservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"graphprocessconfig\": \"lot_ischildof_sku\"\n  },\n  \"entity\": {\n    \"id\": \"PH_TEST_LG_18_JUN_5\",\n    \"type\": \"lot\",\n    \"data\": {}\n  }\n}"
+				},
+				"description": "Create Lot to SKU Entity Graph Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Lot to PP Entity Graph Request - Single Lot PP",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygraphservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"graphprocessconfig\": \"lot_productpresentationtolot_productpresentation_singlelotpp\"\n  },\n  \"entity\": {\n    \"id\": \"PH_TEST_LOT_10_JUL_1\",\n    \"type\": \"lot\",\n    \"data\": {}\n  }\n}"
+				},
+				"description": "Create Lot to PP Entity Graph Request"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Lot to PP Entity Graph Request - Multi Lot PP",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entitygraphservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"graphprocessconfig\": \"lot_productpresentationtolot_productpresentation_multilotpp\"\n  },\n  \"entity\": {\n    \"id\": \"PH_TEST_LOT_10_JUL_1\",\n    \"type\": \"lot\",\n    \"data\": {}\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get LOT using Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"tests[\"Successfull Request\"] = jsonData[\"entityOperationResponse\"][\"status\"] === \"success\"",
+							"",
+							"tests[\"Entities Found\"] = _.has(jsonData[\"entityOperationResponse\"], 'entities');"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"contexts\":[\n        {\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptybookshelves/itybookshelves\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          }],\n      \"id\":\"FKtkLqs2dDVAfI45HFx0B+w+cjzsn9bmgVy1VGG0zNs=\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"lot\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get SKU using Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"tests[\"Successfull Request\"] = jsonData[\"entityOperationResponse\"][\"status\"] === \"success\"",
+							"",
+							"tests[\"Entities Found\"] = _.has(jsonData[\"entityOperationResponse\"], 'entities');"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"admin\"]",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"params\": {\r\n    \"query\": {\r\n      \"id\": \"PH_TEST_LG_18_JUN_4\",\r\n      \"filters\": {\r\n        \"typesCriterion\": [\r\n          \"sku\"\r\n        ]\r\n      }\r\n    },\r\n    \"fields\": {\r\n      \"attributes\": [\"_ALL\"],\r\n      \"relationships\":[\"_ALL\"]\r\n    }\r\n  }\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get PP using Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"tests[\"Successfull Request\"] = jsonData[\"entityOperationResponse\"][\"status\"] === \"success\"",
+							"",
+							"tests[\"Entities Found\"] = _.has(jsonData[\"entityOperationResponse\"], 'entities');"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"productpresentation_id\",\n      \"filters\": {\n        \"typesCriterion\": [\n          \"productpresentation\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get query equivalent to LOT match",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+							"",
+							"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+							"",
+							"tests[\"entity get successfully\"] = data.has(\"NSUN KDS_SPF30 200ML\");",
+							"",
+							"console.log(data);",
+							"",
+							"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/get",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "{{owner}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"params\": {\n    \"query\": {\n        \"valueContexts\": [\n          {\n            \"locale\": \"en-US\",\n            \"source\": \"internal\"\n          }\n        ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"lot\"\n        ],\n        \"attributesCriterion\": [\n          {\n            \"subproducttype\": {\n              \"exact\": \"4101041\"\n            }\n          },\n          {\n            \"itemtype\": {\n              \"exact\": \"3919133\"\n            }\n          },\n          {\n            \"cost\": {\n              \"exact\": \"12345\"\n            }\n          },\n          {\n            \"length\": {\n              \"exact\": \"12\"\n            }\n          },\n          {\n            \"height\": {\n              \"exact\": \"12\"\n            }\n          },\n          {\n            \"grossweight\": {\n              \"exact\": \"12\"\n            }\n          },\n          {\n            \"diff1group\": {\n              \"exact\": \"COLORS\"\n            }\n          },\n          {\n            \"diff2group\": {\n              \"exact\": \"NOSIZE\"\n            }\n          },\n          {\n            \"colordesc\": {\n              \"exact\": \"Red\"\n            }\n          },\n          {\n            \"assembledweight\": {\n              \"exact\": \"12\"\n            }\n          },\n          {\n            \"assembledlength\": {\n              \"exact\": \"12\"\n            }\n          },\n          {\n            \"assembledwidth\": {\n              \"exact\": \"12\"\n            }\n          },\n          {\n            \"assembledheight\": {\n              \"exact\": \"12\"\n            }\n          },\n          {\n            \"countryofmanufacture\": {\n              \"exact\": \"DZ\"\n            }\n          }\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"subproducttype\",\n        \"countryofmanufacture\",\n        \"assembledheight\",\n        \"assembledwidth\",\n        \"assembledlength\",\n        \"assembledweight\",\n        \"colordesc\",\n        \"diff2group\",\n        \"diff1group\",\n        \"grossweight\",\n        \"height\",\n        \"length\",\n        \"cost\",\n        \"itemtype\"\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create SKU with match and rollup attirbutes filled",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"buyer\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n  \"entity\": {\n    \"id\": \"PH_TEST_1\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"createdBy\": \"santu.joe@gmail.com_user\",\n      \"createdService\": \"entityManageService\",\n      \"createdDate\": \"2017-06-01T08:55:54.682-0500\",\n      \"modifiedService\": \"entityManageService\",\n      \"modifiedBy\": \"system_user\",\n      \"modifiedDate\": \"2017-06-01T09:56:35.560-0500\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"primaryimage\":{\n        \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1001.jpg\"\n            }\n          ]  \n        },\n        \"alternateimages\":{\n        \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1002.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1003.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1003.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1004.jpg\"\n            }\n          ]  \n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"Raymondshirt15\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"39c219b3-153d-45ea-8aff-cbb5403bea79\",\n              \"value\": \"Raymondshirt15\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2079675c-014b-4f92-b173-c547104623ab\",\n              \"value\": \"Nike\"\n            }\n          ]\n        },\n        \"lifecyclestage\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"93150e6b-6ff9-40ee-afa4-2261a17a4e24\",\n              \"value\": \"Draft\",\n              \"properties\": {\n                \"referenceData\": \"lifecyclestage/draft_lifecyclestage\"\n              }\n            }\n          ]\n        },\n        \"creationdate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"587129f8-8766-46e0-95cf-3e3fbb8dbe31\",\n              \"value\": \"2017-06-01T08:55:54.889-0500\"\n            }\n          ]\n        },\n        \"source\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1045feba-bd79-48cd-a392-6c6aef4f69bc\",\n              \"value\": \"PIM\",\n              \"properties\": {\n                \"referenceData\": \"sourcevalues/pim_sourcevalues\"\n              }\n            }\n          ]\n        },\n        \"skuitemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"fb3512e8-264c-4dd3-9aa3-880b64af3284\",\n              \"value\": \"FS\"\n            }\n          ]\n        },\n        \"channel\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"eefd49aa-3036-43f4-8ff3-e7c8af60aa55\",\n              \"value\": \"DIR\",\n              \"properties\": {\n                \"referenceData\": \"channelvalues/dir_channelvalues\"\n              }\n            }\n          ]\n        },\n        \"willcallfactoryshipind\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1db37712-d5ea-488f-9426-f9a44025bac9\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"noncontinentalprepaid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4f1766e6-5c76-4447-8a31-9331d64cafb5\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"continentalprepaid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"15760e3d-8ff4-4c0c-8c8d-dbfce4a284b1\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"unusualdemandquantity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4733e9dd-8131-4b3f-8721-749d13b94eee\",\n              \"value\": 11\n            }\n          ]\n        },\n        \"ecomminnerpack\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4135cad3-b1ed-4cbe-bfbe-d4905b4287c0\",\n              \"value\": 1\n            }\n          ]\n        },\n        \"specialprogramtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"d551f29d-bd64-4aeb-845f-549f3076b8ef\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"specialprogramtypevalues/0_specialprogramtypevalues\"\n              }\n            }\n          ]\n        },\n        \"storesubset\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"17945f95-1bfa-424b-9bbc-4ccfd6aa4c0d\",\n              \"value\": \"6\",\n              \"properties\": {\n                \"referenceData\": \"storesubsetvalues/6_storesubsetvalues\"\n              }\n            }\n          ]\n        },\n        \"storejcpstatus\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"35ad04cc-41c3-4878-b5fd-5d9afa811d99\",\n              \"value\": \"3\",\n              \"properties\": {\n                \"referenceData\": \"storejcpstatusvalues/3_storejcpstatusvalues\"\n              }\n            }\n          ]\n        },\n        \"factoryshipleadtime\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"103d5965-417d-4650-a078-24b00f3a13d5\",\n              \"value\": 2\n            }\n          ]\n        },\n        \"sizecase\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6b9a480b-cf31-42aa-9f34-1f97b5ae111d\",\n              \"value\": \"1\"\n            }\n          ]\n        },\n        \"lifestyle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"299d650e-ad4d-4df6-8545-3f1e54b63c19\",\n              \"value\": \"M\",\n              \"properties\": {\n                \"referenceData\": \"lifestylevalues/m_lifestylevalues\"\n              }\n            }\n          ]\n        },\n        \"suppliermfrshippoint\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"3d9c0531-7165-488c-b4b1-5d51b508b925\",\n              \"value\": \"00\"\n            }\n          ]\n        },\n        \"sizeinner\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"ce89d41d-b2b4-4c2b-9c65-34c7583efd38\",\n              \"value\": \"1\"\n            }\n          ]\n        },\n        \"packagetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b9cc5360-f816-418a-bbe4-90e82360c41f\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"packagetypevalues/ea_packagetypevalues\"\n              }\n            }\n          ]\n        },\n        \"weightunitofmeasure\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9f66e6d7-42c7-4734-82df-203076440f99\",\n              \"value\": \"LBS\",\n              \"properties\": {\n                \"referenceData\": \"weightuomvalues/lbs_weightuomvalues\"\n              }\n            }\n          ]\n        },\n        \"ecomhangingindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7a3e5388-1f7c-4ed2-bc3f-b576c55e7936\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"effindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4ef7a8a6-d19b-401b-8786-d432fc5ebe37\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"storeset\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6cc2e866-302f-4f0b-ba79-4512114d3421\",\n              \"value\": \"6\",\n              \"properties\": {\n                \"referenceData\": \"storesetvalues/6_storesetvalues\"\n              }\n            }\n          ]\n        },\n        \"christmasindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"e95b63bf-5a75-4b10-8187-caabe54a1261\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"protectionplan\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9706274e-baf1-42cb-b01d-48736d51d9f3\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"ecommsuppliershippoint\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"d1d40a47-d378-427d-8849-02a5e9026361\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"maxbackorderdays\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"12ed21c2-713d-4833-b955-d3589a42888f\",\n              \"value\": 7\n            }\n          ]\n        },\n        \"storepurchasetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"c483e617-fa0b-4be0-b4a5-9b822171562b\",\n              \"value\": \"B\",\n              \"properties\": {\n                \"referenceData\": \"storepurchasetypevalues/b_storepurchasetypevalues\"\n              }\n            }\n          ]\n        },\n        \"ecommpurchasetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"18665ff0-6bff-4921-9570-7261f0809f7f\",\n              \"invalidValue\": \"SB\"\n            }\n          ]\n        },\n        \"factoryshipuom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"11be5c31-0cab-4ace-b606-2d329240fdf0\",\n              \"invalidValue\": \"D\"\n            }\n          ]\n        },\n        \"ticketstockno\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6fe70a92-ff0e-4c8a-b614-5c302402f393\",\n              \"value\": \"NONE\"\n            }\n          ]\n        },\n        \"season\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"67dcd7f7-7e30-46f7-aa0d-589e77e98b26\",\n              \"value\": \"401\",\n              \"properties\": {\n                \"referenceData\": \"seasonvalues/401_seasonvalues\"\n              }\n            }\n          ]\n        },\n        \"ecommjcpstatus\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"337afddc-be55-48fd-9a2a-4b917036636c\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"ecommjcpstatusvalues/1_ecommjcpstatusvalues\"\n              }\n            }\n          ]\n        },\n        \"enterpriseinventoryindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"f4a138d6-fe43-4ae4-a0eb-45ec8e19e51c\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"fashionpyramid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"dcbc696c-010c-4fca-8357-5bd5d9af2d2f\",\n              \"value\": \"C\",\n              \"properties\": {\n                \"referenceData\": \"fashionpyramidvalues/c_fashionpyramidvalues\"\n              }\n            }\n          ]\n        },\n        \"deliveryinstructions\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9698bd9e-dabc-4b09-83da-9732c7c1421c\",\n              \"value\": \"S\",\n              \"properties\": {\n                \"referenceData\": \"deliveryinstructionvalues/s_deliveryinstructionvalues\"\n              }\n            }\n          ]\n        },\n        \"pricetier\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"46ee1e54-aacf-4db7-b359-928ee2105b94\",\n              \"value\": \"B\",\n              \"properties\": {\n                \"referenceData\": \"pricetiervalues/b_pricetiervalues\"\n              }\n            }\n          ]\n        },\n        \"specialitemcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6b2800c7-4aa5-41a1-9385-fd4bf6fc615d\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"specialitemcodevalues/0_specialitemcodevalues\"\n              }\n            }\n          ]\n        },\n        \"factoryshiplimitedinvind\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"287c85d6-7465-405a-8df5-c91dfd1a314d\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"shippinginforequired\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"5a1f179d-bfc4-4ede-8ba6-d165f71c42a7\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"sellinguom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7ce78177-003c-47c0-9a20-1f2966e78ec4\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"sellinguomvalues/ea_sellinguomvalues\"\n              }\n            }\n          ]\n        },\n        \"standarduom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"fe18783c-61b8-4179-9c7b-2c4555af5bc0\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"standarduomvalues/ea_standarduomvalues\"\n              }\n            }\n          ]\n        },\n        \"sellableflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"53cf2fe6-0d53-4864-afa5-25a3e3af023e\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"orderableflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2004b5d4-b7ae-42bd-9f95-cb17e3599024\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"inventoryflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1829861d-1af6-4402-a218-751ff3e704f0\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"orinfetchrequestbody\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"de2e8c9a-faed-475f-99d9-f9385cba348e\",\n              \"value\": \"{\\\"UserID\\\":\\\"PimUser\\\",\\\"ItemCount\\\":\\\"1\\\",\\\"RequestID\\\":\\\"TOKEN\\\"}\"\n            }\n          ]\n        },\n        \"orin\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"450b8cd9-2c8e-4b7d-ad1b-68f560f83c23\",\n              \"value\": \"PhaniTestingAssetAlso\"\n            }\n          ]\n        },\n        \"diff1type\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"c19a7a43-5f9d-4a83-9247-096bdc873982\",\n              \"value\": \"Color\",\n              \"properties\": {\n                \"referenceData\": \"diff1typevalues/color_diff1typevalues\"\n              }\n            }\n          ]\n        },\n        \"diff1group\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"77447a78-a33a-4700-b6fb-34afe5fbed90\",\n              \"value\": \"COLORS\",\n              \"properties\": {\n                \"referenceData\": \"diff1groupvalues/colors_diff1groupvalues\"\n              }\n            }\n          ]\n        },\n        \"diff2type\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"562e1389-d967-48e7-acef-b71e698e389a\",\n              \"value\": \"Size\",\n              \"properties\": {\n                \"referenceData\": \"diff2typevalues/size_diff2typevalues\"\n              }\n            }\n          ]\n        },\n        \"diff2group\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"f697bb2e-8014-4338-b38a-c2da429e53de\",\n              \"value\": \"NOSIZE\",\n              \"properties\": {\n                \"referenceData\": \"diff2groupvalues/nosize_diff2groupvalues\"\n              }\n            }\n          ]\n        },\n        \"skusize\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"26f9329c-134f-497f-8dd2-018e6b0fc0a3\",\n              \"value\": \"1SZ*\"\n            }\n          ]\n        },\n        \"itemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"af16ee67-afda-4181-8dce-3ff0c46ec3b0\",\n              \"value\": \"3919133\",\n              \"properties\": {\n                \"referenceData\": \"itemtype/3919133_itemtype\"\n              }\n            }\n          ]\n        },\n        \"subproducttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"339cb56e-9b8f-4aac-ab97-88dedf02cce9\",\n              \"value\": \"4101041\",\n              \"properties\": {\n                \"referenceData\": \"subproducttype/4101041_subproducttype\"\n              }\n            }\n          ]\n        },\n        \"producttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7fa055ac-b5a4-4688-aaa8-ef5d9712d819\",\n              \"value\": \"3909002\",\n              \"properties\": {\n                \"referenceData\": \"producttype/3909002_producttype\"\n              }\n            }\n          ]\n        },\n        \"productline\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"dd3e2861-ccda-4fd4-aa84-2010d047e4db\",\n              \"value\": \"3908002\",\n              \"properties\": {\n                \"referenceData\": \"productline/3908002_productline\"\n              }\n            }\n          ]\n        },\n        \"cost\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7efe89b5-85bd-4a48-afc2-feb7965ae4b6\",\n              \"value\": 733535\n            }\n          ]\n        },\n        \"estimatedupsshippingcharge\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"81bf43ea-bcec-43c8-b107-c9e860fb545a\",\n              \"value\": \"9.38\"\n            }\n          ]\n        },\n        \"plannedonsitedate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"778c03f0-ea50-46c1-ab22-f373cfb3162e\",\n              \"value\": \"2017-06-04T00:00:00.000-0500\"\n            }\n          ]\n        },\n        \"grossweight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"77470b37-fdd4-48c9-a91d-2c938a6ba5e3\",\n              \"value\": 68744\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"61c2a49d-d2dc-4993-a147-e9a755a1ce32\",\n              \"value\": 67869\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b155ce5c-2dd1-4eac-a92b-b6b7ddcde6ef\",\n              \"value\": 4635\n            }\n          ]\n        },\n        \"shippingwidth\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2b9569b7-c294-41f5-a87f-a9149365fcd6\",\n              \"value\": 68454\n            }\n          ]\n        },\n        \"countryofmanufacture\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1cdce198-4a2b-4cae-8a82-6a326b5bcc96\",\n              \"value\": \"DZ\",\n              \"properties\": {\n                \"referenceData\": \"countryofmanufacturevalues/dz_countryofmanufacturevalues\"\n              }\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"04c6fcce-651e-4c28-9db4-10d41fcc10d9\",\n              \"value\": 3463\n            }\n          ]\n        },\n        \"assembledlength\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8b4466f0-8f50-4298-b7fb-0626982f69eb\",\n              \"value\": 855\n            }\n          ]\n        },\n        \"assembledweight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"eca47a8b-0cee-4766-8ee7-ed0e1e634801\",\n              \"value\": 3733\n            }\n          ]\n        },\n        \"assembledwidth\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9fc09bb0-9ae3-431f-99b7-60fd45272482\",\n              \"value\": 966\n            }\n          ]\n        },\n        \"colordesc\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b8f4b70a-f39a-40f5-a328-de7eccaef8f6\",\n              \"value\": \"PhaniHere\"\n            }\n          ]\n        },\n        \"vpn\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8ea4f08b-3629-454b-a51a-6ac4d476b3ed\",\n              \"value\": \"ABC123\"\n            }\n          ]\n        },\n        \"hazmatflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"11ede908-0549-48f7-8a1c-c6b8063a0810\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"msrp\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"88da66a1-7d07-4f96-9e4e-4f92638d24d0\",\n              \"value\": 222\n            }\n          ]\n        },\n        \"prop65indicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"bf8e6a7f-c7a6-41d9-aa38-3a6094106ef4\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"shippointcity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"0c6ad23d-6a3f-4382-aa44-0ae3c0f0ab82\",\n              \"value\": \"bangalore\"\n            }\n          ]\n        },\n        \"shippointstate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"33fe6d56-4d5f-4ed0-997d-dd81cf8d8f6f\",\n              \"value\": \"karnataka\"\n            }\n          ]\n        },\n        \"class\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1a34b680-5dc6-45ed-9fec-07de99a0174a\",\n              \"value\": \"1002_greetingcards\",\n              \"properties\": {\n                \"referenceData\": \"class/1002greetingcards_class\"\n              }\n            }\n          ]\n        },\n        \"division\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8b1b200b-95fc-4b63-97d7-951392e9252e\",\n              \"value\": \"2\",\n              \"properties\": {\n                \"referenceData\": \"division/2_division\"\n              }\n            }\n          ]\n        },\n        \"entity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"30a724a3-04d9-45da-b6a3-8a862200f2b9\",\n              \"value\": \"11\",\n              \"properties\": {\n                \"referenceData\": \"entity/11_entity\"\n              }\n            }\n          ]\n        },\n        \"subdivision\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"a306a4b0-8234-46ea-8d4b-3047be541799\",\n              \"value\": \"100\",\n              \"properties\": {\n                \"referenceData\": \"subdivision/100_subdivision\"\n              }\n            }\n          ]\n        },\n        \"initialmarkup\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6378cf94-eccf-4e33-8f3e-6c44bb74ee9a\",\n              \"value\": -102775\n            }\n          ]\n        },\n        \"retail\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"226e7ba1-c2d2-44aa-be67-af367d3629ae\",\n              \"value\": 12\n            }\n          ]\n        },\n        \"subclass\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"914507aa-6919-4a27-a8a2-addb27814815\",\n              \"value\": \"1002_greetingcards\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Image Entity with Asset Linking attributes",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"vendor\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entity\": {\n    \"id\": \"PH_1001_jpg_image\",\n    \"name\": \"mobile001.png\",\n    \"type\": \"image\",\n    \"properties\": {\n      \"source\": \"internal\",\n      \"createdByService\": \"assetservice\",\n      \"createdBy\": \"SONM\",\n      \"createdDate\": \"2017-05-16T04:30:43.260-0500\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"property_originalfilename\": {\n          \"values\": [\n            {\n              \"value\": \"PH_1001.jpg\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"property_ownershipdata\": {\n          \"values\": [\n            {\n              \"value\": \"Nike\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"about\": {\n          \"values\": [\n            {\n              \"value\": \"flower brown\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"aperturevalue\": {\n          \"values\": [\n            {\n              \"value\": \"7.0\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"artist\": {\n          \"values\": [\n            {\n              \"value\": \"Smith\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"bitspersample\": {\n          \"values\": [\n            {\n              \"value\": \"8\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"colorcomponents\": {\n          \"values\": [\n            {\n              \"value\": \"3\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"colorspace\": {\n          \"values\": [\n            {\n              \"value\": \"sRGB\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"componentsconfiguration\": {\n          \"values\": [\n            {\n              \"value\": \"Y, Cb, Cr, -\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"compressedbitsperpixel\": {\n          \"values\": [\n            {\n              \"value\": \"5\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"copyright\": {\n          \"values\": [\n            {\n              \"value\": \"Independent Photographer - ©2017 Riversand SONM, all rights reserved\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"copyrightnotice\": {\n          \"values\": [\n            {\n              \"value\": \"Independent Photographer - ©2017 Riversand SONM, all rights reserved\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"copyrightowner\": {\n          \"values\": [\n            {\n              \"value\": \"SONM\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"copyrightstatus\": {\n          \"values\": [\n            {\n              \"value\": \"Public\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"countrycode\": {\n          \"values\": [\n            {\n              \"value\": \"1\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creator\": {\n          \"values\": [\n            {\n              \"value\": \"SONM\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creatorcontactinfoaddress\": {\n          \"values\": [\n            {\n              \"value\": \"Hawaii\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creatorcontactinfocity\": {\n          \"values\": [\n            {\n              \"value\": \"Hawaii\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creatorcontactinfocountry\": {\n          \"values\": [\n            {\n              \"value\": \"USA\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creatorcontactinfoemails\": {\n          \"values\": [\n            {\n              \"value\": \"rs@rs.com\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creatorcontactinfophones\": {\n          \"values\": [\n            {\n              \"value\": \"1123456789\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creatorcontactinfopostalcode\": {\n          \"values\": [\n            {\n              \"value\": \"500018\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creatorcontactinfostateorprovince\": {\n          \"values\": [\n            {\n              \"value\": \"Telangan\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creatorjobtitle\": {\n          \"values\": [\n            {\n              \"value\": \"Freelance photographer\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"creditline\": {\n          \"values\": [\n            {\n              \"value\": \"Independent Photographer - Riversand SONM Photography\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"customrendered\": {\n          \"values\": [\n            {\n              \"value\": \"Normal\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"dateacquired\": {\n          \"values\": [\n            {\n              \"value\": \"2017-05-16T04:30:43.260-0500\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"datecreated\": {\n          \"values\": [\n            {\n              \"value\": \"2017-05-16T04:30:43.260-0500\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"datemodified\": {\n          \"values\": [\n            {\n              \"value\": \"2017-05-16T04:30:43.260-0500\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"datetimeoriginal\": {\n          \"values\": [\n            {\n              \"value\": \"2017-05-16T04:30:43.260-0500\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"description\": {\n          \"values\": [\n            {\n              \"value\": \"mobile001\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"descriptionwriter\": {\n          \"values\": [\n            {\n              \"value\": \"SONM\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"digitalzoomratio\": {\n          \"values\": [\n            {\n              \"value\": \"1\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"encodingprocess\": {\n          \"values\": [\n            {\n              \"value\": \"Baseline DCT, Huffman coding\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"exifimageheight\": {\n          \"values\": [\n            {\n              \"value\": \"1704\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"exifimagewidth\": {\n          \"values\": [\n            {\n              \"value\": \"2272\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"exifversion\": {\n          \"values\": [\n            {\n              \"value\": \"0220\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"exposuremode\": {\n          \"values\": [\n            {\n              \"value\": \"Auto\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"exposuretime\": {\n          \"values\": [\n            {\n              \"value\": \"1/500\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"filesource\": {\n          \"values\": [\n            {\n              \"value\": \"Digital Camera\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"filetypeextension\": {\n          \"values\": [\n            {\n              \"value\": \"png\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"flash\": {\n          \"values\": [\n            {\n              \"value\": \"Auto, Did not fire\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"flashpixversion\": {\n          \"values\": [\n            {\n              \"value\": \"0100\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"fnumber\": {\n          \"values\": [\n            {\n              \"value\": \"4.9\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"focallength\": {\n          \"values\": [\n            {\n              \"value\": \"21.3 mm\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"focalplanexresolution\": {\n          \"values\": [\n            {\n              \"value\": \"8114.285714\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"focalplaneyresolution\": {\n          \"values\": [\n            {\n              \"value\": \"8114.285714\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"headline\": {\n          \"values\": [\n            {\n              \"value\": \"One plus one Mobile1\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"imagedescription\": {\n          \"values\": [\n            {\n              \"value\": \"Flower\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"imageheight\": {\n          \"values\": [\n            {\n              \"value\": \"360\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"imagesize\": {\n          \"values\": [\n            {\n              \"value\": \"480x360\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"imagewidth\": {\n          \"values\": [\n            {\n              \"value\": \"480\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"intellectualgenre\": {\n          \"values\": [\n            {\n              \"value\": \"sun light, flower\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"interoperabilityversion\": {\n          \"values\": [\n            {\n              \"value\": \"0100\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"iptcadmindetailsinstructions\": {\n          \"values\": [\n            {\n              \"value\": \"Beautiful Flower \",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"iptcadmindetailstitle\": {\n          \"values\": [\n            {\n              \"value\": \"Flower\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"iptclocationcity\": {\n          \"values\": [\n            {\n              \"value\": \"Mauna Kea\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"iptclocationcountry\": {\n          \"values\": [\n            {\n              \"value\": \"USA\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"iptcscenecode\": {\n          \"values\": [\n            {\n              \"value\": \"10100\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"iptcsubjectcode\": {\n          \"values\": [\n            {\n              \"value\": \"1000000\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"jfifversion\": {\n          \"values\": [\n            {\n              \"value\": \"1.01\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"jobidentifier\": {\n          \"values\": [\n            {\n              \"value\": \"jobId101\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"keyword\": {\n          \"values\": [\n            {\n              \"value\": \"Testtags\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"make\": {\n          \"values\": [\n            {\n              \"value\": \"Canon\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"maxaperturevalue\": {\n          \"values\": [\n            {\n              \"value\": \"2.8\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"megapixels\": {\n          \"values\": [\n            {\n              \"value\": \"0.173\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"meteringmode\": {\n          \"values\": [\n            {\n              \"value\": \"Center-weighted average\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"mimetype\": {\n          \"values\": [\n            {\n              \"value\": \"image/png\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"model\": {\n          \"values\": [\n            {\n              \"value\": \"Canon PowerShot S40\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"offsetschema\": {\n          \"values\": [\n            {\n              \"value\": \"4024\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"orientation\": {\n          \"values\": [\n            {\n              \"value\": \"Horizontal (normal)\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"padding\": {\n          \"values\": [\n            {\n              \"value\": \"(Binary data 2060 bytes, use -b option to extract)\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"rating\": {\n          \"values\": [\n            {\n              \"value\": \"4\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"ratingpercent\": {\n          \"values\": [\n            {\n              \"value\": \"75\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"relatedimageheight\": {\n          \"values\": [\n            {\n              \"value\": \"1704\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"relatedimagewidth\": {\n          \"values\": [\n            {\n              \"value\": \"2272\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"resolutionunit\": {\n          \"values\": [\n            {\n              \"value\": \"inches\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"rights\": {\n          \"values\": [\n            {\n              \"value\": \"Test Copyright\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"scenecapturetype\": {\n          \"values\": [\n            {\n              \"value\": \"Standard\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"sensingmethod\": {\n          \"values\": [\n            {\n              \"value\": \"One-chip color area\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"shutterspeedvalue\": {\n          \"values\": [\n            {\n              \"value\": \"1/501\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"source\": {\n          \"values\": [\n            {\n              \"value\": \"Digital Still Camera (DSC)\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"stateorprovince\": {\n          \"values\": [\n            {\n              \"value\": \"Hawaii\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"sublocation\": {\n          \"values\": [\n            {\n              \"value\": \"Mauna Kea\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"thumbnailId\": {\n          \"values\": [\n            {\n              \"value\": \"thumbnail001\",\n              \"source\": \"internal\"\n            }\n          ]\n        },\n        \"whitebalance\": {\n          \"values\": [\n            {\n              \"value\": \"Auto\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"worldregion\": {\n          \"values\": [\n            {\n              \"value\": \"US\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"xmpcopyrightnotice\": {\n          \"values\": [\n            {\n              \"value\": \"Independent Photographer - ©2017 Riversand SONM, all rights reserved\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"xmpcopyrightstatus\": {\n          \"values\": [\n            {\n              \"value\": \"public\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"xmpcreator\": {\n          \"values\": [\n            {\n              \"value\": \"Test Author\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"xmpcreatorjobtitle\": {\n          \"values\": [\n            {\n              \"value\": \"Freelance photographer\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"xmpdescriptionwriter\": {\n          \"values\": [\n            {\n              \"value\": \"SONM\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"xmptitle\": {\n          \"values\": [\n            {\n              \"value\": \"Flower\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"xresolution\": {\n          \"values\": [\n            {\n              \"value\": \"300\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"ycbcrpositioning\": {\n          \"values\": [\n            {\n              \"value\": \"Centered\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"ycbcrsubsampling\": {\n          \"values\": [\n            {\n              \"value\": \"YCbCr4\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        },\n        \"yresolution\": {\n          \"values\": [\n            {\n              \"value\": \"800\",\n              \"source\": \"internal\",\n              \"locale\": \"en-US\"\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "LotGroup - Create SKU with match and rollup attirbutes filled ",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "system_user",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"admin\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entity\": {\n    \"id\": \"PH_TEST_LG_18_JUN_5\",\n    \"type\": \"sku\",\n    \"properties\": {\n      \"createdBy\": \"santu.joe@gmail.com_user\",\n      \"createdService\": \"entityManageService\",\n      \"createdDate\": \"2017-06-01T08:55:54.682-0500\",\n      \"modifiedService\": \"entityManageService\",\n      \"modifiedBy\": \"system_user\",\n      \"modifiedDate\": \"2017-06-01T09:56:35.560-0500\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"lotgroup\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"lg_002\"\n            }\n          ]\n        },\n        \"primaryimage\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1001.jpg\"\n            }\n          ]\n        },\n        \"alternateimages\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1002.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1003.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1003.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1005.jpg\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"Raymondshirt15\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"39c219b3-153d-45ea-8aff-cbb5403bea79\",\n              \"value\": \"Raymondshirt15\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2079675c-014b-4f92-b173-c547104623ab\",\n              \"value\": \"Nike\"\n            }\n          ]\n        },\n        \"lifecyclestage\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"93150e6b-6ff9-40ee-afa4-2261a17a4e24\",\n              \"value\": \"Draft\",\n              \"properties\": {\n                \"referenceData\": \"lifecyclestage/draft_lifecyclestage\"\n              }\n            }\n          ]\n        },\n        \"creationdate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"587129f8-8766-46e0-95cf-3e3fbb8dbe31\",\n              \"value\": \"2017-06-01T08:55:54.889-0500\"\n            }\n          ]\n        },\n        \"source\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1045feba-bd79-48cd-a392-6c6aef4f69bc\",\n              \"value\": \"PIM\",\n              \"properties\": {\n                \"referenceData\": \"sourcevalues/pim_sourcevalues\"\n              }\n            }\n          ]\n        },\n        \"skuitemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"fb3512e8-264c-4dd3-9aa3-880b64af3284\",\n              \"value\": \"FS\"\n            }\n          ]\n        },\n        \"channel\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"eefd49aa-3036-43f4-8ff3-e7c8af60aa55\",\n              \"value\": \"DIR\",\n              \"properties\": {\n                \"referenceData\": \"channelvalues/dir_channelvalues\"\n              }\n            }\n          ]\n        },\n        \"willcallfactoryshipind\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1db37712-d5ea-488f-9426-f9a44025bac9\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"noncontinentalprepaid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4f1766e6-5c76-4447-8a31-9331d64cafb5\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"continentalprepaid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"15760e3d-8ff4-4c0c-8c8d-dbfce4a284b1\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"unusualdemandquantity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4733e9dd-8131-4b3f-8721-749d13b94eee\",\n              \"value\": 11\n            }\n          ]\n        },\n        \"ecomminnerpack\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4135cad3-b1ed-4cbe-bfbe-d4905b4287c0\",\n              \"value\": 1\n            }\n          ]\n        },\n        \"specialprogramtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"d551f29d-bd64-4aeb-845f-549f3076b8ef\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"specialprogramtypevalues/0_specialprogramtypevalues\"\n              }\n            }\n          ]\n        },\n        \"storesubset\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"17945f95-1bfa-424b-9bbc-4ccfd6aa4c0d\",\n              \"value\": \"6\",\n              \"properties\": {\n                \"referenceData\": \"storesubsetvalues/6_storesubsetvalues\"\n              }\n            }\n          ]\n        },\n        \"storejcpstatus\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"35ad04cc-41c3-4878-b5fd-5d9afa811d99\",\n              \"value\": \"3\",\n              \"properties\": {\n                \"referenceData\": \"storejcpstatusvalues/3_storejcpstatusvalues\"\n              }\n            }\n          ]\n        },\n        \"factoryshipleadtime\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"103d5965-417d-4650-a078-24b00f3a13d5\",\n              \"value\": 2\n            }\n          ]\n        },\n        \"sizecase\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6b9a480b-cf31-42aa-9f34-1f97b5ae111d\",\n              \"value\": \"1\"\n            }\n          ]\n        },\n        \"lifestyle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"299d650e-ad4d-4df6-8545-3f1e54b63c19\",\n              \"value\": \"M\",\n              \"properties\": {\n                \"referenceData\": \"lifestylevalues/m_lifestylevalues\"\n              }\n            }\n          ]\n        },\n        \"suppliermfrshippoint\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"3d9c0531-7165-488c-b4b1-5d51b508b925\",\n              \"value\": \"00\"\n            }\n          ]\n        },\n        \"sizeinner\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"ce89d41d-b2b4-4c2b-9c65-34c7583efd38\",\n              \"value\": \"1\"\n            }\n          ]\n        },\n        \"packagetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b9cc5360-f816-418a-bbe4-90e82360c41f\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"packagetypevalues/ea_packagetypevalues\"\n              }\n            }\n          ]\n        },\n        \"weightunitofmeasure\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9f66e6d7-42c7-4734-82df-203076440f99\",\n              \"value\": \"LBS\",\n              \"properties\": {\n                \"referenceData\": \"weightuomvalues/lbs_weightuomvalues\"\n              }\n            }\n          ]\n        },\n        \"ecomhangingindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7a3e5388-1f7c-4ed2-bc3f-b576c55e7936\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"effindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4ef7a8a6-d19b-401b-8786-d432fc5ebe37\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"storeset\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6cc2e866-302f-4f0b-ba79-4512114d3421\",\n              \"value\": \"6\",\n              \"properties\": {\n                \"referenceData\": \"storesetvalues/6_storesetvalues\"\n              }\n            }\n          ]\n        },\n        \"christmasindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"e95b63bf-5a75-4b10-8187-caabe54a1261\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"protectionplan\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9706274e-baf1-42cb-b01d-48736d51d9f3\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"ecommsuppliershippoint\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"d1d40a47-d378-427d-8849-02a5e9026361\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"maxbackorderdays\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"12ed21c2-713d-4833-b955-d3589a42888f\",\n              \"value\": 7\n            }\n          ]\n        },\n        \"storepurchasetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"c483e617-fa0b-4be0-b4a5-9b822171562b\",\n              \"value\": \"B\",\n              \"properties\": {\n                \"referenceData\": \"storepurchasetypevalues/b_storepurchasetypevalues\"\n              }\n            }\n          ]\n        },\n        \"ecommpurchasetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"18665ff0-6bff-4921-9570-7261f0809f7f\",\n              \"invalidValue\": \"SB\"\n            }\n          ]\n        },\n        \"factoryshipuom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"11be5c31-0cab-4ace-b606-2d329240fdf0\",\n              \"invalidValue\": \"D\"\n            }\n          ]\n        },\n        \"ticketstockno\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6fe70a92-ff0e-4c8a-b614-5c302402f393\",\n              \"value\": \"NONE\"\n            }\n          ]\n        },\n        \"season\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"67dcd7f7-7e30-46f7-aa0d-589e77e98b26\",\n              \"value\": \"401\",\n              \"properties\": {\n                \"referenceData\": \"seasonvalues/401_seasonvalues\"\n              }\n            }\n          ]\n        },\n        \"ecommjcpstatus\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"337afddc-be55-48fd-9a2a-4b917036636c\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"ecommjcpstatusvalues/1_ecommjcpstatusvalues\"\n              }\n            }\n          ]\n        },\n        \"enterpriseinventoryindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"f4a138d6-fe43-4ae4-a0eb-45ec8e19e51c\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"fashionpyramid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"dcbc696c-010c-4fca-8357-5bd5d9af2d2f\",\n              \"value\": \"C\",\n              \"properties\": {\n                \"referenceData\": \"fashionpyramidvalues/c_fashionpyramidvalues\"\n              }\n            }\n          ]\n        },\n        \"deliveryinstructions\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9698bd9e-dabc-4b09-83da-9732c7c1421c\",\n              \"value\": \"S\",\n              \"properties\": {\n                \"referenceData\": \"deliveryinstructionvalues/s_deliveryinstructionvalues\"\n              }\n            }\n          ]\n        },\n        \"pricetier\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"46ee1e54-aacf-4db7-b359-928ee2105b94\",\n              \"value\": \"B\",\n              \"properties\": {\n                \"referenceData\": \"pricetiervalues/b_pricetiervalues\"\n              }\n            }\n          ]\n        },\n        \"specialitemcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6b2800c7-4aa5-41a1-9385-fd4bf6fc615d\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"specialitemcodevalues/0_specialitemcodevalues\"\n              }\n            }\n          ]\n        },\n        \"factoryshiplimitedinvind\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"287c85d6-7465-405a-8df5-c91dfd1a314d\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"shippinginforequired\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"5a1f179d-bfc4-4ede-8ba6-d165f71c42a7\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"sellinguom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7ce78177-003c-47c0-9a20-1f2966e78ec4\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"sellinguomvalues/ea_sellinguomvalues\"\n              }\n            }\n          ]\n        },\n        \"standarduom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"fe18783c-61b8-4179-9c7b-2c4555af5bc0\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"standarduomvalues/ea_standarduomvalues\"\n              }\n            }\n          ]\n        },\n        \"sellableflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"53cf2fe6-0d53-4864-afa5-25a3e3af023e\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"orderableflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2004b5d4-b7ae-42bd-9f95-cb17e3599024\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"inventoryflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1829861d-1af6-4402-a218-751ff3e704f0\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"orinfetchrequestbody\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"de2e8c9a-faed-475f-99d9-f9385cba348e\",\n              \"value\": \"{\\\"UserID\\\":\\\"PimUser\\\",\\\"ItemCount\\\":\\\"1\\\",\\\"RequestID\\\":\\\"TOKEN\\\"}\"\n            }\n          ]\n        },\n        \"orin\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"450b8cd9-2c8e-4b7d-ad1b-68f560f83c23\",\n              \"value\": \"one more new one here\"\n            }\n          ]\n        },\n        \"diff1type\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"c19a7a43-5f9d-4a83-9247-096bdc873982\",\n              \"value\": \"Color\",\n              \"properties\": {\n                \"referenceData\": \"diff1typevalues/color_diff1typevalues\"\n              }\n            }\n          ]\n        },\n        \"diff1group\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"77447a78-a33a-4700-b6fb-34afe5fbed90\",\n              \"value\": \"COLORS\",\n              \"properties\": {\n                \"referenceData\": \"diff1groupvalues/colors_diff1groupvalues\"\n              }\n            }\n          ]\n        },\n        \"diff2type\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"562e1389-d967-48e7-acef-b71e698e389a\",\n              \"value\": \"Size\",\n              \"properties\": {\n                \"referenceData\": \"diff2typevalues/size_diff2typevalues\"\n              }\n            }\n          ]\n        },\n        \"diff2group\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"f697bb2e-8014-4338-b38a-c2da429e53de\",\n              \"value\": \"NOSIZE\",\n              \"properties\": {\n                \"referenceData\": \"diff2groupvalues/nosize_diff2groupvalues\"\n              }\n            }\n          ]\n        },\n        \"skusize\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"26f9329c-134f-497f-8dd2-018e6b0fc0a3\",\n              \"value\": \"1SZ*\"\n            }\n          ]\n        },\n        \"itemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"af16ee67-afda-4181-8dce-3ff0c46ec3b0\",\n              \"value\": \"3919133\",\n              \"properties\": {\n                \"referenceData\": \"itemtype/3919133_itemtype\"\n              }\n            }\n          ]\n        },\n        \"subproducttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"339cb56e-9b8f-4aac-ab97-88dedf02cce9\",\n              \"value\": \"4101041\",\n              \"properties\": {\n                \"referenceData\": \"subproducttype/4101041_subproducttype\"\n              }\n            }\n          ]\n        },\n        \"producttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7fa055ac-b5a4-4688-aaa8-ef5d9712d819\",\n              \"value\": \"3909002\",\n              \"properties\": {\n                \"referenceData\": \"producttype/3909002_producttype\"\n              }\n            }\n          ]\n        },\n        \"productline\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"dd3e2861-ccda-4fd4-aa84-2010d047e4db\",\n              \"value\": \"3908002\",\n              \"properties\": {\n                \"referenceData\": \"productline/3908002_productline\"\n              }\n            }\n          ]\n        },\n        \"cost\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7efe89b5-85bd-4a48-afc2-feb7965ae4b6\",\n              \"value\": 1278452\n            }\n          ]\n        },\n        \"estimatedupsshippingcharge\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"81bf43ea-bcec-43c8-b107-c9e860fb545a\",\n              \"value\": \"9.38\"\n            }\n          ]\n        },\n        \"plannedonsitedate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"778c03f0-ea50-46c1-ab22-f373cfb3162e\",\n              \"value\": \"2017-06-04T00:00:00.000-0500\"\n            }\n          ]\n        },\n        \"grossweight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"77470b37-fdd4-48c9-a91d-2c938a6ba5e3\",\n              \"value\": 68744\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"61c2a49d-d2dc-4993-a147-e9a755a1ce32\",\n              \"value\": 920141\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b155ce5c-2dd1-4eac-a92b-b6b7ddcde6ef\",\n              \"value\": 4574321\n            }\n          ]\n        },\n        \"shippingwidth\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2b9569b7-c294-41f5-a87f-a9149365fcd6\",\n              \"value\": 5633\n            }\n          ]\n        },\n        \"countryofmanufacture\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1cdce198-4a2b-4cae-8a82-6a326b5bcc96\",\n              \"value\": \"DZ\",\n              \"properties\": {\n                \"referenceData\": \"countryofmanufacturevalues/dz_countryofmanufacturevalues\"\n              }\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"04c6fcce-651e-4c28-9db4-10d41fcc10d9\",\n              \"value\": 252\n            }\n          ]\n        },\n        \"assembledlength\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8b4466f0-8f50-4298-b7fb-0626982f69eb\",\n              \"value\": 85855\n            }\n          ]\n        },\n        \"assembledweight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"eca47a8b-0cee-4766-8ee7-ed0e1e634801\",\n              \"value\": 454\n            }\n          ]\n        },\n        \"assembledwidth\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9fc09bb0-9ae3-431f-99b7-60fd45272482\",\n              \"value\": 7454\n            }\n          ]\n        },\n        \"colordesc\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b8f4b70a-f39a-40f5-a328-de7eccaef8f6\",\n              \"value\": \"Damn new color\"\n            }\n          ]\n        },\n        \"vpn\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8ea4f08b-3629-454b-a51a-6ac4d476b3ed\",\n              \"value\": \"ABC123\"\n            }\n          ]\n        },\n        \"hazmatflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"11ede908-0549-48f7-8a1c-c6b8063a0810\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"msrp\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"88da66a1-7d07-4f96-9e4e-4f92638d24d0\",\n              \"value\": 222\n            }\n          ]\n        },\n        \"prop65indicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"bf8e6a7f-c7a6-41d9-aa38-3a6094106ef4\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"shippointcity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"0c6ad23d-6a3f-4382-aa44-0ae3c0f0ab82\",\n              \"value\": \"bangalore\"\n            }\n          ]\n        },\n        \"shippointstate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"33fe6d56-4d5f-4ed0-997d-dd81cf8d8f6f\",\n              \"value\": \"karnataka\"\n            }\n          ]\n        },\n        \"class\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1a34b680-5dc6-45ed-9fec-07de99a0174a\",\n              \"value\": \"1002_greetingcards\",\n              \"properties\": {\n                \"referenceData\": \"class/1002greetingcards_class\"\n              }\n            }\n          ]\n        },\n        \"division\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8b1b200b-95fc-4b63-97d7-951392e9252e\",\n              \"value\": \"2\",\n              \"properties\": {\n                \"referenceData\": \"division/2_division\"\n              }\n            }\n          ]\n        },\n        \"entity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"30a724a3-04d9-45da-b6a3-8a862200f2b9\",\n              \"value\": \"11\",\n              \"properties\": {\n                \"referenceData\": \"entity/11_entity\"\n              }\n            }\n          ]\n        },\n        \"subdivision\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"a306a4b0-8234-46ea-8d4b-3047be541799\",\n              \"value\": \"100\",\n              \"properties\": {\n                \"referenceData\": \"subdivision/100_subdivision\"\n              }\n            }\n          ]\n        },\n        \"initialmarkup\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6378cf94-eccf-4e33-8f3e-6c44bb74ee9a\",\n              \"value\": -102775\n            }\n          ]\n        },\n        \"retail\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"226e7ba1-c2d2-44aa-be67-af367d3629ae\",\n              \"value\": 12\n            }\n          ]\n        },\n        \"subclass\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"914507aa-6919-4a27-a8a2-addb27814815\",\n              \"value\": \"1002_greetingcards\"\n            }\n          ]\n        }\n      }, \n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptybookshelves/itybookshelves\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"attributes\": {\n            \"woodfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"WHITE\"\n                }\n              ]\n            },\n            \"piecesinset\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": 12\n                }\n              ]\n            },\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"YOUTH\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"0-12_MONTHS\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"10_+_YEARS\"\n                }\n              ]\n            },\n            \"assembly\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"ASSEMBLY_REQUIRED\"\n                }\n              ]\n            },\n            \"lastflow\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"Y\"\n                }\n              ]\n            },\n            \"metalfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"OIL_RUBBED_BRONZE\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"PAINTED\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"CHROME\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Lot with first multi lot pp create data",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "system_user",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"admin\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entity\": {\n    \"id\": \"PH_TEST_LOT_10_JUL_1\",\n    \"type\": \"lot\",\n    \"properties\": {\n      \"createdBy\": \"santu.joe@gmail.com_user\",\n      \"createdService\": \"entityManageService\",\n      \"createdDate\": \"2017-06-01T08:55:54.682-0500\",\n      \"modifiedService\": \"entityManageService\",\n      \"modifiedBy\": \"system_user\",\n      \"modifiedDate\": \"2017-06-01T09:56:35.560-0500\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"skuupcs\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"upc1\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"upc2\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"upc3\"\n            }\n          ]\n        },\n        \"skuvpns\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"vpn1\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"vpn2\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"vpn3\"\n            }\n          ]\n        },\n        \"skuppks\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"ppk1\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"ppk2\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"ppk3\"\n            }\n          ]\n        },\n        \"lotgroup\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"lg_002\"\n            }\n          ]\n        },\n        \"primaryimage\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1001.jpg\"\n            }\n          ]\n        },\n        \"alternateimages\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1002.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1003.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1003.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1005.jpg\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"Raymondshirt15\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"39c219b3-153d-45ea-8aff-cbb5403bea79\",\n              \"value\": \"Raymondshirt15\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2079675c-014b-4f92-b173-c547104623ab\",\n              \"value\": \"Nike\"\n            }\n          ]\n        },\n        \"lifecyclestage\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"93150e6b-6ff9-40ee-afa4-2261a17a4e24\",\n              \"value\": \"Draft\",\n              \"properties\": {\n                \"referenceData\": \"lifecyclestage/draft_lifecyclestage\"\n              }\n            }\n          ]\n        },\n        \"creationdate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"587129f8-8766-46e0-95cf-3e3fbb8dbe31\",\n              \"value\": \"2017-06-01T08:55:54.889-0500\"\n            }\n          ]\n        },\n        \"source\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1045feba-bd79-48cd-a392-6c6aef4f69bc\",\n              \"value\": \"PIM\",\n              \"properties\": {\n                \"referenceData\": \"sourcevalues/pim_sourcevalues\"\n              }\n            }\n          ]\n        },\n        \"skuitemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"fb3512e8-264c-4dd3-9aa3-880b64af3284\",\n              \"value\": \"FS\"\n            }\n          ]\n        },\n        \"channel\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"eefd49aa-3036-43f4-8ff3-e7c8af60aa55\",\n              \"value\": \"DIR\",\n              \"properties\": {\n                \"referenceData\": \"channelvalues/dir_channelvalues\"\n              }\n            }\n          ]\n        },\n        \"willcallfactoryshipind\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1db37712-d5ea-488f-9426-f9a44025bac9\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"noncontinentalprepaid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4f1766e6-5c76-4447-8a31-9331d64cafb5\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"continentalprepaid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"15760e3d-8ff4-4c0c-8c8d-dbfce4a284b1\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"unusualdemandquantity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4733e9dd-8131-4b3f-8721-749d13b94eee\",\n              \"value\": 11\n            }\n          ]\n        },\n        \"ecomminnerpack\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4135cad3-b1ed-4cbe-bfbe-d4905b4287c0\",\n              \"value\": 1\n            }\n          ]\n        },\n        \"specialprogramtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"d551f29d-bd64-4aeb-845f-549f3076b8ef\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"specialprogramtypevalues/0_specialprogramtypevalues\"\n              }\n            }\n          ]\n        },\n        \"storesubset\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"17945f95-1bfa-424b-9bbc-4ccfd6aa4c0d\",\n              \"value\": \"6\",\n              \"properties\": {\n                \"referenceData\": \"storesubsetvalues/6_storesubsetvalues\"\n              }\n            }\n          ]\n        },\n        \"storejcpstatus\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"35ad04cc-41c3-4878-b5fd-5d9afa811d99\",\n              \"value\": \"3\",\n              \"properties\": {\n                \"referenceData\": \"storejcpstatusvalues/3_storejcpstatusvalues\"\n              }\n            }\n          ]\n        },\n        \"factoryshipleadtime\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"103d5965-417d-4650-a078-24b00f3a13d5\",\n              \"value\": 2\n            }\n          ]\n        },\n        \"sizecase\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6b9a480b-cf31-42aa-9f34-1f97b5ae111d\",\n              \"value\": \"1\"\n            }\n          ]\n        },\n        \"lifestyle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"299d650e-ad4d-4df6-8545-3f1e54b63c19\",\n              \"value\": \"M\",\n              \"properties\": {\n                \"referenceData\": \"lifestylevalues/m_lifestylevalues\"\n              }\n            }\n          ]\n        },\n        \"suppliermfrshippoint\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"3d9c0531-7165-488c-b4b1-5d51b508b925\",\n              \"value\": \"00\"\n            }\n          ]\n        },\n        \"sizeinner\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"ce89d41d-b2b4-4c2b-9c65-34c7583efd38\",\n              \"value\": \"1\"\n            }\n          ]\n        },\n        \"packagetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b9cc5360-f816-418a-bbe4-90e82360c41f\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"packagetypevalues/ea_packagetypevalues\"\n              }\n            }\n          ]\n        },\n        \"weightunitofmeasure\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9f66e6d7-42c7-4734-82df-203076440f99\",\n              \"value\": \"LBS\",\n              \"properties\": {\n                \"referenceData\": \"weightuomvalues/lbs_weightuomvalues\"\n              }\n            }\n          ]\n        },\n        \"ecomhangingindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7a3e5388-1f7c-4ed2-bc3f-b576c55e7936\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"effindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4ef7a8a6-d19b-401b-8786-d432fc5ebe37\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"storeset\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6cc2e866-302f-4f0b-ba79-4512114d3421\",\n              \"value\": \"6\",\n              \"properties\": {\n                \"referenceData\": \"storesetvalues/6_storesetvalues\"\n              }\n            }\n          ]\n        },\n        \"christmasindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"e95b63bf-5a75-4b10-8187-caabe54a1261\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"protectionplan\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9706274e-baf1-42cb-b01d-48736d51d9f3\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"ecommsuppliershippoint\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"d1d40a47-d378-427d-8849-02a5e9026361\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"maxbackorderdays\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"12ed21c2-713d-4833-b955-d3589a42888f\",\n              \"value\": 7\n            }\n          ]\n        },\n        \"storepurchasetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"c483e617-fa0b-4be0-b4a5-9b822171562b\",\n              \"value\": \"B\",\n              \"properties\": {\n                \"referenceData\": \"storepurchasetypevalues/b_storepurchasetypevalues\"\n              }\n            }\n          ]\n        },\n        \"ecommpurchasetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"18665ff0-6bff-4921-9570-7261f0809f7f\",\n              \"invalidValue\": \"SB\"\n            }\n          ]\n        },\n        \"factoryshipuom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"11be5c31-0cab-4ace-b606-2d329240fdf0\",\n              \"invalidValue\": \"D\"\n            }\n          ]\n        },\n        \"ticketstockno\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6fe70a92-ff0e-4c8a-b614-5c302402f393\",\n              \"value\": \"NONE\"\n            }\n          ]\n        },\n        \"season\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"67dcd7f7-7e30-46f7-aa0d-589e77e98b26\",\n              \"value\": \"401\",\n              \"properties\": {\n                \"referenceData\": \"seasonvalues/401_seasonvalues\"\n              }\n            }\n          ]\n        },\n        \"ecommjcpstatus\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"337afddc-be55-48fd-9a2a-4b917036636c\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"ecommjcpstatusvalues/1_ecommjcpstatusvalues\"\n              }\n            }\n          ]\n        },\n        \"enterpriseinventoryindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"f4a138d6-fe43-4ae4-a0eb-45ec8e19e51c\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"fashionpyramid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"dcbc696c-010c-4fca-8357-5bd5d9af2d2f\",\n              \"value\": \"C\",\n              \"properties\": {\n                \"referenceData\": \"fashionpyramidvalues/c_fashionpyramidvalues\"\n              }\n            }\n          ]\n        },\n        \"deliveryinstructions\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9698bd9e-dabc-4b09-83da-9732c7c1421c\",\n              \"value\": \"S\",\n              \"properties\": {\n                \"referenceData\": \"deliveryinstructionvalues/s_deliveryinstructionvalues\"\n              }\n            }\n          ]\n        },\n        \"pricetier\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"46ee1e54-aacf-4db7-b359-928ee2105b94\",\n              \"value\": \"B\",\n              \"properties\": {\n                \"referenceData\": \"pricetiervalues/b_pricetiervalues\"\n              }\n            }\n          ]\n        },\n        \"specialitemcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6b2800c7-4aa5-41a1-9385-fd4bf6fc615d\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"specialitemcodevalues/0_specialitemcodevalues\"\n              }\n            }\n          ]\n        },\n        \"factoryshiplimitedinvind\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"287c85d6-7465-405a-8df5-c91dfd1a314d\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"shippinginforequired\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"5a1f179d-bfc4-4ede-8ba6-d165f71c42a7\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"sellinguom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7ce78177-003c-47c0-9a20-1f2966e78ec4\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"sellinguomvalues/ea_sellinguomvalues\"\n              }\n            }\n          ]\n        },\n        \"standarduom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"fe18783c-61b8-4179-9c7b-2c4555af5bc0\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"standarduomvalues/ea_standarduomvalues\"\n              }\n            }\n          ]\n        },\n        \"sellableflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"53cf2fe6-0d53-4864-afa5-25a3e3af023e\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"orderableflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2004b5d4-b7ae-42bd-9f95-cb17e3599024\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"inventoryflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1829861d-1af6-4402-a218-751ff3e704f0\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"orinfetchrequestbody\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"de2e8c9a-faed-475f-99d9-f9385cba348e\",\n              \"value\": \"{\\\"UserID\\\":\\\"PimUser\\\",\\\"ItemCount\\\":\\\"1\\\",\\\"RequestID\\\":\\\"TOKEN\\\"}\"\n            }\n          ]\n        },\n        \"orin\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"450b8cd9-2c8e-4b7d-ad1b-68f560f83c23\",\n              \"value\": \"one more new one here\"\n            }\n          ]\n        },\n        \"diff1type\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"c19a7a43-5f9d-4a83-9247-096bdc873982\",\n              \"value\": \"Color\",\n              \"properties\": {\n                \"referenceData\": \"diff1typevalues/color_diff1typevalues\"\n              }\n            }\n          ]\n        },\n        \"diff1group\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"77447a78-a33a-4700-b6fb-34afe5fbed90\",\n              \"value\": \"COLORS\",\n              \"properties\": {\n                \"referenceData\": \"diff1groupvalues/colors_diff1groupvalues\"\n              }\n            }\n          ]\n        },\n        \"diff2type\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"562e1389-d967-48e7-acef-b71e698e389a\",\n              \"value\": \"Size\",\n              \"properties\": {\n                \"referenceData\": \"diff2typevalues/size_diff2typevalues\"\n              }\n            }\n          ]\n        },\n        \"diff2group\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"f697bb2e-8014-4338-b38a-c2da429e53de\",\n              \"value\": \"NOSIZE\",\n              \"properties\": {\n                \"referenceData\": \"diff2groupvalues/nosize_diff2groupvalues\"\n              }\n            }\n          ]\n        },\n        \"skusize\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"26f9329c-134f-497f-8dd2-018e6b0fc0a3\",\n              \"value\": \"1SZ*\"\n            }\n          ]\n        },\n        \"itemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"af16ee67-afda-4181-8dce-3ff0c46ec3b0\",\n              \"value\": \"3919133\",\n              \"properties\": {\n                \"referenceData\": \"itemtype/3919133_itemtype\"\n              }\n            }\n          ]\n        },\n        \"subproducttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"339cb56e-9b8f-4aac-ab97-88dedf02cce9\",\n              \"value\": \"4101041\",\n              \"properties\": {\n                \"referenceData\": \"subproducttype/4101041_subproducttype\"\n              }\n            }\n          ]\n        },\n        \"producttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7fa055ac-b5a4-4688-aaa8-ef5d9712d819\",\n              \"value\": \"3909002\",\n              \"properties\": {\n                \"referenceData\": \"producttype/3909002_producttype\"\n              }\n            }\n          ]\n        },\n        \"productline\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"dd3e2861-ccda-4fd4-aa84-2010d047e4db\",\n              \"value\": \"3908002\",\n              \"properties\": {\n                \"referenceData\": \"productline/3908002_productline\"\n              }\n            }\n          ]\n        },\n        \"cost\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7efe89b5-85bd-4a48-afc2-feb7965ae4b6\",\n              \"value\": 1278452\n            }\n          ]\n        },\n        \"estimatedupsshippingcharge\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"81bf43ea-bcec-43c8-b107-c9e860fb545a\",\n              \"value\": \"9.38\"\n            }\n          ]\n        },\n        \"plannedonsitedate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"778c03f0-ea50-46c1-ab22-f373cfb3162e\",\n              \"value\": \"2017-06-04T00:00:00.000-0500\"\n            }\n          ]\n        },\n        \"grossweight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"77470b37-fdd4-48c9-a91d-2c938a6ba5e3\",\n              \"value\": 68744\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"61c2a49d-d2dc-4993-a147-e9a755a1ce32\",\n              \"value\": 920141\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b155ce5c-2dd1-4eac-a92b-b6b7ddcde6ef\",\n              \"value\": 4574321\n            }\n          ]\n        },\n        \"shippingwidth\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2b9569b7-c294-41f5-a87f-a9149365fcd6\",\n              \"value\": 5633\n            }\n          ]\n        },\n        \"countryofmanufacture\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1cdce198-4a2b-4cae-8a82-6a326b5bcc96\",\n              \"value\": \"DZ\",\n              \"properties\": {\n                \"referenceData\": \"countryofmanufacturevalues/dz_countryofmanufacturevalues\"\n              }\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"04c6fcce-651e-4c28-9db4-10d41fcc10d9\",\n              \"value\": 252\n            }\n          ]\n        },\n        \"assembledlength\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8b4466f0-8f50-4298-b7fb-0626982f69eb\",\n              \"value\": 85855\n            }\n          ]\n        },\n        \"assembledweight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"eca47a8b-0cee-4766-8ee7-ed0e1e634801\",\n              \"value\": 454\n            }\n          ]\n        },\n        \"assembledwidth\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9fc09bb0-9ae3-431f-99b7-60fd45272482\",\n              \"value\": 7454\n            }\n          ]\n        },\n        \"colordesc\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b8f4b70a-f39a-40f5-a328-de7eccaef8f6\",\n              \"value\": \"Damn new color\"\n            }\n          ]\n        },\n        \"vpn\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8ea4f08b-3629-454b-a51a-6ac4d476b3ed\",\n              \"value\": \"ABC123\"\n            }\n          ]\n        },\n        \"hazmatflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"11ede908-0549-48f7-8a1c-c6b8063a0810\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"msrp\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"88da66a1-7d07-4f96-9e4e-4f92638d24d0\",\n              \"value\": 222\n            }\n          ]\n        },\n        \"prop65indicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"bf8e6a7f-c7a6-41d9-aa38-3a6094106ef4\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"shippointcity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"0c6ad23d-6a3f-4382-aa44-0ae3c0f0ab82\",\n              \"value\": \"bangalore\"\n            }\n          ]\n        },\n        \"shippointstate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"33fe6d56-4d5f-4ed0-997d-dd81cf8d8f6f\",\n              \"value\": \"karnataka\"\n            }\n          ]\n        },\n        \"class\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1a34b680-5dc6-45ed-9fec-07de99a0174a\",\n              \"value\": \"1002_greetingcards\",\n              \"properties\": {\n                \"referenceData\": \"class/1002greetingcards_class\"\n              }\n            }\n          ]\n        },\n        \"division\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8b1b200b-95fc-4b63-97d7-951392e9252e\",\n              \"value\": \"2\",\n              \"properties\": {\n                \"referenceData\": \"division/2_division\"\n              }\n            }\n          ]\n        },\n        \"entity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"30a724a3-04d9-45da-b6a3-8a862200f2b9\",\n              \"value\": \"11\",\n              \"properties\": {\n                \"referenceData\": \"entity/11_entity\"\n              }\n            }\n          ]\n        },\n        \"subdivision\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"a306a4b0-8234-46ea-8d4b-3047be541799\",\n              \"value\": \"100\",\n              \"properties\": {\n                \"referenceData\": \"subdivision/100_subdivision\"\n              }\n            }\n          ]\n        },\n        \"initialmarkup\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6378cf94-eccf-4e33-8f3e-6c44bb74ee9a\",\n              \"value\": -102775\n            }\n          ]\n        },\n        \"retail\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"226e7ba1-c2d2-44aa-be67-af367d3629ae\",\n              \"value\": 12\n            }\n          ]\n        },\n        \"subclass\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"914507aa-6919-4a27-a8a2-addb27814815\",\n              \"value\": \"1002_greetingcards\"\n            }\n          ]\n        }\n      }, \n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptybookshelves/itybookshelves\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"attributes\": {\n            \"woodfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"WHITE\"\n                }\n              ]\n            },\n            \"piecesinset\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": 12\n                }\n              ]\n            },\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"YOUTH\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"0-12_MONTHS\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"10_+_YEARS\"\n                }\n              ]\n            },\n            \"assembly\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"ASSEMBLY_REQUIRED\"\n                }\n              ]\n            },\n            \"lastflow\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"Y\"\n                }\n              ]\n            },\n            \"metalfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"OIL_RUBBED_BRONZE\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"PAINTED\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"CHROME\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Lot with first multi lot pp UPC match attribute data",
+			"request": {
+				"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityservice/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-version",
+						"value": "8.1",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-clientId",
+						"value": "rdpclient",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-tenantId",
+						"value": "{{TENANT_ID}}",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-ownershipData",
+						"value": "Nike",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userId",
+						"value": "system_user",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userName",
+						"value": "Maryj",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-firstName",
+						"value": "Mary",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-lastName",
+						"value": "Jane",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userEmail",
+						"value": "mary.jane@riversand.com",
+						"description": ""
+					},
+					{
+						"key": "x-rdp-userRoles",
+						"value": "[\"admin\"]",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"entity\": {\n    \"id\": \"PH_TEST_LOT_10_JUL_4\",\n    \"type\": \"lot\",\n    \"properties\": {\n      \"createdBy\": \"santu.joe@gmail.com_user\",\n      \"createdService\": \"entityManageService\",\n      \"createdDate\": \"2017-06-01T08:55:54.682-0500\",\n      \"modifiedService\": \"entityManageService\",\n      \"modifiedBy\": \"system_user\",\n      \"modifiedDate\": \"2017-06-01T09:56:35.560-0500\"\n    },\n    \"data\": {\n      \"attributes\": {\n        \"multilotppvalupc\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"upc1\"\n            }\n          ]\n        },\n        \"skuupcs\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"upc7\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"upc8\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"upc9\"\n            }\n          ]\n        },\n        \"skuvpns\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"vpn7\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"vpn8\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"vpn9\"\n            }\n          ]\n        },\n        \"skuppks\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"ppk7\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"ppk8\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"value\": \"ppk9\"\n            }\n          ]\n        },\n        \"lotgroup\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"lg_002\"\n            }\n          ]\n        },\n        \"primaryimage\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1001.jpg\"\n            }\n          ]\n        },\n        \"alternateimages\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1002.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1003.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1003.jpg\"\n            },\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"PH_1005.jpg\"\n            }\n          ]\n        },\n        \"upcbarcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6447b1ad-5b1e-44e4-b251-7281079a7550\",\n              \"value\": \"Raymondshirt15\"\n            }\n          ]\n        },\n        \"producttitle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"39c219b3-153d-45ea-8aff-cbb5403bea79\",\n              \"value\": \"Raymondshirt15\"\n            }\n          ]\n        },\n        \"suppliernumbername\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2079675c-014b-4f92-b173-c547104623ab\",\n              \"value\": \"Nike\"\n            }\n          ]\n        },\n        \"lifecyclestage\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"93150e6b-6ff9-40ee-afa4-2261a17a4e24\",\n              \"value\": \"Draft\",\n              \"properties\": {\n                \"referenceData\": \"lifecyclestage/draft_lifecyclestage\"\n              }\n            }\n          ]\n        },\n        \"creationdate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"587129f8-8766-46e0-95cf-3e3fbb8dbe31\",\n              \"value\": \"2017-06-01T08:55:54.889-0500\"\n            }\n          ]\n        },\n        \"source\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1045feba-bd79-48cd-a392-6c6aef4f69bc\",\n              \"value\": \"PIM\",\n              \"properties\": {\n                \"referenceData\": \"sourcevalues/pim_sourcevalues\"\n              }\n            }\n          ]\n        },\n        \"skuitemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"fb3512e8-264c-4dd3-9aa3-880b64af3284\",\n              \"value\": \"FS\"\n            }\n          ]\n        },\n        \"channel\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"eefd49aa-3036-43f4-8ff3-e7c8af60aa55\",\n              \"value\": \"DIR\",\n              \"properties\": {\n                \"referenceData\": \"channelvalues/dir_channelvalues\"\n              }\n            }\n          ]\n        },\n        \"willcallfactoryshipind\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1db37712-d5ea-488f-9426-f9a44025bac9\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"noncontinentalprepaid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4f1766e6-5c76-4447-8a31-9331d64cafb5\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"continentalprepaid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"15760e3d-8ff4-4c0c-8c8d-dbfce4a284b1\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"unusualdemandquantity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4733e9dd-8131-4b3f-8721-749d13b94eee\",\n              \"value\": 11\n            }\n          ]\n        },\n        \"ecomminnerpack\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4135cad3-b1ed-4cbe-bfbe-d4905b4287c0\",\n              \"value\": 1\n            }\n          ]\n        },\n        \"specialprogramtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"d551f29d-bd64-4aeb-845f-549f3076b8ef\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"specialprogramtypevalues/0_specialprogramtypevalues\"\n              }\n            }\n          ]\n        },\n        \"storesubset\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"17945f95-1bfa-424b-9bbc-4ccfd6aa4c0d\",\n              \"value\": \"6\",\n              \"properties\": {\n                \"referenceData\": \"storesubsetvalues/6_storesubsetvalues\"\n              }\n            }\n          ]\n        },\n        \"storejcpstatus\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"35ad04cc-41c3-4878-b5fd-5d9afa811d99\",\n              \"value\": \"3\",\n              \"properties\": {\n                \"referenceData\": \"storejcpstatusvalues/3_storejcpstatusvalues\"\n              }\n            }\n          ]\n        },\n        \"factoryshipleadtime\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"103d5965-417d-4650-a078-24b00f3a13d5\",\n              \"value\": 2\n            }\n          ]\n        },\n        \"sizecase\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6b9a480b-cf31-42aa-9f34-1f97b5ae111d\",\n              \"value\": \"1\"\n            }\n          ]\n        },\n        \"lifestyle\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"299d650e-ad4d-4df6-8545-3f1e54b63c19\",\n              \"value\": \"M\",\n              \"properties\": {\n                \"referenceData\": \"lifestylevalues/m_lifestylevalues\"\n              }\n            }\n          ]\n        },\n        \"suppliermfrshippoint\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"3d9c0531-7165-488c-b4b1-5d51b508b925\",\n              \"value\": \"00\"\n            }\n          ]\n        },\n        \"sizeinner\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"ce89d41d-b2b4-4c2b-9c65-34c7583efd38\",\n              \"value\": \"1\"\n            }\n          ]\n        },\n        \"packagetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b9cc5360-f816-418a-bbe4-90e82360c41f\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"packagetypevalues/ea_packagetypevalues\"\n              }\n            }\n          ]\n        },\n        \"weightunitofmeasure\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9f66e6d7-42c7-4734-82df-203076440f99\",\n              \"value\": \"LBS\",\n              \"properties\": {\n                \"referenceData\": \"weightuomvalues/lbs_weightuomvalues\"\n              }\n            }\n          ]\n        },\n        \"ecomhangingindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7a3e5388-1f7c-4ed2-bc3f-b576c55e7936\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"effindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"4ef7a8a6-d19b-401b-8786-d432fc5ebe37\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"storeset\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6cc2e866-302f-4f0b-ba79-4512114d3421\",\n              \"value\": \"6\",\n              \"properties\": {\n                \"referenceData\": \"storesetvalues/6_storesetvalues\"\n              }\n            }\n          ]\n        },\n        \"christmasindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"e95b63bf-5a75-4b10-8187-caabe54a1261\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"protectionplan\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9706274e-baf1-42cb-b01d-48736d51d9f3\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"ecommsuppliershippoint\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"d1d40a47-d378-427d-8849-02a5e9026361\",\n              \"value\": \"0\"\n            }\n          ]\n        },\n        \"maxbackorderdays\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"12ed21c2-713d-4833-b955-d3589a42888f\",\n              \"value\": 7\n            }\n          ]\n        },\n        \"storepurchasetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"c483e617-fa0b-4be0-b4a5-9b822171562b\",\n              \"value\": \"B\",\n              \"properties\": {\n                \"referenceData\": \"storepurchasetypevalues/b_storepurchasetypevalues\"\n              }\n            }\n          ]\n        },\n        \"ecommpurchasetype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"18665ff0-6bff-4921-9570-7261f0809f7f\",\n              \"invalidValue\": \"SB\"\n            }\n          ]\n        },\n        \"factoryshipuom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"11be5c31-0cab-4ace-b606-2d329240fdf0\",\n              \"invalidValue\": \"D\"\n            }\n          ]\n        },\n        \"ticketstockno\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6fe70a92-ff0e-4c8a-b614-5c302402f393\",\n              \"value\": \"NONE\"\n            }\n          ]\n        },\n        \"season\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"67dcd7f7-7e30-46f7-aa0d-589e77e98b26\",\n              \"value\": \"401\",\n              \"properties\": {\n                \"referenceData\": \"seasonvalues/401_seasonvalues\"\n              }\n            }\n          ]\n        },\n        \"ecommjcpstatus\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"337afddc-be55-48fd-9a2a-4b917036636c\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"ecommjcpstatusvalues/1_ecommjcpstatusvalues\"\n              }\n            }\n          ]\n        },\n        \"enterpriseinventoryindicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"f4a138d6-fe43-4ae4-a0eb-45ec8e19e51c\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"fashionpyramid\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"dcbc696c-010c-4fca-8357-5bd5d9af2d2f\",\n              \"value\": \"C\",\n              \"properties\": {\n                \"referenceData\": \"fashionpyramidvalues/c_fashionpyramidvalues\"\n              }\n            }\n          ]\n        },\n        \"deliveryinstructions\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9698bd9e-dabc-4b09-83da-9732c7c1421c\",\n              \"value\": \"S\",\n              \"properties\": {\n                \"referenceData\": \"deliveryinstructionvalues/s_deliveryinstructionvalues\"\n              }\n            }\n          ]\n        },\n        \"pricetier\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"46ee1e54-aacf-4db7-b359-928ee2105b94\",\n              \"value\": \"B\",\n              \"properties\": {\n                \"referenceData\": \"pricetiervalues/b_pricetiervalues\"\n              }\n            }\n          ]\n        },\n        \"specialitemcode\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6b2800c7-4aa5-41a1-9385-fd4bf6fc615d\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"specialitemcodevalues/0_specialitemcodevalues\"\n              }\n            }\n          ]\n        },\n        \"factoryshiplimitedinvind\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"287c85d6-7465-405a-8df5-c91dfd1a314d\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"shippinginforequired\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"5a1f179d-bfc4-4ede-8ba6-d165f71c42a7\",\n              \"value\": \"0\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/0_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"sellinguom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7ce78177-003c-47c0-9a20-1f2966e78ec4\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"sellinguomvalues/ea_sellinguomvalues\"\n              }\n            }\n          ]\n        },\n        \"standarduom\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"fe18783c-61b8-4179-9c7b-2c4555af5bc0\",\n              \"value\": \"EA\",\n              \"properties\": {\n                \"referenceData\": \"standarduomvalues/ea_standarduomvalues\"\n              }\n            }\n          ]\n        },\n        \"sellableflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"53cf2fe6-0d53-4864-afa5-25a3e3af023e\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"orderableflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2004b5d4-b7ae-42bd-9f95-cb17e3599024\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"inventoryflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1829861d-1af6-4402-a218-751ff3e704f0\",\n              \"value\": \"Y\"\n            }\n          ]\n        },\n        \"orinfetchrequestbody\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"de2e8c9a-faed-475f-99d9-f9385cba348e\",\n              \"value\": \"{\\\"UserID\\\":\\\"PimUser\\\",\\\"ItemCount\\\":\\\"1\\\",\\\"RequestID\\\":\\\"TOKEN\\\"}\"\n            }\n          ]\n        },\n        \"orin\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"450b8cd9-2c8e-4b7d-ad1b-68f560f83c23\",\n              \"value\": \"one more new one here\"\n            }\n          ]\n        },\n        \"diff1type\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"c19a7a43-5f9d-4a83-9247-096bdc873982\",\n              \"value\": \"Color\",\n              \"properties\": {\n                \"referenceData\": \"diff1typevalues/color_diff1typevalues\"\n              }\n            }\n          ]\n        },\n        \"diff1group\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"77447a78-a33a-4700-b6fb-34afe5fbed90\",\n              \"value\": \"COLORS\",\n              \"properties\": {\n                \"referenceData\": \"diff1groupvalues/colors_diff1groupvalues\"\n              }\n            }\n          ]\n        },\n        \"diff2type\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"562e1389-d967-48e7-acef-b71e698e389a\",\n              \"value\": \"Size\",\n              \"properties\": {\n                \"referenceData\": \"diff2typevalues/size_diff2typevalues\"\n              }\n            }\n          ]\n        },\n        \"diff2group\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"f697bb2e-8014-4338-b38a-c2da429e53de\",\n              \"value\": \"NOSIZE\",\n              \"properties\": {\n                \"referenceData\": \"diff2groupvalues/nosize_diff2groupvalues\"\n              }\n            }\n          ]\n        },\n        \"skusize\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"26f9329c-134f-497f-8dd2-018e6b0fc0a3\",\n              \"value\": \"1SZ*\"\n            }\n          ]\n        },\n        \"itemtype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"af16ee67-afda-4181-8dce-3ff0c46ec3b0\",\n              \"value\": \"3919133\",\n              \"properties\": {\n                \"referenceData\": \"itemtype/3919133_itemtype\"\n              }\n            }\n          ]\n        },\n        \"subproducttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"339cb56e-9b8f-4aac-ab97-88dedf02cce9\",\n              \"value\": \"4101041\",\n              \"properties\": {\n                \"referenceData\": \"subproducttype/4101041_subproducttype\"\n              }\n            }\n          ]\n        },\n        \"producttype\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7fa055ac-b5a4-4688-aaa8-ef5d9712d819\",\n              \"value\": \"3909002\",\n              \"properties\": {\n                \"referenceData\": \"producttype/3909002_producttype\"\n              }\n            }\n          ]\n        },\n        \"productline\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"dd3e2861-ccda-4fd4-aa84-2010d047e4db\",\n              \"value\": \"3908002\",\n              \"properties\": {\n                \"referenceData\": \"productline/3908002_productline\"\n              }\n            }\n          ]\n        },\n        \"cost\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"7efe89b5-85bd-4a48-afc2-feb7965ae4b6\",\n              \"value\": 1278452\n            }\n          ]\n        },\n        \"estimatedupsshippingcharge\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"81bf43ea-bcec-43c8-b107-c9e860fb545a\",\n              \"value\": \"9.38\"\n            }\n          ]\n        },\n        \"plannedonsitedate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"778c03f0-ea50-46c1-ab22-f373cfb3162e\",\n              \"value\": \"2017-06-04T00:00:00.000-0500\"\n            }\n          ]\n        },\n        \"grossweight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"77470b37-fdd4-48c9-a91d-2c938a6ba5e3\",\n              \"value\": 68744\n            }\n          ]\n        },\n        \"height\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"61c2a49d-d2dc-4993-a147-e9a755a1ce32\",\n              \"value\": 920141\n            }\n          ]\n        },\n        \"length\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b155ce5c-2dd1-4eac-a92b-b6b7ddcde6ef\",\n              \"value\": 4574321\n            }\n          ]\n        },\n        \"shippingwidth\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"2b9569b7-c294-41f5-a87f-a9149365fcd6\",\n              \"value\": 5633\n            }\n          ]\n        },\n        \"countryofmanufacture\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1cdce198-4a2b-4cae-8a82-6a326b5bcc96\",\n              \"value\": \"DZ\",\n              \"properties\": {\n                \"referenceData\": \"countryofmanufacturevalues/dz_countryofmanufacturevalues\"\n              }\n            }\n          ]\n        },\n        \"assembledheight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"04c6fcce-651e-4c28-9db4-10d41fcc10d9\",\n              \"value\": 252\n            }\n          ]\n        },\n        \"assembledlength\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8b4466f0-8f50-4298-b7fb-0626982f69eb\",\n              \"value\": 85855\n            }\n          ]\n        },\n        \"assembledweight\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"eca47a8b-0cee-4766-8ee7-ed0e1e634801\",\n              \"value\": 454\n            }\n          ]\n        },\n        \"assembledwidth\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"9fc09bb0-9ae3-431f-99b7-60fd45272482\",\n              \"value\": 7454\n            }\n          ]\n        },\n        \"colordesc\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"b8f4b70a-f39a-40f5-a328-de7eccaef8f6\",\n              \"value\": \"Damn new color\"\n            }\n          ]\n        },\n        \"vpn\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8ea4f08b-3629-454b-a51a-6ac4d476b3ed\",\n              \"value\": \"ABC123\"\n            }\n          ]\n        },\n        \"hazmatflag\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"11ede908-0549-48f7-8a1c-c6b8063a0810\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"msrp\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"88da66a1-7d07-4f96-9e4e-4f92638d24d0\",\n              \"value\": 222\n            }\n          ]\n        },\n        \"prop65indicator\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"bf8e6a7f-c7a6-41d9-aa38-3a6094106ef4\",\n              \"value\": \"1\",\n              \"properties\": {\n                \"referenceData\": \"rmsbooleanonezerovalues/1_rmsbooleanonezerovalues\"\n              }\n            }\n          ]\n        },\n        \"shippointcity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"0c6ad23d-6a3f-4382-aa44-0ae3c0f0ab82\",\n              \"value\": \"bangalore\"\n            }\n          ]\n        },\n        \"shippointstate\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"33fe6d56-4d5f-4ed0-997d-dd81cf8d8f6f\",\n              \"value\": \"karnataka\"\n            }\n          ]\n        },\n        \"class\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"1a34b680-5dc6-45ed-9fec-07de99a0174a\",\n              \"value\": \"1002_greetingcards\",\n              \"properties\": {\n                \"referenceData\": \"class/1002greetingcards_class\"\n              }\n            }\n          ]\n        },\n        \"division\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"8b1b200b-95fc-4b63-97d7-951392e9252e\",\n              \"value\": \"2\",\n              \"properties\": {\n                \"referenceData\": \"division/2_division\"\n              }\n            }\n          ]\n        },\n        \"entity\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"30a724a3-04d9-45da-b6a3-8a862200f2b9\",\n              \"value\": \"11\",\n              \"properties\": {\n                \"referenceData\": \"entity/11_entity\"\n              }\n            }\n          ]\n        },\n        \"subdivision\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"a306a4b0-8234-46ea-8d4b-3047be541799\",\n              \"value\": \"100\",\n              \"properties\": {\n                \"referenceData\": \"subdivision/100_subdivision\"\n              }\n            }\n          ]\n        },\n        \"initialmarkup\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"6378cf94-eccf-4e33-8f3e-6c44bb74ee9a\",\n              \"value\": -102775\n            }\n          ]\n        },\n        \"retail\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"226e7ba1-c2d2-44aa-be67-af367d3629ae\",\n              \"value\": 12\n            }\n          ]\n        },\n        \"subclass\": {\n          \"values\": [\n            {\n              \"source\": \"internal\",\n              \"locale\": \"en-US\",\n              \"id\": \"914507aa-6919-4a27-a8a2-addb27814815\",\n              \"value\": \"1002_greetingcards\"\n            }\n          ]\n        }\n      }, \n      \"contexts\": [\n        {\n          \"context\": {\n            \"classification\": \"plfurniture/ptyaccentfurniture/sptybookshelves/itybookshelves\",\n            \"taxonomy\": \"productsetuptaxonomy\"\n          },\n          \"attributes\": {\n            \"woodfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"WHITE\"\n                }\n              ]\n            },\n            \"piecesinset\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": 12\n                }\n              ]\n            },\n            \"agegroup\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"YOUTH\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"0-12_MONTHS\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"10_+_YEARS\"\n                }\n              ]\n            },\n            \"assembly\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"ASSEMBLY_REQUIRED\"\n                }\n              ]\n            },\n            \"lastflow\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"Y\"\n                }\n              ]\n            },\n            \"metalfinish\": {\n              \"values\": [\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"OIL_RUBBED_BRONZE\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"PAINTED\"\n                },\n                {\n                  \"source\": \"internal\",\n                  \"locale\": \"en-US\",\n                  \"value\": \"CHROME\"\n                }\n              ]\n            }\n          }\n        }\n      ]\n    }\n  }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

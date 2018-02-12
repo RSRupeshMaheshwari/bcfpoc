@@ -1,0 +1,389 @@
+{
+	"variables": [],
+	"info": {
+		"name": "15. Entity AppModel Service",
+		"_postman_id": "eca5807f-5677-d6b3-b380-dca68f4bc560",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Get Entity Model Coalesce",
+			"description": "",
+			"item": [
+				{
+					"name": "1. Get Entity Manage Model for coalesce of sku",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"sku_entityManageModel\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappmodelservice/getcoalesce",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"vendor\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_entityManageModel\",\n      \"contexts\": [\n        {\n          \"classification\": \"HOUSEWARES/RANGES/RANGES\",\n          \"taxonomy\": \"Product Setup Taxonomy\"\n        }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"entityManageModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Entity Display Model for coalesce of  sku",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"sku_entityManageModel\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappmodelservice/getcoalesce",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_entityDisplayModel\",\n      \"contexts\": [\n        {\n          \"classification\": \"HOUSEWARES/PET ACCESSORIES/PET ACCESSORIES/PET CAR SEAT COVERS\",\n          \"taxonomy\": \"Product Setup Taxonomy\"\n        }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"entityDisplayModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Entity Validtion Model for coalesce of sku",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"sku_entityManageModel\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappmodelservice/getcoalesce",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_entityValidationModel\",\n      \"contexts\": [\n        {\n          \"classification\": \"HOUSEWARES/PET ACCESSORIES/PET ACCESSORIES/PET CAR SEAT COVERS\",\n          \"taxonomy\": \"Product Setup Taxonomy\"\n        }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"entityValidationModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "5. Get Entity DefaultValue Model for coalesce of sku",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);",
+									"",
+									"postman.setEnvironmentVariable(\"sampleExcpected\",responseBody);",
+									"",
+									"var data =  postman.getEnvironmentVariable(\"sampleExcpected\"); ",
+									"",
+									"tests[\"model get successful\"] = data.has(\"sku_entityManageModel\");",
+									"",
+									"console.log(data);",
+									"",
+									"postman.clearEnvironmentVariable(\"sampleExcpected\");",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "http://{{WEBURL}}:{{WEBPORT}}/{{TENANT_ID}}/api/entityappmodelservice/getcoalesce",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-version",
+								"value": "8.1",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-clientId",
+								"value": "rdpclient",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-tenantId",
+								"value": "{{TENANT_ID}}",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-ownershipData",
+								"value": "Nike",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userId",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userName",
+								"value": "Maryj",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-firstName",
+								"value": "Mary",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-lastName",
+								"value": "Jane",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userEmail",
+								"value": "mary.jane@riversand.com",
+								"description": ""
+							},
+							{
+								"key": "x-rdp-userRoles",
+								"value": "[\"admin\"]",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"params\": {\n    \"query\": {\n      \"id\": \"sku_entityDefaultValueModel\",\n      \"contexts\": [\n        {\n          \"classification\": \"HOUSEWARES/PET ACCESSORIES/PET ACCESSORIES/PET CAR SEAT COVERS\",\n          \"taxonomy\": \"Product Setup Taxonomy\"\n        }\n      ],\n      \"filters\": {\n        \"typesCriterion\": [\n          \"entityDefaultValueModel\"\n        ]\n      }\n    },\n    \"fields\": {\n      \"attributes\": [\n        \"_ALL\"\n      ],\n      \"relationships\": [\n        \"_ALL\"\n      ]\n    }\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
