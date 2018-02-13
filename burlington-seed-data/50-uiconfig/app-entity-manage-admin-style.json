@@ -662,9 +662,7 @@
 												"domain": "thing"
 											}
 										},
-										"menuItems": [
-										
-										],
+									
 										"component": {
 											"name": "rock-relationship-split-screen",
 											"path": "/src/elements/rock-relationship-split-screen/rock-relationship-split-screen.html",
@@ -1038,7 +1036,7 @@
 										"gridConfig": {
 											"viewMode": "Tabular",
 											"mode": "Read",
-											"title": "Child SKUs",
+											"title": "Child choices",
 											"schemaType": "colModel",
 											"statusEnabled": true,
 											"tabular": {
@@ -1053,22 +1051,24 @@
 													]
 												},
 												"columns": [
-													{
-														"header": "Style Name",
-														"name": "stylename",
-														"sortable": true,
-														"filterable": false,
-														"editType": "",
-														"isFromEntityAttribute": true
-													},
+													
 													{
 														"header": "Choice ID",
 														"name": "burlid",
 														"sortable": true,
 														"filterable": false,
 														"editType": "",
-														"isFromEntityAttribute": true,
+														"readOnly": true,
+														"isRelatedEntityAttribute": true,
 														"linkTemplate": "entity-manage?id={id}&type={type}"
+													},
+													{
+														"header": "Style Name",
+														"name": "stylename",
+														"sortable": true,
+														"filterable": false,
+														"editType": "",
+														"isRelatedEntityAttribute": true
 													}
 												]
 											},
@@ -1097,15 +1097,7 @@
 																"visible": true,
 																"tooltip": "Edit"
 															},
-															
-																{
-																	"name": "bulkedit",
-																	"icon": "pebble-md-icons:Bulk-Edit",
-																	"text": "",
-																	"visible": true,
-																	"tooltip": "Bulk Edit"
-																},
-																{
+															{
 																"name": "delete",
 																"icon": "pebble-md-icons:Delete",
 																"text": "",
@@ -1131,15 +1123,11 @@
 												]
 											}
 										},
-										"direction": "up",
-										"fromEntityTypes": [
-											"choice"
-										],
 										"addRelLovConfig": {
 											"idField": "id",
 											"titlePattern": "{entity.attributes.burlid}"
 										},
-										"quickManageConfig": {
+										"quickManageConfig":{
 											"rock-tabs": {
 												"scrollable": true,
 												"fitContainer": false,
@@ -1174,7 +1162,8 @@
 																	"133312": "Width should be less than Length"
 																},
 																"config-context": {
-																	"relationshipAttributes": []
+																	"relationshipAttributes": [
+																	]
 																}
 															}
 														}
@@ -1182,47 +1171,43 @@
 												]
 											},
 											"pebble-toolbar": {
-												"buttonItems": [
-													{
-														"buttons": [
-															{
-																"name": "refresh",
-																"icon": "pebble-md-icons:ToolbarRefresh",
+												"buttonItems": [{
+													"buttons": [{
+														"name": "refresh",
+														"icon": "pebble-md-icons:ToolbarRefresh",
+														"text": "",
+														"visible": true,
+														"tooltip": "Refresh"
+													},
+														{
+															"name": "moreActions",
+															"icon": "pebble-md-icons:ToolbarMore",
+															"text": "",
+															"buttons": [{
+																"name": "add",
+																"icon": "pebble-sm-icons:Add",
 																"text": "",
 																"visible": true,
-																"tooltip": "Refresh"
+																"tooltip": "Add"
 															},
-															{
-																"name": "moreActions",
-																"icon": "pebble-md-icons:ToolbarMore",
-																"text": "",
-																"buttons": [
-																	{
-																		"name": "add",
-																		"icon": "pebble-sm-icons:Add",
-																		"text": "",
-																		"visible": true,
-																		"tooltip": "Add"
-																	},
-																	{
-																		"name": "delete",
-																		"icon": "pebble-md-icons:Delete",
-																		"text": "",
-																		"visible": true,
-																		"tooltip": "Delete"
-																	},
-																	{
-																		"name": "cut",
-																		"icon": "pebble-md-icons:Cut",
-																		"text": "",
-																		"visible": true,
-																		"tooltip": "Cut"
-																	}
-																]
-															}
-														]
-													}
-												]
+																{
+																	"name": "delete",
+																	"icon": "pebble-md-icons:Delete",
+																	"text": "",
+																	"visible": true,
+																	"tooltip": "Delete"
+																},
+																{
+																	"name": "cut",
+																	"icon": "pebble-md-icons:Cut",
+																	"text": "",
+																	"visible": true,
+																	"tooltip": "Cut"
+																}
+															]
+														}
+													]
+												}]
 											}
 										}
 									},
@@ -1619,7 +1604,7 @@
 						"jsonData": {
 							"config": {
 								"image": "",
-								"titleAttribute": "mdmid",
+								"titleAttribute": "productname",
 								"subtitleAttribute": ""
 							}
 						}
@@ -2352,8 +2337,8 @@
 											"properties": {
 												"result-attributes": [
 													{
-														"name": "mdmid",
-														"externalName": "Product ID"
+														"name": "burlid",
+														"externalName": "ID"
 													}
 												],
 												"business-function-data": {}
