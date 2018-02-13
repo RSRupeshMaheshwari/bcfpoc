@@ -1,0 +1,96 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "governance_model_ui_excel_import_process",
+      "name": "Governance Model UI Excel Import Process",
+      "type": "integrationprofile",
+      "properties": {
+        "createdService": "configurationManageService",
+        "createdDate": "2017-11-09T03:14:22.039-0600",
+        "modifiedService": "configurationManageService",
+        "modifiedDate": "2017-11-09T03:14:22.039-0600"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "app": "RSConnect",
+              "service": "MODEL_IMPORT",
+              "channel": "UI_GovernanceModel",
+              "format": "Excel",
+              "source": "internal",
+              "role": "admin",
+              "user": "system",
+              "subtype": "User",
+              "order": "10"
+            },
+            "jsonData": {
+              "integrationType": "User",
+              "isEnabled": "true",
+              "collect": {
+                "isDataPersistent": "true",
+                "channel": [
+                  {
+                    "type": "folderConnector",
+                    "settings": {
+                      "sourceFolder": "",
+                      "pattern": "*"
+                    }
+                  }
+                ],
+                "format": {
+                  "type": "DataModelEXCEL",
+                  "version": "1.1",
+                  "settings": {
+                    "additionalSettings": {
+                      "encoding": "utf8"
+                    }
+                  }
+                },
+                "filter": {
+                  "include": {},
+                  "exclude": {}
+                }
+              },
+              "publish": {
+                "isDataPersistent": "false",
+                "channel": [
+                  {
+                    "type": "rdpConnector",
+                    "settings": {
+                      "version": "1.1"
+                    }
+                  }
+                ],
+                "format": {
+                  "type": "RSJSON",
+                  "version": "1.1",
+                  "batchSize": 1,
+                  "settings": {
+                    "additionalSettings": {
+                      "encoding": "utf8"
+                    }
+                  }
+                },
+                "filter": {
+                  "include": {},
+                  "exclude": {}
+                }
+              },
+              "transform": {
+                "settings": {
+                  "nullRecordTransformer": "true"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

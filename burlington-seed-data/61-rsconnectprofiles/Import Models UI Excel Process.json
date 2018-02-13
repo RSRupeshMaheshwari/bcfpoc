@@ -1,0 +1,86 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "Excel_Import_Models_Process",
+      "name": "Excel_Import_Models_Process",
+      "type": "COPProfile",
+      "properties": {
+        "externalName": "Excel_Import_Models_Process"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "app": "RSConnect",
+              "service": "excelImportProcessService",
+              "list": "self"
+            },
+            "jsonData": {
+              "id": "Excel_Import_Models_Process",
+              "name": "Excel_Import_Models_Process",
+              "type": "MODEL_IMPORT",
+              "isEnabled": "true",
+              "integrationType": "User",
+              "collect": {
+                "isDataPersistent": "false",
+                "channel": [
+                  {
+                    "type": "folderConnector",
+                    "settings": {
+                      "sourceFolder": "",
+                      "pattern": "*.{xlsm,xlsx}"
+                    }
+                  }
+                ],
+                "format": {
+                  "type": "DataModelEXCEL",
+                  "version": "1.1",
+                  "settings": {
+                  }
+                },
+                "filter": {
+                  "include": {},
+                  "exclude": {}
+                }
+              },
+              "publish": {
+                "isDataPersistent": "true",
+                "channel": [
+                  {
+                    "type": "rdpConnector",
+                    "settings": {}
+                  }
+                ],
+                "format": {
+                  "type": "RSJSON",
+                  "version": "1.1",
+                  "batchSize": 1,
+                  "settings": {
+                    "additionalSettings": {
+                      "encoding": "utf8",
+                      "supportsCollection": "true"
+                    }
+                  }
+                },
+                "filter": {
+                  "include": [],
+                  "exclude": []
+                }
+              },
+              "transform": {
+                "settings": {
+                  "nullRecordTransformer": "true"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

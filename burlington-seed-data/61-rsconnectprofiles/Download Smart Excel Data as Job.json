@@ -1,0 +1,123 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "downloadDataExcelJob",
+      "name": "downloadDataExcelJob",
+      "type": "integrationprofile",
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "app": "RSConnect",
+              "service": "ENTITY_EXPORT",
+              "channel": "JOB",
+              "format": "Excel",
+              "source": "internal",
+              "role": "admin",
+              "user": "system",
+              "subtype": "User",
+              "order": "10"
+            },
+            "jsonData": {
+              "integrationType": "User",
+              "isEnabled": "true",
+              "collect": {
+                "isDataPersistent": "true",
+                "channel": [
+                  {
+                    "type": "rdpConnector",
+                    "settings": {
+                      "version": "1.1"
+                    }
+                  }
+                ],
+                "format": {
+                  "type": "RSJSON",
+                  "version": "1.1",
+                  "batchSize": 1,
+                  "settings": {
+                    "encoding": "utf8",
+                    "includeParent": "false",
+                    "includeChildren": "false",
+                    "includeSiblings": "false",
+                    "includeRelatedEntityExternalIds": "true",
+                    "supportsCollection": "true",
+                    "additionalSettings": {
+                      "encoding": "utf8"
+                    }
+                  }
+                },
+                "filter": {
+                  "include": {
+                    "queryFields": {
+                      "attributes": [
+                        "burlid"
+                      ]
+                    }
+                  },
+                  "exclude": {}
+                }
+              },
+              "publish": {
+                "isDataPersistent": "true",
+                "channel": [
+                  {
+                    "type": "presentationConnector",
+                    "settings": {
+                      "mode": "ASYNC"
+                    }
+                  }
+                ],
+                "format": {
+                  "type": "SMARTEXCEL",
+                  "version": "1.1",
+                  "settings": {
+                    "encoding": "utf8",
+                    "isLocalizationEnabled" : "true"
+                  }
+                },
+                "filter": {
+                  "include": {},
+                  "exclude": {}
+                }
+              },
+              "transform": {
+                "settings": {
+                  "entityType": "@field(type)",
+                  "enableDynamicMapping": "true",
+                  "source": "rms",
+                  "allowNullValues": "false",
+                  "clearMissingAttributes": "false",
+                  "strategies": [
+                    {
+                      "useExternalName": "true",
+                      "caseFormat": "NONE",
+                      "removeSpecialCharacters": "false",
+                      "removeWhitespace": "false",
+                      "trimLeadingNumbers": "false",
+                      "trimTrailingNumbers": "false",
+                      "isDefault": "false"
+                    }
+                  ]
+                },
+                "contexts": [
+                  {
+                    "context": {
+                      "classification": "@fieldExternalName(classification)",
+                      "taxonomy": "@fieldExternalName(taxonomy)"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

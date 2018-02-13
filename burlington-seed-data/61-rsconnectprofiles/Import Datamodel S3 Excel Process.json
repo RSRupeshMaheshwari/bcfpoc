@@ -1,0 +1,98 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "datamodel_s3bucket_excel_import_process",
+      "name": "Datamodel S3Bucket Excel Import Process",
+      "type": "integrationprofile",
+      "properties": {
+        "createdService": "configurationManageService",
+        "createdDate": "2017-11-09T03:14:22.039-0600",
+        "modifiedService": "configurationManageService",
+        "modifiedDate": "2017-11-09T03:14:22.039-0600"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "app": "RSConnect",
+              "service": "MODEL_IMPORT",
+              "channel": "S3",
+              "format": "EXCEL",
+              "source": "internal",
+              "role": "admin",
+              "user": "system",
+              "subtype": "User",
+              "order": "10"
+            },
+            "jsonData": {
+              "integrationType": "User",
+              "isEnabled": "true",
+              "collect": {
+                "isDataPersistent": "false",
+                "channel": [
+                  {
+                    "type": "s3BucketConnector",
+                    "credentialsType": "{{AWSCREDENTIALSTYPE}}",
+                    "settings": {
+                      "fileType": "xlsx",
+                      "bucketName": "{{ENVNAME}}-import-model-excel",
+                      "regionName": "{{AWSREGIONNAME}}"
+                    }
+                  }
+                ],
+                "format": {
+                  "type": "DataModelEXCEL",
+                  "version": "1.1",
+                  "settings": {
+                    "additionalSettings": {
+                      "encoding": "utf8"
+                    }
+                  }
+                },
+                "filter": {
+                  "include": {},
+                  "exclude": {}
+                }
+              },
+              "publish": {
+                "isDataPersistent": "false",
+                "channel": [
+                  {
+                    "type": "rdpConnector",
+                    "settings": {
+                      "version": "1.1"
+                    }
+                  }
+                ],
+                "format": {
+                  "type": "RSJSON",
+                  "version": "1.1",
+                  "batchSize": 1,
+                  "settings": {
+                    "additionalSettings": {
+                      "encoding": "utf8"
+                    }
+                  }
+                },
+                "filter": {
+                  "include": {},
+                  "exclude": {}
+                }
+              },
+              "transform": {
+                "settings": {
+                  "nullRecordTransformer": "true"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
