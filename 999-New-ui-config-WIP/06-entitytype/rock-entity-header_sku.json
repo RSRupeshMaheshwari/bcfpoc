@@ -1,0 +1,73 @@
+{
+	"metaInfo": {
+	  "dataIndex": "config",
+	  "collectionName": "configObjects",
+	  "responseObjectName": "response"
+	},
+	"configObjects": [
+	  {
+		"id": "rock-entity-header_sku_uiConfig",
+		"name": "rock-entity-header_sku",
+		"version": "1.0",
+		"type": "uiConfig",
+		"properties": {
+		  "createdByService": "system",
+		  "createdBy": "system"
+		},
+		"data": {
+		  "contexts": [
+			{
+			  "context": {
+				"component": "rock-entity-header",
+				"entityType": "sku"
+			  },
+			  "jsonData": {
+				"config": {
+				  "headerConfig": {
+					"id": {
+										  "attributeName": "id",
+										  "label": "ID",
+										  "noTrim": true,
+										  "isMetadataAttribute": true,
+										  "visible": false
+									  },
+									  "name": {
+										  "attributeName": "name",
+										  "label": "Name",
+										  "noTrim": true,
+										  "isMetadataAttribute": true,
+										  "visible": false
+									  },
+					"burlid": {
+					  "attributeName": "burlid",
+					  "label": "ID",
+					  "visible": true,
+					  "noTrim": false
+					},
+					"productname": {
+					  "attributeName": "vendorlabelname",
+					  "label": "Sku Name",
+					  "visible": true,
+					  "noTrim": false
+					},
+					"stylename": {
+					  "attributeName": "stylename",
+					  "label": "Style Name",
+					  "visible": true,
+					  "noTrim": false
+					},
+					"colorfamily": {
+					  "attributeName": "colorfamily",
+					  "label": "Color Family",
+					  "visible": true,
+					  "noTrim": false
+					}
+				  }
+				}
+			  }
+			}
+		  ]
+		}
+	  }
+	]
+  }

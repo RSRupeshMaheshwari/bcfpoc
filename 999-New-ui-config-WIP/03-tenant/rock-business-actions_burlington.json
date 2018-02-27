@@ -1,0 +1,48 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-business-actions_burlington_uiConfig",
+      "name": "rock-business-actions_burlington",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-business-actions",
+              "tenant": "burlington"
+            },
+            "jsonData": {
+              "config": {
+                "actionGroups": {
+                  "basic": {
+                    "title": "Basic",
+                    "visible": true,
+                    "actions": {
+                      "roll-up": {
+                        "visible": true
+                      }
+                    }
+                  },
+                  "context": {
+                    "title": "Context Manage",
+                    "visible": false
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

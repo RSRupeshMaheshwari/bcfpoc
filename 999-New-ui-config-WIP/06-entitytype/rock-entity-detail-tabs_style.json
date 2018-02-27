@@ -1,0 +1,76 @@
+{
+    "metaInfo": {
+        "dataIndex": "config",
+        "collectionName": "configObjects",
+        "responseObjectName": "response"
+    },
+    "configObjects": [
+        {
+            "id": "rock-entity-detail-tabs_style_uiConfig",
+            "name": "rock-entity-detail-tabs_style",
+            "version": "1.0",
+            "type": "uiConfig",
+            "properties": {
+                "createdByService": "system",
+                "createdBy": "system"
+            },
+            "data": {
+                "contexts": [
+                    {
+                        "context": {
+                            "component": "rock-entity-detail-tabs",
+                            "entityType": "style"
+                        },
+                        "jsonData": {
+                            "config": {
+                                "tabItems": {
+                                    "attributes": {
+                                        "component": {
+                                            "properties": {
+                                                "config-context": {
+                                                    "attributeNames": [
+														"fabricorigintype",
+														"productname",
+														"stylename",
+														"webstore",
+														"burlid"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "relationships": {
+                                        "component": {
+                                            "properties": {
+                                                "config-context": {
+													"relationshipNames": [
+														"childof"
+													]
+                                                }
+                                            }
+                                        }
+                                    },
+                              
+                                    "myViews": {
+                                        "visible": false,
+										"component": {
+											"properties": {
+												"config-context": {
+													"attributeNames": [
+														"burlid"
+													]
+												}
+											}
+										},
+										"menuItems": [
+										]
+									}
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

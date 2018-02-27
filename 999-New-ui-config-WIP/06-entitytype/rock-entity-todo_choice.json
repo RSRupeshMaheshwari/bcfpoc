@@ -1,0 +1,88 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-entity-todo_choice_uiConfig",
+      "name": "rock-entity-todo_choice",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-entity-todo",
+              "entitytype": "choice"
+            },
+            "jsonData": {
+              "config": {
+                "todos": {
+                  "linkAssets": {
+                    "icon": {
+                      "name": "pebble-icon:BrandFilled"
+                    },
+                    "data": {
+                      "type": "manageRelationships",
+                      "label": "Manage Children",
+                      "eventName": "trigger-todo-action",
+                      "config": {
+                        "relationshipTypeName": "hasparent"
+                      }
+                    },
+                    "visible": true
+                  },
+                  "manageCopyAttributes": {
+                    "icon": {
+                      "name": "pebble-icon:ChannelFilled"
+                    },
+                    "data": {
+                      "type": "manageAttributes",
+                      "label": "Manage Basic Attributes",
+                      "eventName": "trigger-todo-action",
+                      "config": {
+                        "attributeNames": [
+                          "burlid",
+													"stylename",
+													"customercolor",
+													"tempprice"
+                        ]
+                      }
+                    },
+                    "visible": true
+                  },
+                  "manageRecommandedAttributes": {
+                    "icon": {
+                      "name": "pebble-icon:ChannelFilled"
+                    },
+                    "data": {
+                      "type": "manageAttributes",
+                      "label": "Manage other Attributes",
+                      "eventName": "trigger-todo-action",
+                      "config": {
+                        "attributeGroupNames": [
+													"ProductInfo"
+												],
+                        "attributeNames": []
+                      }
+                    },
+                    "visible": true
+                  },
+                  "addrelationship": {
+                    "visible": false
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+    "metaInfo": {
+      "dataIndex": "config",
+      "collectionName": "configObjects",
+      "responseObjectName": "response"
+    },
+    "configObjects": [
+      {
+        "id": "app-repository_admin_uiConfig",
+        "name": "app-repository_admin",
+        "version": "1.0",
+        "type": "uiConfig",
+        "properties": {
+          "createdByService": "system",
+          "createdBy": "system"
+        },
+        "data": {
+          "contexts": [
+            {
+              "context": {
+                "component": "app-repository",
+                "role": "admin"
+              },
+              "jsonData": {
+                "config": {
+                    "govmodel-dashboard": {
+                        "visible": true
+                    },
+                    "basemodel-dashboard": {
+                        "visible": true
+                    }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }

@@ -1,0 +1,38 @@
+{
+    "metaInfo": {
+        "dataIndex": "config",
+        "collectionName": "configObjects",
+        "responseObjectName": "response"
+    },
+    "configObjects": [
+        {
+            "id": "rock-dashboard-widgets_admin_uiConfig",
+            "name": "rock-dashboard-widgets_admin",
+            "version": "1.0",
+            "type": "uiConfig",
+            "properties": {
+                "createdByService": "system",
+                "createdBy": "system"
+            },
+            "data": {
+                "contexts": [
+                    {
+                        "context": {
+                            "component": "rock-dashboard-widgets",
+                            "role": "admin"
+                        },
+                        "jsonData": {
+                            "config": {
+                                "widgets": {
+                                    "rock-task-list": {
+                                        "visible": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

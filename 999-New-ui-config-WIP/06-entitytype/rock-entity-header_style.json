@@ -1,0 +1,86 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-entity-header_style_uiConfig",
+      "name": "rock-entity-header_style",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-entity-header",
+              "entityType": "style"
+            },
+            "jsonData": {
+              "config": {
+                "headerConfig": {
+                  "typeExternalName": {
+										"attributeName": "typeExternalName",
+										"label": "Type",
+										"noTrim": true,
+										"isMetadataAttribute": true,
+										"visible": false
+									},
+                  "id": {
+										"attributeName": "id",
+										"label": "ID",
+										"noTrim": true,
+										"isMetadataAttribute": true,
+										"visible": false
+									},
+									"name": {
+										"attributeName": "name",
+										"label": "Name",
+										"noTrim": true,
+										"isMetadataAttribute": true,
+										"visible": false
+									},
+                  "burlid": {
+                    "attributeName": "burlid",
+                    "label": "ID",
+                    "visible": true,
+                    "noTrim": false
+                  },
+                  "productname": {
+                    "attributeName": "productname",
+                    "label": "Product Name",
+                    "visible": true,
+                    "noTrim": false
+                  },
+                  "stylename": {
+                    "attributeName": "stylename",
+                    "label": "Style Name",
+                    "visible": true,
+                    "noTrim": false
+                  },
+                  "fabricorigintype": {
+                    "attributeName": "fabricorigintype",
+                    "label": "Fabric Origin",
+                    "visible": true,
+                    "noTrim": false
+                  },
+                  "webstore": {
+                    "attributeName": "webstore",
+                    "label": "Webstore",
+                    "visible": true,
+                    "noTrim": false
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

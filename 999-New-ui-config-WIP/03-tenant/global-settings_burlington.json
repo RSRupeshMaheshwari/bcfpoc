@@ -1,0 +1,57 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "global-settings_burlington_uiConfig",
+      "name": "global-settings_burlington",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "global-settings",
+              "tenant": "burlington"
+            },
+            "jsonData": {
+              "config": {
+                "themeSettings": {
+                  "headerLogoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Burlington_Coat_Factory_Logo.svg",
+                  "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Burlington_Coat_Factory_Logo.svg",
+                  "footerTitle": "burlington",
+                  "themeName": "dark",
+                  "primaryColor": "#001074",
+                  "primaryLightColor": "#FFFFFF",
+                  "secondaryColor": "#001074"
+                },
+                "dataDefaults": {
+                  "entityTypes": {
+                    "thing": [
+                      "style",
+                      "choice",
+                      "sku"
+                    ],
+                    "digitalAsset": [
+                      "image",
+                      "video",
+                      "audio",
+                      "document"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

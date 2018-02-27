@@ -1,0 +1,39 @@
+{
+    "metaInfo": {
+      "dataIndex": "config",
+      "collectionName": "configObjects",
+      "responseObjectName": "response"
+    },
+    "configObjects": [
+      {
+        "id": "app-repository_burlington_uiConfig",
+        "name": "app-repository_burlington",
+        "version": "1.0",
+        "type": "uiConfig",
+        "properties": {
+          "createdByService": "system",
+          "createdBy": "system"
+        },
+        "data": {
+          "contexts": [
+            {
+              "context": {
+                "component": "app-repository",
+                "tenant": "burlington"
+              },
+              "jsonData": {
+                "config": {
+                    "govmodel-dashboard": {
+                        "visible": true
+                    },
+                    "basemodel-dashboard": {
+                        "visible": true
+                    }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }

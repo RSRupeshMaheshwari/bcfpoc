@@ -1,0 +1,105 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-quick-actions_burlington_uiConfig",
+      "name": "rock-quick-actions_burlington",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-quick-actions",
+              "tenant": "burlington"
+            },
+            "jsonData": {
+              "config": {
+                "actionGroups": {
+                  "create": {
+                    "title": "Create",
+                    "actions": {
+                      "createEntity": {
+                        "visible": false
+                      },
+                      "createStyle": {
+                        "name": "createStyle",
+                        "icon": "pebble-icon:ProductFilled",
+                        "text": "Style",
+                        "visible": true,
+                        "dataRoute": "entity-create",
+                        "contextData": {
+                          "itemContext": {
+                            "type": "style"
+                          }
+                        }
+                      },
+                      "createChoice": {
+                        "name": "createChoice",
+                        "icon": "pebble-icon:ProductFilled",
+                        "text": "Choice",
+                        "visible": true,
+                        "dataRoute": "entity-create",
+                        "contextData": {
+                          "itemContext": {
+                            "type": "choice"
+                          }
+                        }
+                      },
+                      "createSku": {
+                        "name": "createSku",
+                        "icon": "pebble-icon:ProductFilled",
+                        "text": "SKU",
+                        "visible": true,
+                        "dataRoute": "entity-create",
+                        "contextData": {
+                          "itemContext": {
+                            "type": "sku"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "upload": {
+                    "title": "Upload",
+                    "actions": {
+                      "uploadEntities": {
+                        "visible": false
+                      },
+                      "uploadSkus": {
+                        "name": "uploadSkus",
+                        "icon": "pebble-icon:ProductFilled",
+                        "text": "Upload SKUs",
+                        "visible": true,
+                        "dataRoute": "upload-excel",
+                        "contextData": {
+                          "itemContext": {
+                            "type": "enart"
+                          }
+                        }
+                      },
+                      "valueMappings": {
+                        "visible": false
+                      }
+                    }
+                  },
+                  "uploadmodel": {
+										"visible": false
+									}
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

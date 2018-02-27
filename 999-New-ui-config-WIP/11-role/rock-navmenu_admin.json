@@ -1,0 +1,39 @@
+{
+    "metaInfo": {
+      "dataIndex": "config",
+      "collectionName": "configObjects",
+      "responseObjectName": "response"
+    },
+    "configObjects": [
+      {
+        "id": "rock-navmenu_admin_uiConfig",
+        "name": "rock-navmenu_admin",
+        "version": "1.0",
+        "type": "uiConfig",
+        "properties": {
+          "createdByService": "system",
+          "createdBy": "system"
+        },
+        "data": {
+          "contexts": [
+            {
+              "context": {
+                "component": "rock-navmenu",
+                "role": "admin"
+              },
+              "jsonData": {
+                "config": {
+                    "govmodel-dashboard": {
+                        "visible": true
+                    },
+                    "basemodel-dashboard": {
+                        "visible": true
+                    }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }

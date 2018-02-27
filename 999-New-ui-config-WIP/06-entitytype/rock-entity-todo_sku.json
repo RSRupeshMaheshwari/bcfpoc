@@ -1,0 +1,50 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "rock-entity-todo_sku_uiConfig",
+			"name": "rock-entity-todo_sku",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "rock-entity-todo",
+							"entityType": "sku"
+						},
+						"jsonData": {
+							"config": {
+							  "todos": {
+								"manageCopyAttributes": {
+								  "visible": true
+								},
+								"manageRecommandedAttributes": {
+								  "data": {
+									"config": {
+									  "attributeNames": [
+										"colorfamily",
+										"stylename",
+										"vendorlabelname"
+									  ]
+									}
+								  },
+								  "visible": true
+								}
+							  }
+							}
+						  }
+					}
+				]
+			}
+		}
+	]
+}

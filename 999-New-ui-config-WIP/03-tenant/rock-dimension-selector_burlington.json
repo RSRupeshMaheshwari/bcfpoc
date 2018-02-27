@@ -1,0 +1,76 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-dimension-selector_burlinton_uiConfig",
+      "name": "rock-dimension-selector_burlington",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-dimension-selector",
+              "tenant": "burlington"
+            },
+            "jsonData": {
+              "config": {
+								"source": {
+									"hidden": true
+								},
+                "dcountry": {
+									"id": "dcountry",
+									"title": "Country",
+									"icon": "pebble-icon:Source",
+									"visible": false,
+									"useContextModel": true,
+									"dimensionType": "data",
+									"dataRequestType": "entity",
+									"dataMappings": {
+										"subtitle": "",
+										"sort": "{entity.attributes.flabel}",
+										"image": "",
+										"icon": "",
+										"type": [
+											"dcountry"
+										]
+									},
+									"selectedItem": {},
+									"default": ""
+								},
+								"dchannel": {
+									"id": "dchannel",
+									"title": "Channel",
+									"icon": "pebble-icon:SourceDb",
+									"visible": false,
+									"useContextModel": true,
+									"dimensionType": "data",
+									"dataRequestType": "entity",
+									"dataMappings": {
+										"subtitle": "",
+										"sort": "{entity.attributes.flabel}",
+										"image": "",
+										"icon": "",
+										"type": [
+											"dchannel"
+										]
+									},
+									"selectedItem": {},
+									"default": ""
+								}
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

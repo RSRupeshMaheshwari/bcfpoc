@@ -1,0 +1,163 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "rock-entity-summary_style_uiConfig",
+			"name": "rock-entity-summary_style",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "rock-entity-summary",
+							"entitytype":"style"
+					
+						},
+						"jsonData": {
+							"config": {
+								"widgets": {
+									"rock-entity-todo": {
+										"name": "rock-entity-todo",
+										"nonClosable": true,
+										"nonMaximizable": true,
+										"nonDraggable": true,
+										"visible": true,
+										"config": {
+											"heading": "Things I can do",
+											"headerIcon": "",
+											"position-x": 4,
+											"position-y": 0,
+											"width": 4,
+											"height": 4,
+											"iconButtons": {
+												"settings": {
+													"name": "settings",
+													"label": "Settings",
+													"icon": "pebble-icon:Settings",
+													"showInMoreActions": true,
+													"visible": true
+												},
+												"help": {
+													"name": "help",
+													"label": "Help",
+													"icon": "pebble-icon:Help",
+													"showInMoreActions": true,
+													"visible": true
+												}
+											},
+											"component": {
+												"name": "rock-entity-todo",
+												"path": "/src/elements/rock-entity-todo/rock-entity-todo.html"
+											}
+										}
+									},
+									"rock-entity-tofix": {
+										"name": "rock-entity-tofix",
+										"nonClosable": true,
+										"nonMaximizable": true,
+										"nonDraggable": true,
+										"visible": false,
+										"config": {
+											"heading": "Things I need to fix",
+											"headerIcon": "",
+											"position-x": 4,
+											"position-y": 0,
+											"width": 4,
+											"height": 4,
+											"iconButtons": {
+												"refresh": {
+													"name": "refresh",
+													"label": "Refresh",
+													"icon": "pebble-icon:Refresh",
+													"showInMoreActions": false,
+													"visible": false
+												}
+											},
+											"component": {
+												"name": "rock-entity-tofix",
+												"path": "/src/elements/rock-entity-tofix/rock-entity-tofix.html",
+												"properties": {
+													"view-mode": true
+												}
+											}
+										}
+									},
+									"rock-entity-relationships-summary": {
+										"name": "rock-entity-relationships-summary",
+										"nonClosable": true,
+										"nonMaximizable": true,
+										"nonDraggable": true,
+										"visible": true,
+										"config": {
+											"heading": "Relationships",
+											"headerIcon": "",
+											"position-x": 0,
+											"position-y": 0,
+											"width": 4,
+											"height": 4,
+											"iconButtons": [
+												{
+													"name": "refreshIcon",
+													"label": "Refresh",
+													"icon": "pebble-icon:Refresh",
+													"showInMoreActions": false
+												}
+											],
+											"component": {
+												"name": "rock-entity-relationships-summary",
+												"path": "/src/elements/rock-entity-relationships-summary/rock-entity-relationships-summary.html",
+												"properties": {
+													"domain": "thing",
+													"where-used-items": []
+												}
+											}
+										}
+									},
+									"rock-entity-assets-summary": {
+										"name": "rock-entity-assets-summary",
+										"nonClosable": true,
+										"nonMaximizable": true,
+										"nonDraggable": true,
+										"visible": false,
+										"config": {
+											"heading": "Assets",
+											"headerIcon": "",
+											"position-x": 0,
+											"position-y": 0,
+											"width": 0,
+											"height": 0,
+											"iconButtons": [
+												{
+													"name": "refreshIcon",
+													"label": "Refresh",
+													"icon": "pebble-icon:Refresh",
+													"showInMoreActions": false
+												}
+											],
+											"component": {
+												"name": "rock-entity-relationships-summary",
+												"path": "/src/elements/rock-entity-relationships-summary/rock-entity-relationships-summary.html",
+												"properties": {
+													"domain": "digitalAsset"
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

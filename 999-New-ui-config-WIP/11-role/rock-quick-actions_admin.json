@@ -1,0 +1,38 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-quick-actions_admin_uiConfig",
+      "name": "rock-quick-actions_admin",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-quick-actions",
+              "role": "admin"
+            },
+            "jsonData": {
+              "config": {
+                "actionGroups": {
+                  "uploadmodel": {
+										"visible": true
+									}
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

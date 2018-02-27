@@ -1,0 +1,73 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-entity-header_choice_uiConfig",
+      "name": "rock-entity-header_choice",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-entity-header",
+              "entityType": "choice"
+            },
+            "jsonData": {
+              "config": {
+                "headerConfig": {
+                  "id": {
+                    "attributeName": "id",
+                    "label": "ID",
+                    "noTrim": true,
+                    "isMetadataAttribute": true,
+                    "visible": false
+                   },
+                   "name": {
+                    "attributeName": "name",
+                    "label": "Name",
+                    "noTrim": true,
+                    "isMetadataAttribute": true,
+                    "visible": false
+                   },
+                  "burlid": {
+                    "attributeName": "burlid",
+                    "label": "Burlington ID ",
+                    "visible": true,
+                    "noTrim": false
+                  },
+                  "stylename": {
+                    "attributeName": "stylename",
+                    "label": "Style Name ",
+                    "visible": true,
+                    "noTrim": false
+                  },
+                  "customercolor": {
+                    "attributeName": "customercolor",
+                    "label": "Customer Color ",
+                    "visible": true,
+                    "noTrim": false
+                  },
+                  "tempprice": {
+                    "attributeName": "tempprice",
+                    "label": "Price",
+                    "visible": true,
+                    "noTrim": false
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

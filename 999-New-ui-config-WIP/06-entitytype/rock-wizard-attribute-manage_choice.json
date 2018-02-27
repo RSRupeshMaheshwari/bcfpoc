@@ -1,0 +1,53 @@
+{
+    "metaInfo": {
+        "dataIndex": "config",
+        "collectionName": "configObjects",
+        "responseObjectName": "response"
+    },
+    "configObjects": [
+        {
+            "id": "rock-wizard-attribute-manage_choice_uiConfig",
+            "name": "rock-wizard-attribute-manage_choice",
+            "version": "1.0",
+            "type": "uiConfig",
+            "properties": {
+                "createdByService": "system",
+                "createdBy": "system"
+            },
+            "data": {
+                "contexts": [
+                    {
+                        "context": {
+                            "component": "rock-wizard-attribute-manage",
+                            "entitytype": "choice"
+                        },
+                        "jsonData": {
+                            "config": {
+                                "name": "rock-wizard-attribute-manage",
+                                "label": "Manage Attributes",
+                                "steps": {
+                                    "step-1-attributes-manage": {
+                                        "name": "step-1-attributes-manage",
+                                        "label": "Manage Attributes",
+                                        "component": {
+                                            "name": "rock-attribute-manage",
+                                            "path": "/../../src/elements/rock-attribute-manage/rock-attribute-manage.html",
+                                            "properties": {
+                                                "allow-save-on-error": true,
+                                                "no-of-columns": 3,
+                                                "functional-mode": "dataFunction",
+                                                "mode": "edit"
+                                            }
+                                        },
+                                        "nextEvent": "onSave",
+                                        "skipEvent": "onSkip"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

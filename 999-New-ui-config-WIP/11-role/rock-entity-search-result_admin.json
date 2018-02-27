@@ -1,0 +1,98 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-entity-search-result_admin_uiConfig",
+      "name": "rock-entity-search-result_admin",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-entity-search-result",
+              "role": "admin"
+            },
+            "jsonData": {
+              "config": {
+                "gridConfig": {
+                  "itemConfig": {
+                    "fields": {
+                    
+											"id": {
+										
+												"visible": false
+											},
+											"name": {
+											
+												"visible": false
+											},
+                      "burlid": {
+                        "header": "ID",
+                        "name": "burlid",
+                        "sortable": true,
+                        "filterable": false,
+                        "linkTemplate": "entity-manage?id={id}&type={type}",
+                        "visible": true
+                      },
+                      "productname": {
+                        "header": "Product Name",
+                        "name": "productname",
+                        "sortable": false,
+                        "filterable": false,
+                        "visible": true
+                      },
+                      "stylename": {
+                        "header": "Stylename",
+                        "name": "stylename",
+                        "sortable": false,
+                        "filterable": false,
+                        "visible": true
+                      },
+                      "missingrule": {
+                        "header": "Missingrule",
+                        "name": "missingrule",
+                        "sortable": false,
+                        "filterable": false,
+                        "visible": true
+                      },
+                      "divisionid": {
+                        "header": "Divisionid",
+                        "name": "divisionid",
+                        "sortable": false,
+                        "filterable": false,
+                        "visible": true
+                      },
+                      "isarchieved": {
+                        "header": "Archieved",
+                        "name": "isarchieved",
+                        "sortable": false,
+                        "filterable": false,
+                        "visible": true
+                      },
+                      "publishedtoweb": {
+                        "header": "Published Status",
+                        "name": "publishedtoweb",
+                        "sortable": false,
+                        "filterable": false,
+                        "visible": true
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

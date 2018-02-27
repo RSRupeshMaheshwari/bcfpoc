@@ -1,0 +1,57 @@
+{
+    "metaInfo": {
+        "dataIndex": "config",
+        "collectionName": "configObjects",
+        "responseObjectName": "response"
+    },
+    "configObjects": [
+        {
+            "id": "rock-entity-relationship-search-result_burlington_uiConfig",
+            "name": "rock-entity-relationship-search-result_burlington",
+            "version": "1.0",
+            "type": "uiConfig",
+            "properties": {
+                "createdByService": "system",
+                "createdBy": "system"
+            },
+            "data": {
+                "contexts": [
+                    {
+                        "context": {
+                            "component": "rock-entity-relationship-search-result",
+                            "tenant": "burlington"
+                        },
+                        "jsonData": {
+                            "config": {
+                                "gridConfig": {
+                                    "applyContextCoalesce": true,
+                                    "viewConfig": {
+                                        "tabular": {
+                                            "settings": {
+                                                "moreOptionEnabled": true                                                
+                                            }
+                                        }
+                                    }
+                                },
+                                "addRelAssetConfig": {
+                                    "dataRequest": {
+                                        "domains": [
+                                            "digitalAsset"
+                                        ],
+                                        "attributes": [
+                                            "property_originalfilename",
+                                            "filetype",
+                                            "imagesize",
+                                            "imagedescription",
+                                            "thumbnail"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

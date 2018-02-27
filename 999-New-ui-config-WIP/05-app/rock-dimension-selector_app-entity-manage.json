@@ -1,0 +1,78 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-dimension-selector_app-entity-manage_uiConfig",
+      "name": "rock-dimension-selector_app-entity-manage",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-dimension-selector",
+              "app": "app-entity-manage"
+            },
+            "jsonData": {
+              "config": {
+                "taxonomy": {
+                  "id": "taxonomy",
+                  "title": "Taxonomy",
+                  "icon": "pebble-icon:Source",
+                  "visible": true,
+                  "hidden": false,
+                  "dimensionType": "data",
+                  "dataRequestType": "entity-context",
+                  "dataMappings": {
+                    "id": "name",
+                    "title": "name",
+                    "subtitle": "",
+                    "image": "",
+                    "icon": "",
+                    "type": [
+                      "taxonomy"
+                    ]
+                  },
+                  "selectedItem": {
+                  },
+                  "default": ""
+                },
+                "classification": {
+                  "id": "classification",
+                  "title": "Classification",
+                  "icon": "pebble-icon:Source",
+                  "visible": true,
+                  "hidden": false,
+                  "dimensionType": "data",
+                  "dataRequestType": "entity-context",
+                  "dataMappings": {
+                    "id": "name",
+                    "title": "name",
+                    "subtitle": "",
+                    "image": "",
+                    "icon": "",
+                    "type": [
+                      "classification"
+                    ]
+                  },
+                  "selectedItem": {},
+                  "selectedItemInfo": {
+                  },
+                  "default": ""
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "rock-entity-detail-tabs_sku_uiConfig",
+			"name": "rock-entity-detail-tabs_sku",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "rock-entity-detail-tabs",
+							"entityType": "sku"
+						},
+						"jsonData": {
+							"config": {
+								"scrollable": true,
+								"fitContainer": false,
+								"tabItems": {
+									"summary": {
+										"name": "summary",
+										"title": "Summary",
+										"selected": true,
+										"enableDropdownMenu": false,
+										"visible": true,
+										"component": {
+											"name": "rock-entity-summary",
+											"path": "/src/elements/rock-entity-summary/rock-entity-summary.html",
+											"properties": {}
+										}
+									},
+									"attributes": {
+										"name": "attributes",
+										"title": "Attributes",
+										"enableDropdownMenu": true,
+										"visible": true,
+										"menuProviderComponent": {
+											"name": "attribute-tab-menu-provider",
+											"path": "/src/elements/rock-attribute-split-screen/attribute-tab-menu-provider.html",
+											"properties": {}
+										},
+										"component": {
+											"name": "rock-attribute-split-screen",
+											"path": "/src/elements/rock-attribute-split-screen/rock-attribute-split-screen.html",
+											"properties": {
+												"mode": "view",
+												"no-of-columns": 2,
+												"allow-save-on-error": true,
+												"do-sync-validation": true,
+												"apply-locale-coalesce": true,
+												"apply-context-coalesce": true,
+												"config-context": {
+													"attributeNames": [
+														"burlid",
+														"vendorlabelname",
+														"colorfamily",
+														"stylename"
+													]
+												}
+											}
+										}
+									},
+									"graph": {
+										"name": "entity-graph",
+										"title": "Entity Graph",
+										"enableDropdownMenu": false,
+										"visible": true,
+										"component": {
+											"name": "rock-entity-graph",
+											"path": "/src/elements/rock-entity-graph/rock-entity-graph.html",
+											"properties": {}
+										}
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "global-settings_bsdf_uiConfig",
+			"name": "global-settings_bsdf",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "global-settings"
+						},
+						"jsonData": {
+							"config": {
+								"themeSettings": {
+									"headerLogoUrl": "../src/images/riverworks_logo.svg",
+									"footerTitle": "Riverworks",
+									"themeName": "default",
+									"primaryColor": "#001074",
+								  	"primaryLightColor": "#FFFFFF",
+								  	"secondaryColor": "#001074"
+								},
+								"dataDefaults": {
+									"entityTypes": {
+										"thing": [],
+										"digitalAsset": []
+									},
+									"categoryPathSeparator": ">>",
+									"valueContext": {
+										"source": "internal",
+										"locale": "en-US"
+									},
+									"defaultTaxonomy": ""
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

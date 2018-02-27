@@ -1,0 +1,47 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-wizard-entity-create_choice_uiConfig",
+      "name": "rock-wizard-entity-create_choice",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-wizard-entity-create",
+              "entityType": "choice"
+            },
+            "jsonData": {
+              "config": {
+                "steps": {
+                  "step-1-fill-initial-data": {
+                    "component": {
+                      "properties": {
+                        "attribute-names": [
+                          "burlid",
+													"stylename",
+													"customercolor",
+													"tempprice"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

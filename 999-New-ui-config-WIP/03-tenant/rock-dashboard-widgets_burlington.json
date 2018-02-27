@@ -1,0 +1,38 @@
+{
+    "metaInfo": {
+        "dataIndex": "config",
+        "collectionName": "configObjects",
+        "responseObjectName": "response"
+    },
+    "configObjects": [
+        {
+            "id": "rock-dashboard-widgets_burlington_uiConfig",
+            "name": "rock-dashboard-widgets_burlington",
+            "version": "1.0",
+            "type": "uiConfig",
+            "properties": {
+                "createdByService": "system",
+                "createdBy": "system"
+            },
+            "data": {
+                "contexts": [
+                    {
+                        "context": {
+                            "component": "rock-dashboard-widgets",
+                            "tenant": "burlington"
+                        },
+                        "jsonData": {
+                            "config": {
+                                "widgets": {
+                                    "rock-task-list": {
+                                        "visible": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

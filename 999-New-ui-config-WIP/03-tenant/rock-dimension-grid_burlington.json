@@ -1,0 +1,101 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "rock-dimension-grid_burlington_uiConfig",
+			"name": "rock-dimension-grid_burlington",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "rock-dimension-grid",
+							"tenant": "burlington"
+						},
+						"jsonData": {
+							"config": {
+								"gridConfig": {
+									"viewMode": "Tabular",
+									"title": "",
+									"mode": "Read",
+									"readOnly": true,
+									"schemaType": "simple",
+									"header": {
+										"displayTitle": false,
+										"defaultValue": ""
+									},
+									"itemConfig": {
+										"id": "id",
+										"title": "name",
+										"image": "productImageUrl",
+										"isMultiSelect": false,
+										"fields": {
+											"action": {
+												"header": "",
+												"name": "icon",
+												"iconColumn":true,
+												"sortable": false,
+												"filterable": false,
+												"editType": "",
+												"readOnly": true,
+												"visible": true
+											},
+											"value": {
+												"header": "Value",
+												"name": "value",
+												"sortable": true,
+												"filterable": false,
+												"editType": "",
+												"readOnly": true,
+												"visible": true
+											},
+											"source": {
+												"header": "Source",
+												"name": "source",
+												"sortable": false,
+												"filterable": false,
+												"readOnly": true,
+												"visible": true
+											},
+											"locale": {
+												"header": "Locale",
+												"name": "locale",
+												"sortable": true,
+												"filterable": false,
+												"readOnly": true,
+												"visible": true
+											},
+											"time": {
+												"header": "Time",
+												"name": "Time",
+												"sortable": false,
+												"filterable": false,
+												"readOnly":true,
+												"visible": true
+											}
+										}
+									},
+									"viewConfig": {
+										"tabular": {
+											"settings": {},
+											"fieldChanges": {}
+										}
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

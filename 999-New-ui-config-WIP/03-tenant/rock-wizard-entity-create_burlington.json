@@ -1,0 +1,44 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "rock-wizard-entity-create_burlington_uiConfig",
+			"name": "rock-wizard-entity-create_burlington",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "rock-wizard-entity-create",
+                            "tenant": "burlington"
+						},
+						"jsonData": {
+							"config": {
+								"steps": {
+									"step-1-fill-initial-data": {
+										"component": {
+											"name": "rock-entity-create",
+											"path": "/../../src/elements/rock-entity-create/rock-entity-create.html",
+											"properties": {
+												"show-manual-button": true
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

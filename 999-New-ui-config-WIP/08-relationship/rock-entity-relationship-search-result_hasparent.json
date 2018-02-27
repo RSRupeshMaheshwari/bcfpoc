@@ -1,0 +1,91 @@
+{
+    "metaInfo": {
+        "dataIndex": "config",
+        "collectionName": "configObjects",
+        "responseObjectName": "response"
+    },
+    "configObjects": [
+        {
+            "id": "rock-entity-relationship-search-result_hasparent_uiConfig",
+            "name": "rock-entity-relationship-search-result_hasparent",
+            "version": "1.0",
+            "type": "uiConfig",
+            "properties": {
+                "createdByService": "system",
+                "createdBy": "system"
+            },
+            "data": {
+                "contexts": [
+                    {
+                        "context": {
+                            "component": "rock-entity-relationship-search-result",
+                            "relationship": "hasparent"
+                        },
+                        "jsonData": {
+                            "config": {
+                                "gridConfig": {
+                                    "title": "Child SKUs",
+                                    "schemaType": "colModel",
+                                    "itemConfig": {
+                                        "fields": {
+                                            "typeExternalName": {
+                                                "visible": false
+                                            },
+                                            "id": {
+                                                "visible": false
+                                            },
+                                            "name": {
+                                                "visible": false
+                                            },
+                                            "burlid": {
+                                                "header": "Burlington ID",
+                                                "name": "burlid",
+                                                "sortable": true,
+                                                "filterable": false,
+                                                "editType": "",
+                                                "readOnly": true,
+                                                "isRelatedEntityAttribute": true,
+                                                "linkTemplate": "entity-manage?id={id}&type={type}",
+                                                "visible": true
+                                            },
+                                            "stylename": {
+                                                "header": "Style Name",
+                                                "name": "stylename",
+                                                "sortable": true,
+                                                "filterable": false,
+                                                "editType": "",
+                                                "readOnly": true,
+                                                "isRelatedEntityAttribute": true,
+                                                "linkTemplate": "entity-manage?id={id}&type={type}",
+                                                "visible": true
+                                            }
+                                        }
+                                    },
+                                    "viewConfig": {
+                                        "tile": {
+                                            "visible": false
+                                        },
+                                        "list": {
+                                            "visible": false
+                                        }
+                                    }
+                                },
+                                "addRelLovConfig": {
+                                    "idField": "id",
+                                    "titlePattern": "{entity.attributes.burlid}",
+                                    "visible": true
+                                },
+                                "copyActionConfig": {
+                                    "visible": false
+                                },
+                                "governDataConfig": {
+                                    "visible": false
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

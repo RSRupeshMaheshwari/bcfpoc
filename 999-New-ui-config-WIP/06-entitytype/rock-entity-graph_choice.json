@@ -1,0 +1,45 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "rock-entity-graph_choice_uiConfig",
+			"name": "rock-entity-graph_choice",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "rock-entity-graph",
+							"entitytype":"choice"
+							
+						},
+						"jsonData": {
+							"config": {
+								"entityGraphTreeConfig": {
+									"treeNodeTitle": "attribute:burlid",
+									"pageSize":10,
+									"relationships": [
+										{
+											"relationshipName": "hasparent",
+											"treeNodeTitle": "attribute:burlid"
+										   }
+									]
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}
+

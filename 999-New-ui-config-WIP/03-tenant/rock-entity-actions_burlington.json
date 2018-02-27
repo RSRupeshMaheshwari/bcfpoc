@@ -1,0 +1,47 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "rock-entity-actions_burlington_uiConfig",
+			"name": "rock-entity-actions_burlington",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "rock-entity-actions",
+							"tenant": "burlington"
+						},
+						"jsonData": {
+							"config": {
+								"toolbarConfig": {
+									"buttonItems": {
+										"basic": {
+											"buttons": {
+												"delete": {
+													"visible": true
+												},
+												"upload": {
+													"visible": true
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

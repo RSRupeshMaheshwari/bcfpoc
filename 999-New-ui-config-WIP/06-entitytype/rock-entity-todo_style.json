@@ -1,0 +1,112 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-entity-todo_style_uiConfig",
+      "name": "rock-entity-todo_style",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-entity-todo",
+              "entityType": "style"
+            },
+            "jsonData": {
+              "config": {
+                "todos": {
+              
+                  "linkAssets": {
+                    "icon": {
+                      "name": "pebble-icon:BrandFilled"
+                    },
+                    "data": {
+                      "type": "manageRelationships",
+                      "label": "Manage Children",
+                      "eventName": "trigger-todo-action",
+                      "config": {
+                        "relationshipTypeName": "childof"
+                      }
+                    },
+                    "visible": true
+                  },
+                  "manageCopyAttributes": {
+                    "icon": {
+                      "name": "pebble-icon:ChannelFilled"
+                    },
+                    "data": {
+                      "type": "manageAttributes",
+                      "label": "Manage Other Attributes",
+                      "eventName": "trigger-todo-action",
+                      "config": {
+                        "attributeGroupNames": [
+                          "ProductInfo"
+                        ]
+                      }
+                    },
+                    "visible": true
+                  },
+                  "manageRecommandedAttributes": {
+                    "icon": {
+                      "name": "pebble-icon:ChannelFilled"
+                    },
+                    "data": {
+                      "type": "manageAttributes",
+                      "label": "Manage Basic Attributes",
+                      "eventName": "trigger-todo-action",
+                      "config": {
+                        "attributeNames": [
+                          "fabricorigintype",
+                          "productname",
+                          "stylename",
+                          "webstore",
+                          "burlid"
+                        ]
+
+                      }
+                    },
+                    "visible": false
+                  },
+                  "manageRecommandedAttributess": {
+                    "icon": {
+                      "name": "pebble-icon:ChannelFilled"
+                    },
+                    "data": {
+                      "type": "manageAttributes",
+                      "label": "Manage Basic Attributes",
+                      "eventName": "trigger-todo-action",
+                      "config": {
+                        "attributeNames": [
+                          "fabricorigintype",
+                          "productname",
+                          "stylename",
+                          "webstore",
+                          "burlid"
+                        ]
+
+                      }
+                    },
+                    "visible": true
+                  },
+                  "addrelationship": {
+                    "visible": false
+                  }
+                
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

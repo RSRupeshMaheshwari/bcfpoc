@@ -1,0 +1,48 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-wizard-entity-create_style_uiConfig",
+      "name": "rock-wizard-entity-create_style",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-wizard-entity-create",
+              "entityType": "style"
+            },
+            "jsonData": {
+              "config": {
+                "steps": {
+                  "step-1-fill-initial-data": {
+                    "component": {
+                      "properties": {
+                        "attribute-names": [
+                          "fabricorigintype",
+													"productname",
+													"stylename",
+													"webstore",
+													"burlid"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

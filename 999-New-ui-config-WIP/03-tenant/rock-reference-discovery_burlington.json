@@ -1,0 +1,35 @@
+{
+	"metaInfo": {
+		"dataIndex": "config",
+		"collectionName": "configObjects",
+		"responseObjectName": "response"
+	},
+	"configObjects": [
+		{
+			"id": "rock-reference-discovery_burlington_uiConfig",
+			"name": "rock-reference-discovery_burlington",
+			"version": "1.0",
+			"type": "uiConfig",
+			"properties": {
+				"createdByService": "system",
+				"createdBy": "system"
+			},
+			"data": {
+				"contexts": [
+					{
+						"context": {
+							"component": "rock-reference-discovery",
+                            "tenant": "burlington"
+						},
+						"jsonData": {
+							"config": {
+								"defaultReferenceType": "fabricorigintype",
+								"showPublish": false
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

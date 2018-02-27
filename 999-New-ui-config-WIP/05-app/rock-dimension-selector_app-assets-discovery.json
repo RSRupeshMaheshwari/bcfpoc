@@ -1,0 +1,44 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-dimension-selector_app-assets-discovery_uiConfig",
+      "name": "rock-dimension-selector_app-assets-discovery",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-dimension-selector",
+              "app": "app-assets-discovery"
+            },
+            "jsonData": {
+              "config": {
+                "dcountry": {
+                  "useContextModel": false,
+                  "visible": false
+                },
+                "dchannel": {
+                  "useContextModel": false,
+                  "visible": false
+                },
+                "locale": {
+                  "visible": false
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

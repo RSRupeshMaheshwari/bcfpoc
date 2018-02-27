@@ -1,0 +1,94 @@
+{
+    "metaInfo": {
+        "dataIndex": "config",
+        "collectionName": "configObjects",
+        "responseObjectName": "response"
+    },
+    "configObjects": [
+        {
+            "id": "rock-entity-relationship-search-result_childof_uiConfig",
+            "name": "rock-entity-relationship-search-result_childof",
+            "version": "1.0",
+            "type": "uiConfig",
+            "properties": {
+                "createdByService": "system",
+                "createdBy": "system"
+            },
+            "data": {
+                "contexts": [
+                    {
+                        "context": {
+                            "component": "rock-entity-relationship-search-result",
+                            "relationship": "childof"
+                        },
+                        "jsonData": {
+                            "config": {
+                                "gridConfig": {
+                                    "title": "Child Choices",
+                                    "schemaType": "colModel",
+                                    "itemConfig": {
+                                        "fields": {
+                                            "order": {
+                                                "visible": false
+                                            },
+                                            "typeExternalName": {
+                                                "visible": false
+                                            },
+                                            "id": {
+                                                "visible": true
+                                            },
+                                            "name": {
+                                                "visible": false
+                                            },
+                                            "aid": {
+                                                "header": "BURL ID",
+                                                "name": "burlid",
+                                                "sortable": true,
+                                                "filterable": false,
+                                                "editType": "",
+                                                "readOnly": true,
+                                                "isRelatedEntityAttribute": true,
+                                                "linkTemplate": "entity-manage?id={id}&type={type}",
+                                                "visible": true
+                                            },
+                                            "lifecyclestage": {
+                                                "header": "Style NAme",
+                                                "name": "stylename",
+                                                "sortable": true,
+                                                "filterable": false,
+                                                "editType": "",
+                                                "readOnly": true,
+                                                "isRelatedEntityAttribute": true,
+                                                "linkTemplate": "entity-manage?id={id}&type={type}",
+                                                "visible": true
+                                            }
+                                        }
+                                    },
+                                    "viewConfig": {
+                                        "tile": {
+                                            "visible": false
+                                        },
+                                        "list": {
+                                            "visible": false
+                                        }
+                                    }
+                                },
+                                "addRelLovConfig": {
+                                    "idField": "id",
+                                    "titlePattern": "{entity.attributes.burlid}",
+                                    "visible": true
+                                },
+                                "copyActionConfig": {
+                                    "visible": false
+                                },
+                                "governDataConfig": {
+                                    "visible": false
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

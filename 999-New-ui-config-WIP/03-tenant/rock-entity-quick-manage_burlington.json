@@ -1,0 +1,84 @@
+{
+  "metaInfo": {
+    "dataIndex": "config",
+    "collectionName": "configObjects",
+    "responseObjectName": "response"
+  },
+  "configObjects": [
+    {
+      "id": "rock-entity-quick-manage_burlington_uiConfig",
+      "name": "rock-entity-quick-manage_burlington",
+      "version": "1.0",
+      "type": "uiConfig",
+      "properties": {
+        "createdByService": "system",
+        "createdBy": "system"
+      },
+      "data": {
+        "contexts": [
+          {
+            "context": {
+              "component": "rock-entity-quick-manage",
+              "tenant": "burlington"
+            },
+            "jsonData": {
+              "config": {
+                "tabConfig": {
+                  "scrollable": true,
+                  "fitContainer": false,
+                  "tabItems": {
+                    "attributes": {
+                      "component": {
+                        "properties": {
+                          "config-context": {
+                            "attributeNames": [
+                              "burlid",
+                              "productname",
+                              "stylename",
+                              "missingrule",
+                              "divisionid",
+                              "isarchieved",
+                              "publishedtoweb"
+                            ]
+                          }
+                        }
+                      },
+                      "menuItems": [
+												{
+													"name": "advanced",
+													"icon": "pebble-icon:Add",
+													"title": "Advanced",
+													"component": {
+														"name": "rock-attribute-manage",
+														"path": "/src/elements/rock-attribute-manage/rock-attribute-manage.html",
+														"properties": {
+															"mode": "view",
+															"no-of-columns": 2,
+															"do-sync-validation": true,
+															"config-context": {
+																"groupName": "Advanced",
+																"attributeNames": [
+																	"aalcoholcontent",
+																	"abacksidetext",
+																	"abatteriesincluded",
+																	"abeautyritual",
+																	"acountrycomments",
+																	"afrontsidetext",
+																	"asalestext"
+																]
+															}
+														}
+													}
+												}
+											]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
